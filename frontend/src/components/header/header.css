@@ -1,0 +1,143 @@
+#header {
+    background-color: #242429;
+}
+
+#logo {
+    padding: 10px 20px;
+    text-decoration: none;
+    font-size: 26px;
+    font-weight: 900;
+    color: aliceblue;
+}
+
+.header-nav ul{
+    list-style: none;
+    gap: 20px;
+    height: 100%;
+    margin-bottom: 0;
+    padding: 0;
+    color: aliceblue;
+}
+
+.header-nav li {
+    cursor: pointer;
+    transition: .3s;
+}
+
+.header-nav li:hover {
+    color: #bfe2ff;
+}
+
+.user-header {
+    padding: 0px 20px;
+}
+
+#userImage {
+    max-width: 40px;
+    height: auto;
+}
+
+#userName {
+    color: aliceblue;
+    font-weight: 500;
+}
+
+.dropdown-menu {
+    border-radius: 4px;
+    padding: 0;
+    -webkit-animation-name: dropdown-animate;
+    animation-name: dropdown-animate;
+    -webkit-animation-duration: .2s;
+    animation-duration: .2s;
+    -webkit-animation-fill-mode: both;
+    animation-fill-mode: both;
+    border: 0;
+    box-shadow: 0px 5px 30px 0 rgba(82, 63, 105, 0.2);
+    width: max-content;
+  }
+  
+  .dropdown-menu .dropdown-header{
+    text-align: center;
+    justify-items: center;
+    text-wrap: balance;
+    font-size: 15px;
+    padding: 8px;
+    cursor: default;
+  }
+
+  .dropdown-menu .dropdown-header h6{
+    font-weight: 700;
+    width: fit-content;
+  }
+  
+  .dropdown-menu .dropdown-divider {
+    color: #a5c5fe;
+    margin: 0;
+  }
+  
+  .dropdown-menu .dropdown-item {
+    font-size: 14px;
+    padding: 10px;
+    transition: 0.3s;
+  }
+  
+  .dropdown-menu .dropdown-item {
+    font-size: 18px;
+    line-height: 0;
+  }
+  
+  .dropdown-menu .dropdown-item:hover {
+    color: #008cff;
+    background-color: unset;
+  }
+  
+  @media (min-width: 768px) {
+    .dropdown-menu-arrow::before {
+      content: '';
+      width: 13px;
+      height: 13px;
+      position: absolute;
+      top: -7px;
+      right: 20px;
+      transform: rotate(45deg);
+      border-top: 1px solid #eaedf1;
+      border-left: 1px solid #eaedf1;
+      background-color: #fff;
+    }
+  }
+  
+  @-webkit-keyframes dropdown-animate {
+    0% {
+      opacity: 0;
+    }
+  
+    100% {
+      opacity: 1;
+    }
+  
+    0% {
+      opacity: 0;
+    }
+  }
+  
+  @keyframes dropdown-animate {
+    0% {
+      opacity: 0;
+    }
+  
+    100% {
+      opacity: 1;
+    }
+  
+    0% {
+      opacity: 0;
+    }
+  }
+
+.dropdown-item a{
+    color: #242429;
+}
+
+.dropdown-item i span{
+    padding-left: 10px;
+}

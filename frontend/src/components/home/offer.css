@@ -1,0 +1,51 @@
+mark {
+    background-color: transparent;
+    text-transform: uppercase;
+    color: #008cff;
+    font-weight: 500;
+    font-size: 18px;
+}
+
+.offer-container {
+    padding: 0 10%;
+    margin-top: 20px;
+}
+
+.offer {
+    height: 60px;
+    background-color: #242429;
+    border-radius: 5px;
+}
+
+.gift {
+    background-color: #008cff;
+    border-radius: 5px;
+    border-top-right-radius: 30px;
+    border-bottom-right-radius: 30px;
+    padding-left: 20px;
+}
+
+.gift i {
+    font-size: 34px;
+}
+
+.gift-bigger {
+    margin: 0;
+    font-weight: 500;
+    font-size: 17px;
+}
+
+.gift-text {
+    padding: 5px 0px 5px 10px;
+}
+
+.gift-text a {
+    color: aliceblue;
+    font-size: 14px;
+    text-decoration: underline;
+}
+
+.offer-text {
+    color: aliceblue;
+    align-items: center;
+}

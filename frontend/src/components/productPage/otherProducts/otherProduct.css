@@ -1,0 +1,18 @@
+.similar-products {
+    padding: 0 10%;
+    margin-top: 25px;
+    gap: 20px;
+}
+
+.similar-container {
+    gap: 20px;
+}
+
+.product {
+    width: 170px;
+    height: 250px;
+}
+
+.prod-bg {
+    height: 150px;
+}

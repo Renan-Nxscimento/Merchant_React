@@ -1,0 +1,115 @@
+.product-info {
+    padding-left: 15px;
+    padding-right: 15px;
+}
+
+.discount-banner {
+    height: 50px;
+}
+
+.discount-content {
+    background-color: #008cff;
+    color: aliceblue;
+    padding: 0 15px;
+    font-weight: 500;
+}
+
+.save-value {
+    gap: 10px;
+}
+
+.discount-content i{
+    font-size: 24px;
+}
+
+.info-price {
+    height: 85px;
+    font-weight: 500;
+}
+
+#currentPrice {
+    font-size: 36px;
+}
+
+.discount {
+    gap: 10px;
+}
+
+#originalPrice {
+    font-size: 26px;
+    text-decoration: line-through;
+    color: #6e93b6;
+    font-weight: normal;
+}
+
+#discountPercentage {
+    font-size: 16px;
+}
+
+.conditions{
+    gap: 10px;
+    font-weight: 500;
+    cursor: default;
+}
+
+.conditions span{
+    font-size: 14px;
+}
+
+.parcels {
+    background-color: #e9e9e9;
+    height: 30px;
+    padding: 10px;
+    gap: 10px;
+    color: #004985;
+}
+
+.vouchers {
+    background-color: #bfe2ff;
+    color: #008cff;
+    height: 30px;
+    padding: 10px;
+    gap: 10px;
+}
+
+.bi-caret-right-fill{
+ margin-left: auto;
+ cursor: pointer;
+}
+
+.info-name {
+    font-weight: 500;
+    font-size: 18px;
+}
+
+.product-rating {
+    height: 20px;
+    gap: 5px;
+}
+
+#ratingNumber {
+    font-weight: 500;
+}
+
+.slash {
+    height: 1px;
+    width: 100%;
+    background-color: #7d9eb9;
+    align-self: center;
+}
+
+.variations {
+    gap: 10px;
+}
+
+.variation {
+    width: 60px;
+    height: 60px;
+    overflow: hidden;
+    cursor: pointer;
+}
+
+.variation img {
+    width: 100%;
+    height: auto;
+}

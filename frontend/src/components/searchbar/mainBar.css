@@ -1,0 +1,100 @@
+.under-header {
+    background-color: #242429;
+}
+
+.categories {
+    background-color: #242429;
+}
+
+.cat-btn {
+    background-color: #008cff;
+    margin: 10px 20px;
+    margin-top: 0;
+    width: 150px;
+    font-weight: bold;
+    height: 30px;
+    justify-content: center;
+    align-items: center;
+    border: none;
+    text-transform: uppercase;
+}
+
+#dropdownMenuLink {
+    background-color: #008cff;
+    transition: all .3s;
+}
+
+#dropdownMenuLink:hover{
+    background-color: #006dc7;
+}
+
+.dropdown-menu{
+    max-width: 150px;
+    padding: 0 10px;
+}
+
+.dropdown-menu .show{
+    display: flex;
+}
+
+.category-item {
+    border-bottom: 1px solid #b6c6d3;
+    padding: 5px 0;
+    color: #242429;
+    transition: all .3s;
+}
+
+.category-item:hover {
+    color: #006dc7;
+}
+
+.category-item:last-child {
+    border-bottom: none;
+}
+
+.searchbar {
+    height: 30px;
+    outline: none;
+    border: none;
+    border-radius: 5px;
+    background-color: #fff;
+}
+
+#search {
+    width: 100%;
+    height: 30px;
+    outline: none;
+    border: none;
+    border-radius: 5px;
+    background-color: transparent;
+    padding: 0px 10px;
+}
+
+.search-btn {
+    color: #242429;
+    background-color: transparent;
+    border: none;
+    outline: none;
+    padding-left: 5px;
+    transform: scale(-1, 1)
+}
+
+.cart-icon {
+    color: aliceblue;
+    font-weight: 500;
+    text-transform: uppercase;
+    height: 30px;
+    cursor: pointer;
+    width: 190px;
+    padding: 0 10px 0 20px;
+}
+
+.circle {
+    width: 30px;
+    height: 30px;
+    background-color: #008cff;
+    border-radius: 50%;
+    color: #242429;
+    margin-right: 5px;
+}
+ 

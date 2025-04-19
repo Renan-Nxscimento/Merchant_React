@@ -1,0 +1,42 @@
+.reviews {
+    padding: 0 10%;
+    margin-top: 30px;
+}
+
+.rating-grade {
+    height: 150px;
+    border-radius: 10px;
+    background-color: #f2f4f7;
+    overflow: hidden;
+    margin-top: 20px;
+}
+
+.rating-number {
+    background-color: #dbdde0;
+    border-top-right-radius: 5px;
+    border-bottom-right-radius: 5px;
+    font-size: 40px;
+    font-weight: 500;
+}
+
+.rating-number .bi-star-fill {
+    font-size: 20px;
+}
+
+.rating-filter {
+    padding: 20px 40px;
+}
+
+.filter-btn {
+    height: 38px;
+    padding: 10px;
+    background-color: #dbdde0;
+    border-radius: 20px;
+    border: 1px solid #abbdcc;
+    transition: all .3s;
+    color: #506372;
+}
+
+.filter-btn:hover {
+    border: 1px solid #008cff;
+}

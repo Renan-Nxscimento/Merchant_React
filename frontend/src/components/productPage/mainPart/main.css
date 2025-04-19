@@ -1,0 +1,45 @@
+.main-product {
+    padding: 0 10%;
+    margin-top: 25px;
+    height: 525px;
+}
+
+.alt-images {
+    width: 80px;
+    gap: 10px;
+    padding-top: 40px;
+}
+
+.alt-img {
+    height: 70px;
+    width: 70px;
+    overflow: hidden;
+    border: 2px solid transparent;
+    padding: 2px;
+    cursor: pointer;
+}
+
+.selected {
+    border: 2px solid #242429;
+}
+
+.alt-img img{
+    height: 100%;
+    width: auto;
+}
+
+.main-image {
+    width: 450px;
+    height: 450px;
+    overflow: hidden;
+    align-self: center;
+}
+
+.main-image img{
+    height: auto;
+    width: 100%;
+}
+
+h3 {
+    font-weight: 500 !important;
+  }

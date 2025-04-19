@@ -1,0 +1,45 @@
+.description {
+    padding: 0 10%;
+    margin-top: 20px;
+}
+
+.description-text {
+    text-align: justify;
+    margin-top: 20px;
+    font-size: 18px;
+}
+
+.details {
+    padding: 0 10%;
+    margin-top: 25px;
+}
+
+.specifications {
+    width: 50%;
+    margin-top: 10px;
+    margin-bottom: 35px;
+}
+
+.spec {
+    height: 55px;
+    border-top: 1px solid #8598a5;
+}
+
+.spec:last-child {
+    border-bottom: 1px solid #8598a5;
+}
+
+.spec-name {
+    background-color: #dbdde0;
+    padding-left: 20px;
+    font-weight: 500;
+    color: #506372;
+}
+
+.spec-info {
+    background-color: #f2f4f7;
+    padding-left: 20px;
+    text-wrap: balance;
+    color: #59646d;
+}
+
