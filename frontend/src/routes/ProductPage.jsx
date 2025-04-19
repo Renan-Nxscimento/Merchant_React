@@ -21,8 +21,6 @@ const ProductPage = () => {
 
     const Product = products.find(product => String(product._id) === id);
 
-    console.log(Product)
-
   return (
     <>
       {Product ? (  

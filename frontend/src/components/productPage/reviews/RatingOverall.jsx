@@ -1,5 +1,6 @@
 import React from 'react'
-import Stars from '../../stars/stars'
+import Stars from '../../stars/Stars'
+
 
 const RatingOverall = ({Product}) => {
   return (
@@ -9,15 +10,15 @@ const RatingOverall = ({Product}) => {
         <Stars product={Product}/>
       </div>
       <div className="rating-filter d-flex justify-content-between w-100 align-items-center">
-        <button className='filter-btn d-flex align-items-center' onClick={""}>Todos</button>
-        <button className='filter-btn d-flex align-items-center' onClick={""}>
+        <button className='filter-btn d-flex align-items-center'>Todos</button>
+        <button className='filter-btn d-flex align-items-center'>
             <i className="bi bi-image"> Com mídia</i>
         </button>
-        <button className='filter-btn d-flex align-items-center' onClick={""}>5 Estrelas</button>
-        <button className='filter-btn d-flex align-items-center' onClick={""}>4 Estrelas</button>
-        <button className='filter-btn d-flex align-items-center' onClick={""}>3 Estrelas</button>
-        <button className='filter-btn d-flex align-items-center' onClick={""}>2 Estrelas</button>
-        <button className='filter-btn d-flex align-items-center' onClick={""}>1 Estrelas</button>
+        <button className='filter-btn d-flex align-items-center'>5 Estrelas</button>
+        <button className='filter-btn d-flex align-items-center'>4 Estrelas</button>
+        <button className='filter-btn d-flex align-items-center'>3 Estrelas</button>
+        <button className='filter-btn d-flex align-items-center'>2 Estrelas</button>
+        <button className='filter-btn d-flex align-items-center'>1 Estrelas</button>
       </div>
     </div>
   )

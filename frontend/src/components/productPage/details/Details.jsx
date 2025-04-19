@@ -12,7 +12,7 @@ const Details = ({Product}) => {
             detail.detail &&
               detail.detail !== "" &&
                 detail.order <= 4 ? (
-                  <div className='spec d-flex w-100 align-items-center'>
+                  <div key={detail.detail} className='spec d-flex w-100 align-items-center'>
                     <div className="spec-name d-flex w-50 h-100 align-items-center">
                       {detail.detail}
                     </div>
@@ -28,7 +28,7 @@ const Details = ({Product}) => {
             detail.detail &&
               detail.detail !== "" &&
                 detail.order >= 5 ? (
-                  <div className='spec d-flex w-100 align-items-center'>
+                  <div key={detail.detail} className='spec d-flex w-100 align-items-center'>
                     <div className="spec-name d-flex w-50 h-100 align-items-center">
                       {detail.detail}
                     </div>

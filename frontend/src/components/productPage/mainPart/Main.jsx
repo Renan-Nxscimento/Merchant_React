@@ -11,13 +11,17 @@ import Overall from '../reviews/Overall'
 const Main = ({Product}) => {
   return (
     <>
-        <div className="main-product d-flex w-100">
+        <main className="main-product d-flex w-100">
             <Images Product={Product}/>
             <ProductInfo Product={Product}/>
-        </div>
-        <SimilarProducts Snake={Product}/>
-        <Description Product={Product}/>
-        <Details Product={Product}/>
+        </main>
+        <section id='similarProducts'>
+          <SimilarProducts Snake={Product}/>
+        </section>
+        <section id='description'>
+          <Description Product={Product}/>
+          <Details Product={Product}/>
+        </section>
         <Overall Product={Product}/>
     </>
   )
