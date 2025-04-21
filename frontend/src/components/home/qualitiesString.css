@@ -1,0 +1,32 @@
+.qualities-string {
+    padding: 0 10%;
+    margin-top: 40px;
+}
+
+.qualities-container {
+    background-color: #f2f4f7;
+    border-radius: 5px;
+    height: 70px;
+    gap: auto;
+    font-size: 18px;
+    font-weight: 500;
+    color: #506372;
+    font-size: 20px;
+}
+
+.categorie-name {
+    cursor: default;
+}
+
+.f-quality {
+    font-weight: 700;
+    text-transform: uppercase;
+    font-size: 20px;
+    cursor: default;
+}
+
+.qualities-container i span{
+    margin-left: 7px;
+    font-size: 17px;
+    cursor: default;
+}

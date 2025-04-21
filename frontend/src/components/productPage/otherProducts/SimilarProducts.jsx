@@ -1,8 +1,7 @@
 import React, { useEffect, useState } from 'react'
-import Product from '../../home/Product'
-
-import './otherProduct.css'
+import Product from '../../product/Product'
 import { Link } from 'react-router-dom'
+import './otherProduct.css'
 
 const SimilarProducts = ({Snake}) => {
     const [products, setProducts] = useState([])

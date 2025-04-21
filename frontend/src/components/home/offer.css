@@ -33,6 +33,7 @@ mark {
     margin: 0;
     font-weight: 500;
     font-size: 17px;
+    cursor: default;
 }
 
 .gift-text {
@@ -48,4 +49,5 @@ mark {
 .offer-text {
     color: aliceblue;
     align-items: center;
+    cursor: default;
 }

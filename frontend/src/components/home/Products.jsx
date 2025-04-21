@@ -1,9 +1,8 @@
 import React, { useEffect, useState } from 'react'
-import Product from './Product'
-import { Link, useNavigate } from 'react-router-dom'
-
-
 import './products.css'
+import { Link } from 'react-router-dom'
+
+import Product from '../product/Product'
 
 const Products = () => {
         const [products, setProducts] = useState([])

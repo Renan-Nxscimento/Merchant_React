@@ -1,6 +1,5 @@
 import React from 'react'
 import Stars from '../stars/Stars'
-import { Link } from 'react-router-dom'
 
 const Product = ({product}) => {
  const image = product.images[0].src

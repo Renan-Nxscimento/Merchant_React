@@ -74,7 +74,7 @@ const ProductInfo = ({Product}) => {
         <div className="slash"></div>
 
         <div className="variations d-flex flex-wrap">
-            <span className='w-100'>Cool Vibrations.</span>
+            <span className='w-100'>Variation 1</span>
         {Product.variations.map(variation => (
                 variation.variation &&
                  variation.variation !== ""? (

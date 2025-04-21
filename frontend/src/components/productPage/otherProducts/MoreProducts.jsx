@@ -1,6 +1,5 @@
 import React, { useEffect, useState } from 'react'
-
-import Product from '../../home/Product'
+import Product from '../../product/Product'
 
 const MoreProducts = ({Snake}) => {
   const [products, setProducts] = useState([])
