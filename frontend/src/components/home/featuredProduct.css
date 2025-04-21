@@ -67,6 +67,7 @@
     gap: 10px;
     cursor: pointer;
     width: fit-content;
+    align-items: center;
 }
 
 .featured-price {
@@ -76,6 +77,7 @@
 .featured-original-price {
     color: #6e93b6;
     text-decoration: line-through;
+    font-size: 16px;
 }
 
 .f-product-options {
