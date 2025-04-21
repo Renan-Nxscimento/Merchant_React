@@ -1,5 +1,5 @@
 import React from 'react'
-import Stars from '../stars/stars'
+import Stars from '../stars/Stars'
 import { Link } from 'react-router-dom'
 
 const Product = ({product}) => {

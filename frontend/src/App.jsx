@@ -7,6 +7,7 @@ import 'bootstrap-icons/font/bootstrap-icons.css'
 
 import Header from './components/header/Header'
 import { BrowserRouter, Outlet, Route, Router, Routes } from 'react-router-dom'
+import Footer from './components/footer/Footer'
 
 function App() {
 
@@ -14,6 +15,7 @@ function App() {
     <>
       <Header/>
       <Outlet/>
+      <Footer/>
     </>
   )
 }

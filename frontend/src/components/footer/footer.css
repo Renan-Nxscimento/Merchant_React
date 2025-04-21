@@ -1,0 +1,28 @@
+footer {
+    background-color: #242429;
+    color: #6a6e72;
+    height: 50px;
+    padding: 0 10%;
+    margin-top: 50px;
+    border-top: 1px solid #719bc5;
+}
+
+.footer-container a{
+    text-decoration: none;
+    color: #6a6e72;
+}
+
+.footer-container mark {
+    font-size: 16px;
+    text-transform: none;
+    color: #719bc5;
+    cursor: pointer;
+    text-shadow: 0px 0px 2px #43caff;
+    font-weight: 400;
+    transition: all .3s;
+}
+
+.footer-container mark:hover {
+    color: #5eb6ff;
+    text-shadow: 0px 0px 3px #43caff;
+}

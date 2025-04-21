@@ -7,6 +7,7 @@ import SimilarProducts from '../otherProducts/SimilarProducts'
 import Description from '../details/Description'
 import Details from '../details/Details'
 import Overall from '../reviews/Overall'
+import MoreProducts from '../otherProducts/MoreProducts'
 
 const Main = ({Product}) => {
   return (
@@ -23,6 +24,7 @@ const Main = ({Product}) => {
           <Details Product={Product}/>
         </section>
         <Overall Product={Product}/>
+        <MoreProducts Snake={Product}/>
     </>
   )
 }

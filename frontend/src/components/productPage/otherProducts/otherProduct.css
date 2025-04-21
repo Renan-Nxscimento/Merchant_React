@@ -8,6 +8,16 @@
     gap: 20px;
 }
 
+#moreProducts {
+    padding: 0 10%;
+    margin-top: 25px;
+    gap: 20px;
+}
+
+.more-products-container {
+    gap: 20px;
+}
+
 .product {
     width: 170px;
     height: 250px;
