@@ -1,0 +1,31 @@
+.main-brands {
+    padding: 0 10%;
+    height: 200px;
+    margin-top: 100px;
+}
+
+.main-brands-container {
+    margin-top: 40px;
+}
+
+.brand {
+    width: 100%;
+    border: 1px solid #b0b8be;
+    border-right: none;
+}
+
+.brand:last-child {
+    border-right: 1px solid #b0b8be;
+}
+
+.brand img {
+    object-fit: cover;
+    height: 90px;
+    width: auto;
+    transition: all .3s;
+    cursor: pointer;
+}
+
+.brand img:hover {
+    transform: scale(1.04);
+}

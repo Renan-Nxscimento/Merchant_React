@@ -1,6 +1,7 @@
 import Banner from '../components/home/Banner'
 import FeaturedCategories from '../components/home/FeaturedCategories'
 import FeaturedProducts from '../components/home/FeaturedProducts'
+import MainBrands from '../components/home/MainBrands'
 import MainCategories from '../components/home/MainCategories'
 import Offer from '../components/home/Offer'
 import Products from '../components/home/Products'
@@ -20,6 +21,7 @@ const Home = () => {
         <FeaturedCategories/>
         <QualitiesString/>
         <FeaturedProducts/>
+        <MainBrands/>
     </>
   )
 }

@@ -32,7 +32,7 @@ const FeaturedProducts = () => {
   return (
     <section id='featuredProducts' className='d-flex flex-column w-100 align-items-center'>
         <h4 className="big-text">Produtos destaque</h4>
-        <div className="featured-products-container d-flex justify-content-center">
+        <div className="featured-products-container d-flex justify-content-between">
         {
             products.map(product => (
                 product.featured ? (
@@ -47,8 +47,8 @@ const FeaturedProducts = () => {
                             {
                             product.description.length > 300 ? (
                                 <p className='f-product-description'>
-                                    {cutString(product.description, 250)}
-                                    <a className='primary'>...Ver mais</a>
+                                    {cutString(product.description, 150)}
+                                    <span className='text-primary'>...Ver mais</span>
                                 </p>
                             ) : <p className='f-product-description'>{product.description}</p>
                             }

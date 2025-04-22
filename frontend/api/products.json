@@ -438,6 +438,29 @@
         {
             "name": "Venom Snake",
             "userimage": "../assets/images/Boss.png",
-            "nickname": "Big Boss"
+            "nickname": "Big Boss",
+            "logged": true
+        },
+    "brands": [
+        {
+            "brand": "Asus",
+            "logo": "../assets/images/brands/Asus.png"
+        },
+        {
+            "brand": "Samsung",
+            "logo": "../assets/images/brands/Samsung.png"
+        },
+        {
+            "brand": "Xiaomi",
+            "logo": "../assets/images/brands/Xiaomi.png"
+        },
+        {
+            "brand": "Huawei",
+            "logo": "../assets/images/brands/Huawei.png"
+        },
+        {
+            "brand": "Motorola",
+            "logo": "../assets/images/brands/Motorola.png"
         }
+    ]
 }

@@ -21,7 +21,7 @@ const Products = () => {
               }, [])
 
   return (
-    <div className='products-section d-flex flex-column align-items-center'>
+    <section id='productsSection' className='products-section d-flex flex-column align-items-center'>
       <h4 className='big-text'>Nossos produtos</h4>
       <div className="product-selection d-flex">
         <span className="our-sections" id='lastProducto'>ÚLTIMOS</span>
@@ -37,7 +37,7 @@ const Products = () => {
           </Link>
         ))}
       </div>
-    </div>
+    </section>
   )
 }
 

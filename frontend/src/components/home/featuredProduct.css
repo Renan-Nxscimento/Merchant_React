@@ -4,7 +4,6 @@
 }
 
 .featured-products-container {
-    gap: 20px;
     height: 300px;
     margin-top: 40px;
 }
@@ -24,7 +23,7 @@
 }
 
 .f-product-img {
-    width: 300px;
+    width: 40%;
     height: 100%;
     background-color: #e0e3e6;
     cursor: pointer;
@@ -34,7 +33,7 @@
     display: flex;
     align-items: center;
     justify-content: center;
-    width: 300px;
+    width: 100%;
     padding: 20px;
     height: 300px;
     object-fit: cover;
@@ -43,6 +42,16 @@
 .f-product-content {
     padding: 10px;
     gap: 7px;
+    max-width: 60%;
+}
+
+.f-product-content .text-primary {
+    cursor: pointer;
+}
+
+.f-product-content .text-primary:hover {
+    color: #8356ff !important;
+    text-decoration: underline;
 }
 
 .f-product-content .stars{
@@ -58,7 +67,6 @@
 
 .f-product-description {
     font-size: 16px;
-    text-wrap: balance;
 }
 
 .f-product-prices {
@@ -67,6 +75,7 @@
     cursor: pointer;
     width: fit-content;
     align-items: center;
+    margin-top: auto;
 }
 
 .featured-price {
