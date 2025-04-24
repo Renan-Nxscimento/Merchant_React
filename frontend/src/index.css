@@ -22,9 +22,9 @@ body {
 a{
   text-decoration: none;
   cursor: pointer;
+  color: unset;
 }
 
 a:hover {
-  color: var(--secondary);
   text-decoration: none;
 }

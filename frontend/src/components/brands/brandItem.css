@@ -1,0 +1,99 @@
+#brandsSection {
+    margin-top: 40px;
+    padding: 0 10%;
+}
+
+.brand-item {
+ margin-top: 30px;
+ background-color: #f2f4f7;
+ padding: 20px;
+ border-radius: 10px;
+ height: 400px;
+ width: 100%;
+ overflow: hidden;
+}
+
+.brand-item .big-text {
+    font-weight: 700 !important;
+    font-size: 30px;
+}
+
+.brand-logo {
+    min-width: 100px;
+}
+
+.brand-logo img {
+    width: 100%;
+    min-width: 100px;
+}
+
+.best-selling-product {
+    max-height: 100%;
+    background-color: #f8fafd;
+    border-radius: 10px;
+    overflow: hidden;
+    cursor: default;
+    color: #242429;
+}
+
+.bs-img {
+    overflow: hidden;
+    background-color: #fff;
+    border-radius: 10px;
+    height: 250px;
+    width: 250px;
+    min-width: 200px;
+    cursor: pointer;
+}
+
+.bs-img img {
+    object-fit: cover;
+    height: 250px;
+    width: 250px;
+    padding: 10px;
+}
+
+.bs-content {
+    max-width: 70%;
+    height: 100%;
+    padding: 10px;
+    gap: 10px;
+}
+
+.text-primary {
+    cursor: pointer;
+}
+
+.bs-content .stars {
+    font-size: 18px;
+}
+
+.bs-name {
+    font-size: 18px;
+    font-weight: 500;
+    cursor: pointer;
+}
+
+.bs-price {
+    font-size: 24px;
+    gap: 5px;
+    margin-top: auto;
+    cursor: pointer;
+}
+
+.more-products-btn {
+    height: 30px;
+    width: 100%;
+    margin-top: 20px;
+    background-color: #fff;
+    border-radius: 5px;
+    color: #008cff;
+    border: 1px solid #6e93b6;
+    text-transform: uppercase;
+    font-weight: 500;
+    transition: all .3s;
+}
+
+.more-products-btn:hover {
+    background-color: #e7e9ec;
+}

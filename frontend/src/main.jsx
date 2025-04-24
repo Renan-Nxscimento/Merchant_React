@@ -6,7 +6,8 @@ import App from './App.jsx'
 import { createBrowserRouter, RouterProvider } from 'react-router-dom'
 import Home from './routes/Home.jsx'
 import ProductPage from './routes/ProductPage.jsx'
-
+import Vouchers from './routes/Vouchers.jsx'
+import Brands from './routes/Brands.jsx'
 
 const router = createBrowserRouter([
   {
@@ -19,11 +20,11 @@ const router = createBrowserRouter([
       },
       {
         path: "/vouchers",
-        element: <div>cupons</div>,
+        element: <Vouchers/>,
       },
       {
         path: "/brands",
-        element: <div>marcas</div>,
+        element: <Brands/>,
       },{
         path: "/feedbacks",
         element: <div>feedbacks</div>,

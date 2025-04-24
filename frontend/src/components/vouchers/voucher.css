@@ -1,0 +1,127 @@
+#vouchersSection {
+    padding: 0 10%;
+    margin-top: 40px;
+}
+
+.voucher {
+    height: 300px;
+    width: 650px;
+    background-color: #f2f4f7;
+    border-radius: 10px;
+    margin-top: 30px;
+}
+
+.voucher-top {
+    padding: 20px;
+    cursor: default;
+}
+
+.voucher-icon {
+    width: 160px;
+    height: 170px;
+}
+
+.v-circle {
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+    border: 4px solid #008cff;
+    font-size: 60px;
+    background-color: #d8eeff;
+    color: #008cff;
+}
+
+.v-discount {
+    width: 150px;
+    height: 40px;
+    border-radius: 5px;
+    border: 4px solid #008cff;
+    margin-top: -25px;
+    background-color: #d8eeff;
+    color: #008cff;
+    font-weight: 600;
+    font-size: 20px;
+}
+
+.voucher-info {
+    align-items: center;
+    padding-right: 10%;
+    gap: 10px;
+    width: 100%;
+}
+
+.voucher-code {
+    font-size: 18px;
+    color: #506372;
+}
+
+.voucher-value {
+    text-transform: uppercase;
+    color: #008cff;
+    font-weight: 700 !important;
+}
+
+.voucher-limit {
+    color: #6e93b6;
+}
+
+.v-condition {
+    height: 30px;
+    background-color: #d8eeff;
+    width: 230px;
+    border-radius: 8px;
+    color: #008cff;
+    font-weight: 500;
+    margin-top: auto;
+}
+
+.voucher-cut {
+    width: 100%;
+    justify-content: space-between;
+}
+
+.v-left {
+    width: 15px;
+    height: 30px;
+    background-color: #fff;
+    border-top-right-radius: 15px;
+    border-bottom-right-radius: 15px;
+}
+
+.v-slashs {
+    width: 100%;
+}
+
+.v-slash {
+    height: 2px;
+    width: 30px;
+    background-color: #d1dde7;
+}
+
+.v-right {
+    width: 15px;
+    height: 30px;
+    background-color: #fff;
+    border-top-left-radius: 15px;
+    border-bottom-left-radius: 15px;
+}
+
+.redeem-voucher {
+    height: 60px;
+}
+
+.redeem-btn {
+    background-color: #d8eeff;
+    height: 40px;
+    width: 40%;
+    border: 3px solid #008cff;
+    border-radius: 5px;
+    color: #008cff;
+    text-transform: uppercase;
+    font-weight: 500;
+    transition: all .3s;
+}
+
+.redeem-btn:hover {
+    background-color: #c8e1f5;
+}

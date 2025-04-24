@@ -18,8 +18,6 @@ const MainBrands = () => {
                     fetchData()
                   }, [])
 
-                  console.log(brands)
-
   return (
     <div className='main-brands w-100 d-flex flex-column align-items-center'>
         <h4 className="big-text">principais marcas</h4>
