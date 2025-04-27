@@ -19,12 +19,13 @@
     color: aliceblue;
 }
 
-.header-nav li {
+.header-nav li a{
     cursor: pointer;
     transition: .3s;
+    color: aliceblue;
 }
 
-.header-nav li:hover {
+.header-nav li a:hover {
     color: #bfe2ff;
 }
 

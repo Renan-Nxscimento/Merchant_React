@@ -7,4 +7,4 @@ export default defineConfig({
 })
 
 
-//json-server --watch --port 4000 ./api/products.json
+//json-server --watch --port 4000 ./api/api.json

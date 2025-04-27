@@ -465,5 +465,13 @@
             "brand": "Motorola",
             "logo": "../assets/images/brands/Motorola.png"
         }
+    ],
+    "storereviews": [
+        {
+            "username": "Ocelot",
+            "rating": 4,
+            "text": "That's an automatic. Don't try to damper the recoil, you do that with a revolver. That was some fancy shooting... Pretty good.",
+            "date": "1985"
+        }
     ]
 }
