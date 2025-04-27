@@ -1,0 +1,59 @@
+#storeReviews {
+    padding: 0 10%;
+    margin-top: 40px;
+}
+
+#storeReviews .big-text {
+    margin-bottom: 30px !important;
+}
+
+#storeReviews .slash {
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+
+#storeReviews .slash:last-child {
+    display: none;
+}
+
+.store-review {
+    width: 100%;
+    background-color: #f2f4f7;
+    min-height: 250px;
+    padding: 15px;
+    border-radius: 10px;
+}
+
+.user-image {
+    width: 50px;
+}
+
+.user-image img {
+    object-fit: cover;
+    height: 50px;
+    width: 50px;
+    border-radius: 50%;
+    border: 1px solid grey;
+}
+
+.r-top {
+    width: 100%;
+}
+
+.r-top .stars{
+    font-size: 22px;
+    margin-right: auto;
+    margin-left: auto;
+}
+
+.user-n-date {
+    gap: 5px;
+    position: absolute;
+    color: #506372;
+    cursor: default;
+}
+
+.r-text {
+    text-wrap: balance;
+    font-size: 18px;
+}

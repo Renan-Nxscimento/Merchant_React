@@ -469,9 +469,11 @@
     "storereviews": [
         {
             "username": "Ocelot",
+            "userimage": "../assets/images/ocelot.webp",
             "rating": 4,
-            "text": "That's an automatic. Don't try to damper the recoil, you do that with a revolver. That was some fancy shooting... Pretty good.",
-            "date": "1985"
+            "text": "That's an automatic. Don't try to damper the recoil, you do that with a revolver. That was some fancy shooting. Pretty good.That's an automatic. Don't try to damper the recoil, you do that with a revolver. That was some fancy shooting. Pretty good.That's an automatic. Don't try to damper the recoil, you do that with a revolver. That was some fancy shooting. Pretty good.That's an automatic. Don't try to damper the recoil, you do that with a revolver. That was some fancy shooting. Pretty good.That's an automatic. Don't try to damper the recoil, you do that with a revolver. That was some fancy shooting. Pretty good.That's an automatic. Don't try to damper the recoil, you do that with a revolver. That was some fancy shooting. Pretty good.That's an automatic. Don't try to damper the recoil, you do that with a revolver. That was some fancy shooting. Pretty good.That's an automatic. Don't try to damper the recoil, you do that with a revolver. That was some fancy shooting. Pretty good.That's an automatic. Don't try to damper the recoil, you do that with a revolver. That was some fancy shooting. Pretty good.That's an automatic. Don't try to damper the recoil, you do that with a revolver. That was some fancy shooting. Pretty good.That's an automatic. Don't try to damper the recoil, you do that with a revolver. That was some fancy shooting. Pretty good.That's an automatic. Don't try to damper the recoil, you do that with a revolver. That was some fancy shooting. Pretty good.That's an automatic. Don't try to damper the recoil, you do that with a revolver. That was some fancy shooting. Pretty good.That's an automatic. Don't try to damper the recoil, you do that with a revolver. That was some fancy shooting. Pretty good.That's an automatic. Don't try to damper the recoil, you do that with a revolver. That was some fancy shooting. Pretty good.That's an automatic. Don't try to damper the recoil, you do that with a revolver. That was some fancy shooting. Pretty good.That's an automatic. Don't try to damper the recoil, you do that with a revolver. That was some fancy shooting. Pretty good.That's an automatic. Don't try to damper the recoil, you do that with a revolver. That was some fancy shooting. Pretty good.",
+            "date": "1985",
+            "id": 1
         }
     ]
 }

@@ -8,6 +8,7 @@ import Home from './routes/Home.jsx'
 import ProductPage from './routes/ProductPage.jsx'
 import Vouchers from './routes/Vouchers.jsx'
 import Brands from './routes/Brands.jsx'
+import StoreReviews from './routes/StoreReviews.jsx'
 
 const router = createBrowserRouter([
   {
@@ -27,7 +28,7 @@ const router = createBrowserRouter([
         element: <Brands/>,
       },{
         path: "/feedbacks",
-        element: <div>feedbacks</div>,
+        element: <StoreReviews/>,
       },
       {
         path: "/contact",

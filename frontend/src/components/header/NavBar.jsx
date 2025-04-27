@@ -17,7 +17,11 @@ const NavBar = () => {
             Marcas
             </Link>
             </li>
-            <li className='list-item'>Feedbakcs</li>
+            <li className='list-item'>
+            <Link to={`/feedbacks`}>
+            Feedbacks
+            </Link>
+            </li>
             <li className='list-item'>Entrar em contato</li>
         </ul>
     </nav>
