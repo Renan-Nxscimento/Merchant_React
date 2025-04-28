@@ -1,0 +1,99 @@
+#cartSection {
+    padding: 0 10%;
+    margin-top: 40px;
+}
+
+.ocelot {
+    min-height: 77vh;
+}
+
+.ocelot footer {
+    margin-top: none;
+}
+
+.shipping-container {
+    background-color: #f2f4f7;
+    border-radius: 8px;
+    overflow: hidden;
+    height: 200px;
+    color: #242429;
+    margin-top: 40px;
+}
+
+.ship-calc {
+    justify-content: space-between;
+    height: 100%;
+    width: 225px;
+}
+
+.ship-calc input {
+    border: unset;
+    outline: unset;
+    padding: 0 10px;
+    border-radius: 5px;
+    height: 30px;
+    text-align: center;
+    width: 150px;
+}
+
+.ship-calc input::-webkit-outer-spin-button,
+           input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+.ship-calc span {
+    width: 150px;
+    text-align: center;
+    font-size: 22px;
+    cursor: default;
+}
+
+.cep-btn {
+    height: 40px;
+    background-color: #008cff;
+    border-radius: 5px;
+    color: aliceblue;
+    width: 150px;
+}
+
+.ship-value-n-place {
+    gap: 25px;
+    cursor: default;
+}
+
+.ship-value {
+    background-color: #fff;
+    padding: 10px;
+    border-radius: 5px;
+}
+
+.total-value {
+    width: 250px;
+    height: 200px !important;
+    background-color: #e0e3e6;
+    margin-right: -25px;
+    padding: 20px;
+    color: #506372;
+    font-weight: 500;
+    cursor: default;
+}
+
+.total {
+    width: 100%;
+    height: 30px;
+    background-color: #fff;
+    padding: 0 10px;
+    border-radius: 5px;
+    cursor: text;
+}
+
+.finish-btn {
+    background-color: #008cff;
+    border-radius: 5px;
+    height: 40px;
+    color: aliceblue;
+    font-weight: 500;
+    text-transform: uppercase;
+}
+

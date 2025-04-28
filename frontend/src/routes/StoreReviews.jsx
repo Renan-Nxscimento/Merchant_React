@@ -2,7 +2,6 @@ import React, { useEffect, useState } from 'react'
 import Review from '../components/storeReviews/Review'
 import QualitiesString from '../components/home/QualitiesString'
 import FeaturedProducts from '../components/home/FeaturedProducts'
-import MainBrands from '../components/home/MainBrands'
 
 import '../components/storeReviews/review.css'
 

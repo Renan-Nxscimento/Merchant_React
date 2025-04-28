@@ -8,6 +8,15 @@
     gap: 20px;
 }
 
+.similar-container .product {
+    width: 170px;
+    height: 250px;
+}
+
+.similar-container .prod-bg {
+    height: 150px;
+}
+
 #moreProducts {
     padding: 0 10%;
     margin-top: 25px;
@@ -18,11 +27,11 @@
     gap: 20px;
 }
 
-.product {
+.more-products-container .product {
     width: 170px;
     height: 250px;
 }
 
-.prod-bg {
+.more-products-container .prod-bg {
     height: 150px;
 }

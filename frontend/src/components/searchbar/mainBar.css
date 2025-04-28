@@ -85,8 +85,26 @@
     text-transform: uppercase;
     height: 30px;
     cursor: pointer;
-    width: 190px;
+    width: 12%;
     padding: 0 10px 0 20px;
+    justify-content: center;
+}
+
+.cart-icon a {
+    display: flex;
+    align-items: center;
+    color: #f0f8ff;
+    transition: all .3s;
+}
+
+.cart-icon a:hover {
+    display: flex;
+    align-items: center;
+    color: #bbccdf;
+}
+
+.cart-icon a:hover .circle {
+    background-color: #006dc7;
 }
 
 .circle {

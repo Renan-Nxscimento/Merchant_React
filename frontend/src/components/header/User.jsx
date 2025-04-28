@@ -44,7 +44,7 @@ const User = () => {
 
 
   return (
-    <div className="user-header dropdown">
+    <div className="user-header d-flex dropdown">
         <a href="#"
         className='nav-link nav-profile d-flex align-items-center pe-0'
         data-bs-toggle='dropdown'

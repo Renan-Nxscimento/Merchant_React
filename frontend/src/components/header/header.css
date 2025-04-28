@@ -30,12 +30,18 @@
 }
 
 .user-header {
-    padding: 0px 20px;
+    width: 10%;
+    justify-content: center;
+}
+
+.user-header .nav-link:hover #userName{
+  color: #bbccdf;
 }
 
 #userImage {
     max-width: 40px;
     height: auto;
+    border: 2px solid #008cff;
 }
 
 #userName {

@@ -9,6 +9,8 @@ import ProductPage from './routes/ProductPage.jsx'
 import Vouchers from './routes/Vouchers.jsx'
 import Brands from './routes/Brands.jsx'
 import StoreReviews from './routes/StoreReviews.jsx'
+import Contact from './routes/Contact.jsx'
+import Cart from './routes/Cart.jsx'
 
 const router = createBrowserRouter([
   {
@@ -32,7 +34,7 @@ const router = createBrowserRouter([
       },
       {
         path: "/contact",
-        element: <div>contato</div>,
+        element: <Contact/>,
       },
       {
         path: "/smartphones",
@@ -52,7 +54,7 @@ const router = createBrowserRouter([
       },
       {
         path: "/cart",
-        element: <div>carrinho</div>,
+        element: <Cart/>,
       },
       {
         path: "/favorites",
