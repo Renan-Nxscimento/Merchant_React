@@ -1,8 +1,28 @@
 import React from 'react'
 
+import innerText from 'react-innertext';
+
 import './shipAndBuy.css'
 
 const ShipAndBuy = ({Product}) => {
+  
+  let productQuantity = 1
+
+  const quantityNumber = document.getElementById('quantityNumber')
+
+  const raiseQuantity = () => {
+    productQuantity ++
+    quantityNumber.innerHTML = productQuantity
+  }
+
+  const lowerQuantity = () => {
+    if (productQuantity > 1) {
+      productQuantity --
+      quantityNumber.innerHTML = productQuantity
+    }
+  }
+
+
   return (
     <div className='buy-product d-flex flex-column h-100 justify-content-between col-5'>
       <div className="product-seller d-flex align-items-center justify-content-between">
@@ -40,12 +60,12 @@ const ShipAndBuy = ({Product}) => {
 
       <div className="product-quantity d-flex flex-column">
         <div className="quantity-text">
-            <span>Quantidade:</span>
+            <span>Quantidade: </span>
         </div>
         <div className="quantity-buttons d-flex">
-            <button className="quantity-btn" id='qMinus'>-</button>
+            <button className="quantity-btn" id='qMinus' onClick={lowerQuantity}>-</button>
             <span id='quantityNumber'>1</span>
-            <button className="quantity-btn" id='qPlus'>+</button>
+            <button className="quantity-btn" id='qPlus' onClick={raiseQuantity}>+</button>
         </div>
       </div>
 

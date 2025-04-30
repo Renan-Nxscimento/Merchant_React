@@ -26,7 +26,7 @@ const SimilarProducts = ({Snake}) => {
           {products.map(product => (
                     product.category &&
                      product.category === Snake.category ? (
-                      <Link key={product._id} to={`/product/${product._id}`}>
+                      <Link key={product._id} onClick={() => {window.location.href=`/product/${product._id}`}}>
                         <Product product={product}/>
                       </Link>
                      )

@@ -17,16 +17,15 @@
     border: 2px solid transparent;
     padding: 2px;
     cursor: pointer;
+    object-fit: cover;
 }
 
-.selected {
+.img-selected {
     border: 2px solid #242429;
 }
 
-.alt-img img{
-    height: 100%;
-    width: 100%;
-    object-fit: cover;
+.variation-selected {
+    border: 2px solid #242429;
 }
 
 .main-image {
@@ -40,8 +39,92 @@
 .main-image img{
     height: auto;
     width: 100%;
+    object-fit: cover;
+    cursor: pointer;
 }
 
 h3 {
     font-weight: 500 !important;
   }
+
+  .fullscreenImage {
+    position: fixed;
+    top: 0;
+    left: 0;
+    background-color: rgba(0, 0, 0, .9);
+    height: 100%;
+    width: 100%;
+    z-index: 100;
+    display: none;
+}
+
+.f-container {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    height: 100%;
+    justify-content: center;
+    align-items: center;
+}
+
+.close-fullscreen {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: absolute;
+    top: 30px;
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    right: 50px;
+    font-size: 60px;
+    font-weight: bolder;
+    color: #FFF;
+    cursor: pointer;
+    z-index: 100;
+    display: none;
+    background-color: rgba(0, 0, 0, .5);
+}
+
+.fullscreenImage img{
+    position: absolute;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: #c7c7c7;
+    border: 5PX solid #fff;
+    width: auto;
+    object-fit: cover;
+    max-height: 99%;
+    max-width: 99%;
+}
+
+.f-content{
+    width: 90%;
+}
+
+.arrows {
+    display: flex;
+    width: 100%;
+    align-self: center;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.arrow {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 50px;
+    font-family: sans-serif;
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    z-index: 101;
+    cursor: pointer;
+    color: #c7c7c7a4;
+    background-color: transparent;
+}

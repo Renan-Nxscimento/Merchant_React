@@ -1,11 +1,13 @@
 import React, { useEffect, useState } from 'react'
 import './products.css'
-import { Link } from 'react-router-dom'
+import { Link, useLocation } from 'react-router-dom'
 
 import Product from '../product/Product'
 
 const Products = () => {
         const [products, setProducts] = useState([])
+
+
     
             const fetchData = () => {
                 fetch('http://localhost:4000/products')
@@ -32,7 +34,7 @@ const Products = () => {
         {products &&
         products.length > 0 &&
         products.map(product => (
-          <Link key={product._id} to={`/product/${product._id}`}>
+          <Link key={product._id}  onClick={() => {window.location.href=`/product/${product._id}`}}>
             <Product product={product}/>
           </Link>
         ))}

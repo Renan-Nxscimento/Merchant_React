@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useEffect } from 'react'
 
 import Stars from '../../stars/Stars'
 import ShipAndBuy from './ShipAndBuy'
@@ -74,11 +74,14 @@ const ProductInfo = ({Product}) => {
         <div className="slash"></div>
 
         <div className="variations d-flex flex-wrap">
-            <span className='w-100'>Variation 1</span>
+            <span className='w-100' id='variationSelected'>{Product.variations[0].variation}</span>
         {Product.variations.map(variation => (
                 variation.variation &&
                  variation.variation !== ""? (
-                    <div key={variation.variation} className={`variation d-flex align-items-center justify-content-center ${variation.order === 1 ? 'selected' : ''}`}>
+                    <div
+                    id={variation.order}
+                    key={variation.variation} 
+                    className={`variation d-flex align-items-center justify-content-center ${variation.order === 1 ? 'variation-selected' : ''}`}>
                         <img src={Product.images[0].src} alt="" />
                     </div>) 
                 : null

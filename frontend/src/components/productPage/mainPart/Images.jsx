@@ -9,14 +9,13 @@ const Images = ({Product}) => {
             {Product.images.map(image => (
                 image.src &&
                  image.src !== ""? (
-                    <div key={image.order} className={`alt-img d-flex align-items-center justify-content-center ${image.order === 1 ? 'selected' : ''}`}>
-                        <img src={image.src} alt="" />
-                    </div>) 
+                        <img id={image.order} key={image.order} src={image.src} alt="" className={`alt-img d-flex align-items-center justify-content-center ${image.order === 1 ? 'img-selected' : ''}`}/>
+                 )
                 : null
             ))}
         </div>
         <div className="main-image d-flex align-items-center justify-content-center">
-            <img src={mainImage} alt="" />
+            <img id='mainImage' src={mainImage} alt="" />
         </div>
     </div>
   )
