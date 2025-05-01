@@ -4,6 +4,7 @@ import User from './User'
 
 import './header.css'
 import MainBar from '../searchbar/mainBar'
+import { Link } from 'react-router-dom'
 
 const Header = () => {
   return (
@@ -13,7 +14,7 @@ const Header = () => {
     header d-flex align-items-center flex-wrap
     '>
         <div className="logo d-flex align-items-center">
-            <a href="/" id='logo'>MERCHANT</a>
+            <Link id='logo' onClick={() => {window.location.href=`/`}}>MERCHANT</Link>
         </div>
         <NavBar/>
         <User/>

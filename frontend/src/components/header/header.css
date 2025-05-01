@@ -87,6 +87,10 @@
     padding: 10px;
     transition: 0.3s;
   }
+
+  .dropdown-menu .dropdown-item a{
+    transition: 0.3s;
+  }
   
   .dropdown-menu .dropdown-item {
     font-size: 18px;
@@ -94,6 +98,11 @@
   }
   
   .dropdown-menu .dropdown-item:hover {
+    color: #008cff;
+    background-color: unset;
+  }
+
+  .dropdown-menu .dropdown-item:hover a{
     color: #008cff;
     background-color: unset;
   }

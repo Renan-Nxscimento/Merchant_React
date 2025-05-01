@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from 'react'
+import { Link } from 'react-router-dom'
 
 const User = () => {
     const [user, setUser] = useState([])
@@ -77,14 +78,11 @@ const User = () => {
             </li>
 
             <li>
-                <a 
-                href="users.profile.html"
-                className='dropdown-item d-flex align-items-center'
-                >
-                    <i className="bi bi-question-circle">
-                        <span>Need Help?</span>
+            <Link to='/contact' className='dropdown-item d-flex align-items-center'>
+                    <i className="bi bi-question-circle">                 
+                            <span>Suporte</span>
                     </i>
-                </a>
+                </Link>
             </li>
             <li>
                 <hr className="dropdown-divider" />
