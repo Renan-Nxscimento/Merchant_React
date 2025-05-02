@@ -11,6 +11,7 @@ import Brands from './routes/Brands.jsx'
 import StoreReviews from './routes/StoreReviews.jsx'
 import Contact from './routes/Contact.jsx'
 import Cart from './routes/Cart.jsx'
+import ProductsSelection from './components/categoires_n_brands/productsSelection.jsx'
 
 const router = createBrowserRouter([
   {
@@ -38,19 +39,34 @@ const router = createBrowserRouter([
       },
       {
         path: "/smartphones",
-        element: <div>smartphones</div>,
+        element: <ProductsSelection selection={'smartphones'}/>,
       },{
         path: "/smartwatches",
-        element: <div>smartwatches</div>,
+        element: <ProductsSelection selection={'smartwatches'}/>,
       },{
         path: "/chargers",
-        element: <div>carregadores</div>,
+        element: <ProductsSelection selection={'chargers'}/>,
       },{
         path: "/powerbanks",
-        element: <div>powerbanks</div>,
+        element: <ProductsSelection selection={'powerbanks'}/>,
       },{
         path: "/phoneholders",
-        element: <div>suportes</div>,
+        element: <ProductsSelection selection={'phoneholders'}/>,
+      },{
+        path: "/Asus",
+        element: <ProductsSelection selection={'Asus'}/>,
+      },{
+        path: "/Samsung",
+        element: <ProductsSelection selection={'Samsung'}/>,
+      },{
+        path: "/Xiaomi",
+        element: <ProductsSelection selection={'Xiaomi'}/>,
+      },{
+        path: "/Huawei",
+        element: <ProductsSelection selection={'Huawei'}/>,
+      },{
+        path: "/Motorola",
+        element: <ProductsSelection selection={'Motorola'}/>,
       },
       {
         path: "/cart",

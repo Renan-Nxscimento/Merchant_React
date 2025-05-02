@@ -11,6 +11,7 @@
             "seller": "The man who sold the World",
             "price": 8799.00,
             "offer": "",
+            "latest": false,
             "bestseller": true,
             "featured": false,
             "description": "Tenha a experiência completa com o novo ROG Phone 8 Pro. Além de todas as tecnologias que fazem a sua gameplay subir de nível, agora você poderá contar com tecnologias que melhoram seu dia a dia, principalmente se você gosta de capturar cada momento. O ROG Phone 8 Pro conta com o poderoso processador Qualcomm Snapdragon 8 Gen 3, que aliado às tecnologias exclusivas da ASUS, extraem o máximo dos jogos, permitindo que você atinja altíssimos níveis de FPS, inclusive nos jogos mais pesados."
@@ -157,6 +158,7 @@
             "seller": "The man who sold the World",
             "price": 3290.00,
             "offer": "20",
+            "latest": false,
             "bestseller": true,
             "featured": true,
             "description": "O EXTRAORDINÁRIO NA PALMA DE SUA MÃO! Chegou a revolução que você precisava. O Samsung Galaxy S23 plus trará luz para suas noites e poder em sua mão. Você terá detalhes mais nítidos com baixa luminosidade graças a tecnologia Nightography com inteligência artificial aprimorada. O chip snapdragon 8 gen2 com bateria de vida útil estendida, fará seus jogos, filmes e séries serem extraordinários. Preparado para capturar em formato RAW em alta resolução? Com o expert RAW as noites serão registradas com qualidade de tirar o fôlego! Seus olhos não ficarão cansados com a tecnologia Eye Comfort Shield, mesmo no escuro."
@@ -303,6 +305,7 @@
             "seller": "The man who sold the World",
             "price": 4999.12,
             "offer": "",
+            "latest": true,
             "bestseller": false,
             "featured": true,
             "description": "Momentos extraordinários com a lente Leica e sensor Sony IMX906. Desfrute de fotos nítidas mesmo em baixa luz e explore sua criatividade com estilos fotográficos exclusivos Leica. Tela Imersiva com IA, excepcional em qualquer ambiente. Mergulhe em conteúdos vibrantes com o display CrystalRes IA de 144Hz. Com brilho de até 4000 nits e ajustes automáticos inteligentes. Criatividade Impulsionada por IA. Libere seu potencial criativo com ferramentas de IA avançadas. Edite fotos, crie vídeos e experimente recursos inovadores como o Intérprete de IA e o Circule para Pesquisar do Google. Desempenho Poderoso, Eficiente e Resistente. Processador de alta velocidade Dimensity 9300 Plus MediaTek, tecnologia HyperCharge com carregador de 67W, recarrega 100% da bateria em até 45 minutos e certificação IP68 contra água e poeira. Tudo isso com acesso à livros digitais que somente a Xiaomi oferece."

@@ -1,0 +1,29 @@
+#selectionSection {
+    padding: 0 10%;
+    margin-top: 40px;
+}
+
+.product-selection {
+    gap: 30px;
+    font-size: 18px;
+    font-weight: 500;
+    margin-top: 10px;
+    margin-bottom: 40px;
+}
+
+.our-selections {
+    cursor: pointer;
+    text-transform: uppercase;
+}
+
+.activeTxt {
+    color: #008cff;
+    border-bottom: 3px solid #008cff;
+}
+
+.products-container {
+    flex-wrap: wrap;
+    gap: 30px;
+    margin-bottom: 30px;
+    width: 100%;
+}
