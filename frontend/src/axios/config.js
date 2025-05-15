@@ -1,10 +1,10 @@
 import axios from 'axios'
 
-const productFetch = axios.create({
-    baseURL: 'http://localhost:4000/products',
+const fetchApi = axios.create({
+    baseURL: 'http://localhost:3000/api',
     headers: {
         "Content-Type": "application/json"
     }
 })
 
-export default productFetch
+export default fetchApi

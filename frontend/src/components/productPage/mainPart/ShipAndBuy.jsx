@@ -1,24 +1,17 @@
-import React from 'react'
-
-import innerText from 'react-innertext';
+import React, { useState } from 'react'
 
 import './shipAndBuy.css'
 
 const ShipAndBuy = ({Product}) => {
-  
-  let productQuantity = 1
-
-  const quantityNumber = document.getElementById('quantityNumber')
+  const [quantityNumber, setQuantityNumber] = useState(1)
 
   const raiseQuantity = () => {
-    productQuantity ++
-    quantityNumber.innerHTML = productQuantity
+    setQuantityNumber(quantityNumber + 1)
   }
 
   const lowerQuantity = () => {
-    if (productQuantity > 1) {
-      productQuantity --
-      quantityNumber.innerHTML = productQuantity
+    if (quantityNumber > 1) {
+      setQuantityNumber(quantityNumber - 1)
     }
   }
 
@@ -64,7 +57,7 @@ const ShipAndBuy = ({Product}) => {
         </div>
         <div className="quantity-buttons d-flex">
             <button className="quantity-btn" id='qMinus' onClick={lowerQuantity}>-</button>
-            <span id='quantityNumber'>1</span>
+            <span id='quantityNumber'>{quantityNumber}</span>
             <button className="quantity-btn" id='qPlus' onClick={raiseQuantity}>+</button>
         </div>
       </div>

@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from 'react'
 import './products.css'
-import { Link, useLocation } from 'react-router-dom'
+import { Link } from 'react-router-dom'
+import fetchApi from '../axios/config'
 
 import Product from '../product/Product'
 
@@ -9,18 +10,17 @@ const Products = () => {
         const [selectionCounter, setSelectionCounter] = useState(2)
 
     
-            const fetchData = () => {
-                fetch('http://localhost:4000/products')
-                .then(res => res.json())
-                .then(data => {
-                  setProducts(data)
-                })
-                .catch(e => console.log(e.message))
-              }
-            
-              useEffect(() => {
-                fetchData()
-              }, [])
+      useEffect(() => {
+          const loadProducts = async () => {
+          const res = await fetchApi.get('/products')
+
+           console.log(res)
+
+          setParties(res.data)
+          }
+
+        loadProducts()
+      }, [])
 
         const handleSelection = (num) => {
           setSelectionCounter(num);

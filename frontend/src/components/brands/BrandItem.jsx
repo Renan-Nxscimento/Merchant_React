@@ -97,8 +97,8 @@ const BrandItem = ({brand}) => {
                   </div>
                 </div>
               </div>
-              <button className="more-products-btn">Mais produtos</button>
               </Link>
+              <button className="more-products-btn" onClick={() => {window.location.href=`/${producto.brand}`}}>Mais produtos</button>
             </>
             ) : null
           }
