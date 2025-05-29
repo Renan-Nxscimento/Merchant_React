@@ -6,8 +6,8 @@ import './review.css'
 import user from '../../../../public/assets/user.png'
 
 
-const Review = ({Product}) => {
-    const reviews = Product.comments
+const Review = ({selectedProduct}) => {
+    const reviews = selectedProduct.comments
 
   return (
     <div className='reviews-container d-flex w-100 flex-wrap align-items-center justify-content-center'>

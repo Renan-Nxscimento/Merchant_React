@@ -5,11 +5,11 @@ const {Schema} = mongoose
 const imagesSchema = new Schema({
     src: {
         type: String,
-        required: false
+        required: true
     },
     order: {
         type: Number,
-        required: false
+        required: true
     }
 })
 

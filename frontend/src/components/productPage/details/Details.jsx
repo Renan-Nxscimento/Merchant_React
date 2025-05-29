@@ -2,13 +2,13 @@ import React from 'react'
 
 import './details.css'
 
-const Details = ({Product}) => {
+const Details = ({selectedProduct}) => {
   return (
     <div className='details d-flex flex-column'>
       <h3>Detalhes</h3>
       <div className="details-table d-flex">
         <div className="specifications d-flex flex-column">
-          {Product.details.map(detail => (
+          {selectedProduct.details.map(detail => (
             detail.detail &&
               detail.detail !== "" &&
                 detail.order <= 4 ? (
@@ -24,7 +24,7 @@ const Details = ({Product}) => {
           ))}
         </div>
         <div className="specifications d-flex flex-column">
-          {Product.details.map(detail => (
+          {selectedProduct.details.map(detail => (
             detail.detail &&
               detail.detail !== "" &&
                 detail.order >= 5 ? (

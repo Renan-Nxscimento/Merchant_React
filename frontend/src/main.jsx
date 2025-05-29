@@ -11,6 +11,7 @@ import Brands from './routes/Brands.jsx'
 import StoreReviews from './routes/StoreReviews.jsx'
 import Contact from './routes/Contact.jsx'
 import Cart from './routes/Cart.jsx'
+import UserLogin from './routes/UserLogin.jsx'
 import ProductsSelection from './components/categoires_n_brands/productsSelection.jsx'
 
 const router = createBrowserRouter([
@@ -67,6 +68,10 @@ const router = createBrowserRouter([
       },{
         path: "/Motorola",
         element: <ProductsSelection selection={'Motorola'}/>,
+      },
+      {
+        path: "/user",
+        element: <UserLogin/>,
       },
       {
         path: "/cart",

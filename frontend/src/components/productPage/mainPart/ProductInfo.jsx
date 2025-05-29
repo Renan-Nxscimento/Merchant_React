@@ -5,16 +5,16 @@ import ShipAndBuy from './ShipAndBuy'
 
 import './productInfo.css'
 
-const ProductInfo = ({Product}) => {
-    const discount = Math.floor((Product.offer * Product.price ) / 100 ).toFixed(2)
-    const currentPrice = Product.price - discount
+const ProductInfo = ({selectedProduct}) => {
+    const discount = Math.floor((selectedProduct.offer * selectedProduct.price ) / 100 ).toFixed(2)
+    const currentPrice = selectedProduct.price - discount
 
   return (
     <div className='product-content d-flex w-100'>
       <div className="product-info d-flex flex-column col-7 justify-content-between">
         <div className="discount-banner d-flex w-100">
             {
-                Product.offer ? (
+                selectedProduct.offer ? (
                     <div className="discount-content w-100 h-100 d-flex justify-between">
                         <div className="save-value d-flex align-items-center">
                             <i className="bi bi-piggy-bank-fill"></i>
@@ -27,20 +27,20 @@ const ProductInfo = ({Product}) => {
 
         <div className="info-price d-flex flex-column w-100">
             {
-                Product.offer ? (    
+                selectedProduct.offer ? (    
                     <span id="currentPrice">R${currentPrice.toFixed(2).replace('.', ',')}</span>
                 ) 
                 : 
                 (
-                    <span id="currentPrice">R${Product.price.toFixed(2).replace('.', ',')}</span>
+                    <span id="currentPrice">R${selectedProduct.price.toFixed(2).replace('.', ',')}</span>
                 ) 
             }
             {
-                Product.offer  &&
-                 Product.offer !== "" ? (    
+                selectedProduct.offer  &&
+                 selectedProduct.offer !== "" ? (    
                     <div className="discount d-flex align-items-center">
-                        <span id="originalPrice">{Product.price.toFixed(2).replace('.', ',')}</span>
-                        <span id="discountPercentage">{Product.offer}% OFF</span>
+                        <span id="originalPrice">{selectedProduct.price.toFixed(2).replace('.', ',')}</span>
+                        <span id="discountPercentage">{selectedProduct.offer}% OFF</span>
                     </div>
                 ) 
                 : null
@@ -61,28 +61,28 @@ const ProductInfo = ({Product}) => {
         </div>
 
         <div className="info-name w-100">
-            <span>{Product.brand + " " + Product.name}</span>
+            <span>{selectedProduct.brand + " " + selectedProduct.name}</span>
         </div>
 
         <div className="product-rating d-flex align-items-center">
-            <Stars product={Product}/>
-            <span id="ratingNumber">{Product.rating.toFixed(1)}</span>
-            <span id="reviewCount">{Product.reviews} Reviews |</span>
-            <span id="sellsCount">{Product.sales} Vendidos</span>
+            <Stars product={selectedProduct}/>
+            <span id="ratingNumber">{selectedProduct.rating.toFixed(1)}</span>
+            <span id="reviewCount">{selectedProduct.reviews} Reviews |</span>
+            <span id="sellsCount">{selectedProduct.sales} Vendidos</span>
         </div>
 
         <div className="slash"></div>
 
         <div className="variations d-flex flex-wrap">
-            <span className='w-100' id='variationSelected'>{Product.variations[0].variation}</span>
-        {Product.variations.map(variation => (
+            <span className='w-100' id='variationSelected'>{selectedProduct.variations[0].variation}</span>
+        {selectedProduct.variations.map(variation => (
                 variation.variation &&
                  variation.variation !== ""? (
                     <div
                     id={variation.order}
                     key={variation.variation} 
                     className={`variation d-flex align-items-center justify-content-center ${variation.order === 1 ? 'variation-selected' : ''}`}>
-                        <img src={Product.images[0].src} alt="" />
+                        <img src={selectedProduct.images[0].src} alt="" />
                     </div>) 
                 : null
             ))}
@@ -90,7 +90,7 @@ const ProductInfo = ({Product}) => {
 
         <div className="slash"></div>
       </div>
-      <ShipAndBuy Product={Product}/>
+      <ShipAndBuy selectedProduct={selectedProduct}/>
     </div>
   )
 }

@@ -2,24 +2,26 @@ import React, { useEffect, useState } from 'react'
 import BrandItem from '../components/brands/BrandItem'
 import QualitiesString from '../components/home/QualitiesString'
 import FeaturedProducts from '../components/home/FeaturedProducts'
+import fetchApi from '../axios/config';
 
 import '../components/brands/brandItem.css'
 
 const Brands = () => {
     const [brands, setBrands] = useState([])
     
-        const fetchData = () => {
-                        fetch('http://localhost:4000/brands')
-                        .then(res => res.json())
-                        .then(data => {
-                          setBrands(data)
-                        })
-                        .catch(e => console.log(e.message))
-                      }
-                    
-                      useEffect(() => {
-                        fetchData()
-                      }, [])
+      useEffect(() => {
+          const loadBrands = async () => {
+          const res = await fetchApi.get('/brands')
+
+           console.log(res.data)
+
+          setBrands(res.data)
+          }
+
+        loadBrands()
+      }, [])
+
+      if(!brands) return <p>Carregando...</p>
 
   return (
     <>

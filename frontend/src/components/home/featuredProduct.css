@@ -3,6 +3,10 @@
     margin-top: 80px;
 }
 
+#featuredProducts a {
+    max-width: 50%;
+}
+
 .featured-products-container {
     height: 300px;
     margin-top: 40px;

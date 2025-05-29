@@ -2,6 +2,11 @@ const mongoose = require('mongoose')
 
 const {Schema} = mongoose
 
+const {variationSchema} = require('./Variation')
+const {commentsSchema} = require('./Comments')
+const {imagesSchema} = require('./Images')
+const {detailsSchema} = require('./Details')
+
 const productSchema = new Schema(
 {
     myid: {
@@ -39,6 +44,10 @@ const productSchema = new Schema(
         type: String,
         required: true
     },
+    price: {
+        type: Number,
+        required: true
+    },
     offer: {
         type: String,
         required: false
@@ -62,86 +71,18 @@ const productSchema = new Schema(
         type: String,
         required: true
     },
-    variations: [
-        {
-            variation: {
-                type: String,
-                required: true
-            },
-            order: {
-                type: Number,
-                required: true
-            }
-        }
-    ],
-    comments: [
-        {
-            _id: {
-                type: Number,
-                required: true
-            },
-            rating: {
-                type: Number,
-                required: true
-            },
-            variation: {
-                type: String,
-                required: true
-            },
-            customer: {
-                type: String,
-                required: true
-            },
-            date: {
-                type: String,
-                required: true
-            },
-            text: {
-                type: String,
-                required: false
-            },
-            images: [
-                {
-                    src: {
-                        type: String,
-                        required: false
-                    },
-                    order: {
-                        type: Number,
-                        required: false
-                    }
-                }
-            ],
-        },
-    ],
-    images: [
-        {
-            src: {
-                type: String,
-                required: true
-            },
-            order: {
-                type: Number,
-                required: true
-            }
-        }
-    ],
-    details: [
-        {
-            detail: {
-                type: String,
-                required: true
-            },
-            order: {
-                type: Number,
-                required: true
-            },
-            spec: {
-                type: String,
-                required: true
-            }
-        }
-    ],
+    variations: {
+        type: [variationSchema],
+    },
+    comments: {
+        type: [commentsSchema]
+    },
+    images: {
+        type: [imagesSchema]
+    },
+    details: {
+        type: [detailsSchema]
+    },
     }, {
         timestamps: true
       }

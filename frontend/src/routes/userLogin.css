@@ -1,0 +1,69 @@
+.user-form-container {
+ background-color: #f2f4f7;
+ padding: 50px 30px;
+ width: 50%;
+ min-width: 300px;
+ border-radius: 5px;
+ margin-bottom: 10%;
+}
+
+.login-adjust {
+    min-height: 81vh !important;
+}
+
+.user-form {
+    margin-top: 20px;
+    gap: 15px;
+    min-width: 250px;
+}
+
+.user-form label {
+    display: flex;
+    flex-direction: column;
+    font-family: 'Nunito', sans-serif;
+}
+
+.user-form input {
+    display: flex;
+    outline: unset;
+    border: unset;
+    padding: 8px 12px;
+    border-radius: 5px;
+}
+
+.user-form span {
+    font-size: 20px;
+    font-weight: 500;
+}
+
+.form-message{
+    font-size: 16px !important;
+    text-align: center;
+    color: #ff1414;
+    cursor: default;
+    font-weight: unset !important;
+    margin-top: -8px;
+    height: 15px;
+}
+
+.create-account {
+    margin-top: -10px;
+    font-size: 14px !important;
+    text-align: center;
+}
+
+.form-btn {
+    background-color: #008cff;
+    color: #fff;
+    font-weight: 600;
+    letter-spacing: .5px;
+    font-family: "Nunito";
+    font-size: 18px;
+    transition: .3s;
+    margin-top: 10px;
+}
+
+.form-btn:hover {
+    background-color: #006dc7;
+    color: #f2f4f7;
+}

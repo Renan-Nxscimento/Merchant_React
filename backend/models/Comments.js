@@ -5,6 +5,10 @@ const {Schema} = mongoose
 const {imagesSchema} = require('./Images')
 
 const commentsSchema = new Schema({
+    _id: {
+        type: Number,
+        required: true
+    },
     rating: {
         type: Number,
         required: true
@@ -17,10 +21,6 @@ const commentsSchema = new Schema({
         type: String,
         required: true
     },
-    customerImage: {
-        type: String,
-        required: false
-    },
     date: {
         type: String,
         required: true
@@ -29,7 +29,18 @@ const commentsSchema = new Schema({
         type: String,
         required: false
     },
-    images: [imagesSchema],
+    images: [
+        {
+            src: {
+                type: String,
+                required: false
+            },
+            order: {
+                type: Number,
+                required: false
+            }
+        }
+    ],
 }, {
     timestamps: true
   })

@@ -9,7 +9,7 @@ const Contact = () => {
     <>
         <section id='contactSection' className='d-flex flex-column flex-wrap align-items-center'>
             <h3 className="big-text">fale conosco</h3>
-            <div className="contact-container d-flex flex-wrap">
+            <div className="contact-container d-flex flex-wrap justify-content-center">
                 <div className="contact d-flex flex-column">
                     <div className="c-top d-flex align-items-center">
                         <i className="bi bi-telephone-fill"></i>

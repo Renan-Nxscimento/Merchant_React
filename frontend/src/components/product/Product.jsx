@@ -1,8 +1,9 @@
-import React from 'react'
+import React, { useState } from 'react'
 import Stars from '../stars/Stars'
 
 const Product = ({product}) => {
  const image = product.images[0].src
+ 
 
   return (
     

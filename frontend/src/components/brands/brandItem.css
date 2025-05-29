@@ -20,11 +20,14 @@
 
 .brand-logo {
     min-width: 100px;
+    padding-right: 20px;
 }
 
 .brand-logo img {
+    object-fit: contain;
     width: 100%;
     min-width: 100px;
+    max-height: 180px;
 }
 
 .best-selling-product {

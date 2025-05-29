@@ -11,9 +11,9 @@ async function main() {
             'mongodb+srv://boss:thebigboss@merchant.xf1svqa.mongodb.net/merc-api',
         )
         
-        console.log(`connection stabilished, Boss.`)
+        console.log(`Connection estabilished.`)
     } catch (error) {
-        console.log(`something's wrong, Boss, check ${error}.`)
+        console.log(`Something's wrong Boss, check ${error}.`)
     }
 
 }

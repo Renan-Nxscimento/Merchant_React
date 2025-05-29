@@ -29,3 +29,8 @@
 .brand img:hover {
     transform: scale(1.04);
 }
+
+.adjust-brand-image {
+    object-fit: contain !important;
+    max-width: 200px;
+}

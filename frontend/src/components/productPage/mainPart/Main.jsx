@@ -9,22 +9,22 @@ import Details from '../details/Details'
 import Overall from '../reviews/Overall'
 import MoreProducts from '../otherProducts/MoreProducts'
 
-const Main = ({Product}) => {
+const Main = ({selectedProduct}) => {
   return (
     <>
         <main className="main-product d-flex w-100">
-            <Images Product={Product}/>
-            <ProductInfo Product={Product}/>
+            <Images selectedProduct={selectedProduct}/>
+            <ProductInfo selectedProduct={selectedProduct}/>
         </main>
         <section id='similarProducts'>
-          <SimilarProducts Snake={Product}/>
+          <SimilarProducts thisProducts={selectedProduct}/>
         </section>
         <section id='description'>
-          <Description Product={Product}/>
-          <Details Product={Product}/>
+          <Description selectedProduct={selectedProduct}/>
+          <Details selectedProduct={selectedProduct}/>
         </section>
-        <Overall Product={Product}/>
-        <MoreProducts Snake={Product}/>
+        <Overall selectedProduct={selectedProduct}/>
+        <MoreProducts thisProducts={selectedProduct}/>
     </>
   )
 }

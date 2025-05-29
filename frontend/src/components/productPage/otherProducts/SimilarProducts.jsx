@@ -2,22 +2,22 @@ import React, { useEffect, useState } from 'react'
 import Product from '../../product/Product'
 import { Link } from 'react-router-dom'
 import './otherProduct.css'
+import fetchApi from '../../../axios/config'
 
-const SimilarProducts = ({Snake}) => {
+const SimilarProducts = ({thisProducts}) => {
     const [products, setProducts] = useState([])
         
-                const fetchData = () => {
-                    fetch('http://localhost:4000/products')
-                    .then(res => res.json())
-                    .then(data => {
-                      setProducts(data)
-                    })
-                    .catch(e => console.log(e.message))
-                  }
-                
-                  useEffect(() => {
-                    fetchData()
-                  }, [])
+        useEffect(() => {
+            const loadProducts = async () => {
+            const res = await fetchApi.get(`/products`)
+
+             console.log(res)
+
+            setProducts(res.data)
+            }
+
+          loadProducts()
+        }, [])
 
   return (
         <div className='similar-products d-flex flex-column'>
@@ -25,7 +25,7 @@ const SimilarProducts = ({Snake}) => {
           <div className="similar-container d-flex">
           {products.map(product => (
                     product.category &&
-                     product.category === Snake.category ? (
+                     product.category === thisProducts.category ? (
                       <Link key={product._id} onClick={() => {window.location.href=`/product/${product._id}`}}>
                         <Product product={product}/>
                       </Link>

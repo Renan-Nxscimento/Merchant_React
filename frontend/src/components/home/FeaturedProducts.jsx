@@ -1,24 +1,27 @@
 import React, { useEffect, useState } from 'react'
 import { Link } from 'react-router-dom'
 import Stars from '../stars/Stars'
-
+import fetchApi from '../../axios/config'
 import './featuredProduct.css'
 
 const FeaturedProducts = () => {
     const [products, setProducts] = useState([])
         
-                const fetchData = () => {
-                    fetch('http://localhost:4000/products')
-                    .then(res => res.json())
-                    .then(data => {
-                      setProducts(data)
-                    })
-                    .catch(e => console.log(e.message))
-                  }
-                
-                  useEffect(() => {
-                    fetchData()
-                  }, [])
+      useEffect(() => {
+          const loadProducts = async () => {
+          const res = await fetchApi.get('/products')
+
+           console.log(res.data)
+
+          setProducts(res.data)
+          }
+
+        loadProducts()
+      }, [])
+
+      if(!products) return <p>Carregando...</p>
+
+      console.log(products)
 
     function cutString(str, length) {
         return str.slice(0, length)

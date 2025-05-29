@@ -2,7 +2,7 @@ import React, { useState } from 'react'
 
 import './shipAndBuy.css'
 
-const ShipAndBuy = ({Product}) => {
+const ShipAndBuy = ({selectedProduct}) => {
   const [quantityNumber, setQuantityNumber] = useState(1)
 
   const raiseQuantity = () => {
@@ -21,7 +21,7 @@ const ShipAndBuy = ({Product}) => {
       <div className="product-seller d-flex align-items-center justify-content-between">
         <span>Vendido por:</span>
         <div className="seller-name d-flex">
-            <span>{Product.seller}</span>
+            <span>{selectedProduct.seller}</span>
         </div>
       </div>
 

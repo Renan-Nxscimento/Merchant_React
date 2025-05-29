@@ -27,7 +27,7 @@ const productController = {
 
             const response = await ProductModel.create(product)
 
-            res.status(201).json({response, msg: `Copy. Product created, Boss.`})
+            res.status(201).json({response, msg: `Product created, Boss.`})
             
             
         } catch (error) {
@@ -51,7 +51,7 @@ const productController = {
             const product = await ProductModel.findById(id)
 
             if(!product) {
-                res.status(404).json({msg: `Couldn't locate the target, Boss.`})
+                res.status(404).json({msg: `Couldn't locate the product.`})
                 return
             }
 

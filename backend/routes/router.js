@@ -5,4 +5,14 @@ const productsRouter = require('./products')
 
 router.use('/', productsRouter)
 
+//Users router
+const usersRouter = require('./users')
+
+router.use('/', usersRouter)
+
+//Brands router
+const brandsRouter = require('./brands')
+
+router.use('/', brandsRouter)
+
 module.exports = router

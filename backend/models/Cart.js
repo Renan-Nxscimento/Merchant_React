@@ -2,21 +2,21 @@ const mongoose = require('mongoose')
 
 const {Schema} = mongoose
 
-const detailsSchema = new Schema({
-    detail: {
+const cartSchema = new Schema({
+    productname: {
         type: String,
         required: true
     },
-    order: {
+    quantity: {
         type: Number,
         required: true
     },
-    spec: {
+    variation: {
         type: String,
         required: true
     }
 })
 
-const Details = mongoose.model('Details', detailsSchema)
+const Cart = mongoose.model('Cart', cartSchema)
 
-module.exports = Details
+module.exports = Cart

@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react'
 import Product from '../../product/Product'
 
-const MoreProducts = ({Snake}) => {
+const MoreProducts = ({thisProducts}) => {
   const [products, setProducts] = useState([])
           
                   const fetchData = () => {
@@ -21,7 +21,7 @@ const MoreProducts = ({Snake}) => {
     <section id='moreProducts' className='d-flex flex-column'>
       <h3>Mais produtos</h3>
       <div className="more-products-container">
-        <Product product={Snake}/>
+        <Product product={thisProducts}/>
       </div>
     </section>
   )

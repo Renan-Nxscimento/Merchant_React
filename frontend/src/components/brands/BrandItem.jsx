@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from 'react'
 import Stars from '../stars/Stars'
 import { Link } from 'react-router-dom'
+import fetchApi from '../../axios/config'
 
 import './brandItem.css'
 
@@ -8,18 +9,19 @@ const BrandItem = ({brand}) => {
     const [products, setProducts] = useState([])
     const [filtredProduct, setFiltredProduct] = useState(null)
         
-                const fetchData = () => {
-                    fetch('http://localhost:4000/products')
-                    .then(res => res.json())
-                    .then(data => {
-                      setProducts(data)
-                    })
-                    .catch(e => console.log(e.message))
-                  }
-                
-                  useEffect(() => {
-                    fetchData()
-                  }, [])
+      useEffect(() => {
+          const loadProducts = async () => {
+          const res = await fetchApi.get('/products')
+
+           console.log(res.data)
+
+          setProducts(res.data)
+          }
+
+        loadProducts()
+      }, [])
+
+      if(!products) return <p>Carregando...</p>
 
         function cutString(str, length) {
             return str.slice(0, length)
@@ -34,7 +36,7 @@ const BrandItem = ({brand}) => {
 
         function finalFilter(arrs) {
           if (arrs === undefined) {
-            return "No! That is NOT Big Boss."
+            return "No! That is NOT Solid Snake!"
           } else {
             return arrs
           }
@@ -47,7 +49,7 @@ const BrandItem = ({brand}) => {
   return (
     <div className='brand-item d-flex'>
       <div className="brand-logo d-flex col-2 align-items-center">
-        <img src={brand.logo} alt={brand.brand} />
+        <img src={brand.image} alt={brand.brand} />
       </div>
       <div className="brand-content d-flex flex-column col-10 align-items-center">
         <h3 className="big-text">{brand.brand}</h3>

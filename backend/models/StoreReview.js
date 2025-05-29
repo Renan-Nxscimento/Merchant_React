@@ -2,13 +2,9 @@ const mongoose = require('mongoose')
 
 const {Schema} = mongoose
 
-const prodCommentsSchema = new Schema({
+const storeReviewSchema = new Schema({
     rating: {
         type: Number,
-        required: true
-    },
-    variation: {
-        type: String,
         required: true
     },
     customer: {
@@ -29,6 +25,6 @@ const prodCommentsSchema = new Schema({
     },
 })
 
-const ProdComments = mongoose.model('ProdComments', prodCommentsSchema)
+const storeReview = mongoose.model('storeReview', storeReviewSchema)
 
-module.exports = ProdComments
+module.exports = storeReview

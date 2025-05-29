@@ -7,6 +7,7 @@ import MainBar from '../searchbar/mainBar'
 import { Link } from 'react-router-dom'
 
 const Header = () => {
+  
   return (
     <header 
     id="header" 

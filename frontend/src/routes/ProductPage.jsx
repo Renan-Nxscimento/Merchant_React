@@ -2,6 +2,8 @@ import React, { useEffect, useReducer, useState } from 'react'
 import { Link, useLocation, useNavigate, useParams } from 'react-router-dom'
 import Fullscreen from '../components/productPage/mainPart/Fullscreen'
 import Main from '../components/productPage/mainPart/Main';
+import fetchApi from '../axios/config';
+
 
 const ProductPage = () => {
     
@@ -23,21 +25,18 @@ const ProductPage = () => {
     const [products, setProducts] = useState([])
     const {id} = useParams();
         
-                const fetchData = () => {
-                    fetch('http://localhost:4000/products')
-                    .then(res => res.json())
-                    .then(data => {
-                      setProducts(data)
-                    })
-                  }
-                
-                  useEffect(() => {
-                    fetchData()
-                    
-                  }, [])
+        useEffect(() => {
+            const loadProducts = async () => {
+            const res = await fetchApi.get(`/products`)
+
+            setProducts(res.data)
+            }
+
+          loadProducts()
+        }, [])
 
 //Achar produto selecionado
-      const Product = products.find(product => String(product._id) === id);
+      const selectedProduct = products.find(product => String(product._id) === id);
 
 //Manipular imagens
       otherImages.forEach(imago => {
@@ -112,21 +111,21 @@ const ProductPage = () => {
               document.querySelector('.variation-selected')?.classList.remove('variation-selected')
               variation.classList.add('variation-selected')
               if (variation.id && variation.id == 1) {
-                  variationName.innerHTML = Product.variations[0].variation
+                  variationName.innerHTML = selectedProduct.variations[0].variation
               } else if (variation.id && variation.id == 2) {
-                  variationName.innerHTML = Product.variations[1].variation
+                  variationName.innerHTML = selectedProduct.variations[1].variation
               }  else if (variation.id && variation.id == 3) {
-                  variationName.innerHTML = Product.variations[2].variation
+                  variationName.innerHTML = selectedProduct.variations[2].variation
               } else if (variation.id && variation.id == 4) {
-                  variationName.innerHTML = Product.variations[3].variation
+                  variationName.innerHTML = selectedProduct.variations[3].variation
               } 
           }) 
       })
 
   return (
     <>
-      {Product ? (  
-          <Main Product={Product}/>
+      {selectedProduct ? (  
+          <Main selectedProduct={selectedProduct}/>
       ) : (
         <p>Loading...</p>
       )}

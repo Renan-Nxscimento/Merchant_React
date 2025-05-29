@@ -2,12 +2,12 @@ import React from 'react'
 import Stars from '../../stars/Stars'
 
 
-const RatingOverall = ({Product}) => {
+const RatingOverall = ({selectedProduct}) => {
   return (
     <div className='rating-grade w-100 d-flex'>
       <div className="rating-number d-flex flex-column align-items-center justify-content-center col-2">
-        <span id='grade'>{Product.rating.toFixed(1)}</span>
-        <Stars product={Product}/>
+        <span id='grade'>{selectedProduct.rating.toFixed(1)}</span>
+        <Stars product={selectedProduct}/>
       </div>
       <div className="rating-filter d-flex justify-content-between w-100 align-items-center">
         <button className='filter-btn d-flex align-items-center'>Todos</button>
