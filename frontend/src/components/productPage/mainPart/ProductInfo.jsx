@@ -1,4 +1,4 @@
-import React, { useEffect } from 'react'
+import React, { useContext, useEffect, useState } from 'react'
 
 import Stars from '../../stars/Stars'
 import ShipAndBuy from './ShipAndBuy'
@@ -6,8 +6,26 @@ import ShipAndBuy from './ShipAndBuy'
 import './productInfo.css'
 
 const ProductInfo = ({selectedProduct}) => {
+
     const discount = Math.floor((selectedProduct.offer * selectedProduct.price ) / 100 ).toFixed(2)
     const currentPrice = selectedProduct.price - discount
+
+    const [currentVariation, setCurrentVariation] = useState()
+
+        if (!currentVariation) {
+        setCurrentVariation(selectedProduct.variations[0].variation)
+        }
+
+    const [selectedVariation, setSelectedVariation] = useState()
+
+        if (!selectedVariation) {
+        setSelectedVariation(1)
+        }
+
+    const variationsSetter = (name, number) => {
+        setCurrentVariation(name)
+        setSelectedVariation(number)
+    }
 
   return (
     <div className='product-content d-flex w-100'>
@@ -74,14 +92,15 @@ const ProductInfo = ({selectedProduct}) => {
         <div className="slash"></div>
 
         <div className="variations d-flex flex-wrap">
-            <span className='w-100' id='variationSelected'>{selectedProduct.variations[0].variation}</span>
+            <span className='w-100' id='variationSelected'>{currentVariation}</span>
         {selectedProduct.variations.map(variation => (
                 variation.variation &&
                  variation.variation !== ""? (
                     <div
                     id={variation.order}
-                    key={variation.variation} 
-                    className={`variation d-flex align-items-center justify-content-center ${variation.order === 1 ? 'variation-selected' : ''}`}>
+                    key={variation.variation}
+                    onClick={() => variationsSetter(variation.variation, variation.order)} 
+                    className={`variation d-flex align-items-center justify-content-center ${variation.order === selectedVariation ? 'variation-selected' : ''}`}>
                         <img src={selectedProduct.images[0].src} alt="" />
                     </div>) 
                 : null
@@ -90,7 +109,7 @@ const ProductInfo = ({selectedProduct}) => {
 
         <div className="slash"></div>
       </div>
-      <ShipAndBuy selectedProduct={selectedProduct}/>
+      <ShipAndBuy selectedProduct={selectedProduct} variation={currentVariation} productname={selectedProduct.name}/>
     </div>
   )
 }

@@ -1,8 +1,14 @@
-import React, { useState } from 'react'
+import { useContext, useEffect, useState } from 'react'
 
 import './shipAndBuy.css'
+import { UserContext } from '../../../App'
+import fetchApi from '../../../axios/config'
 
-const ShipAndBuy = ({selectedProduct}) => {
+const ShipAndBuy = ({selectedProduct, variation, productname}) => {
+  const [users, setUsers] = useState([])
+  const [currentUser, setCurrentUser] = useState()
+  const {thisUser} = useContext(UserContext)
+  const [isOnCart, setIsOnCart] = useState(false)
   const [quantityNumber, setQuantityNumber] = useState(1)
 
   const raiseQuantity = () => {
@@ -15,6 +21,64 @@ const ShipAndBuy = ({selectedProduct}) => {
     }
   }
 
+  let itemToCart = {
+    productname,
+    quantityNumber,
+    variation
+  }
+
+    const addToCart = () => {
+      cartItems.push(itemToCart)
+      console.log(thisUser)
+      updateCart()
+  }
+
+    const updateCart = async () => {
+
+        try {
+            const res = await fetchApi.put(`/users/${thisUser._id}`, thisUser)
+
+            if(res.status === 200) {
+                console.log('Produto adicionado')
+            }
+        } catch (error) {
+            console.log(error.response.data.msg, 'error')
+        }
+    }
+
+            useEffect(() => {
+            const loadUsers = async () => {
+            const res = await fetchApi.get(`/users`)
+
+            setUsers(res.data)
+
+            const thisId = thisUser._id
+
+            const userLocated = res.data.find(user =>
+                user._id === thisId
+            )
+
+            if(userLocated) {
+              setCurrentUser(userLocated)
+            }
+            }
+
+
+          loadUsers()
+        }, [thisUser])
+
+        useEffect(() => {
+          if(currentUser) {
+            const cartItems = currentUser.cart
+
+            const checkCart = cartItems.find(item => 
+            item.productname === selectedProduct.name && item.variation === variation
+            )
+    
+              setIsOnCart(!!checkCart)
+
+        }
+        }, [currentUser, selectedProduct, variation])
 
   return (
     <div className='buy-product d-flex flex-column h-100 justify-content-between col-5'>
@@ -67,7 +131,19 @@ const ShipAndBuy = ({selectedProduct}) => {
       </div>
 
       <div className="cart-btn">
-        <button className="w-100 h-100">Adicionar ao carrinho</button>
+        {
+          isOnCart? (<button className='w-100 h-100 text-success'>Adicionado ao carrinho</button>) 
+          : 
+          (
+          <button 
+          className="w-100 h-100"
+          onClick={addToCart}
+          >
+            Adicionar ao carrinho
+            <i className="bi bi-cart3"></i>
+          </button>
+          )
+        }
       </div>
 
       <div className="options d-flex">

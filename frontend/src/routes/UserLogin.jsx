@@ -6,10 +6,17 @@ import fetchApi from '../axios/config';
 import './userLogin.css'
 
 const UserLogin = () => {
+  const [registring, isRegistring] = useState(false)
 
   return (
     <div className=' login-adjust user-login flex-column d-flex align-items-center justify-content-center'>
-      <Login/>
+      {
+        registring? (
+          <CreateUser isRegistring={isRegistring}/>
+        ) : (
+          <Login isRegistring={isRegistring}/>
+        )
+      }
       <QualitiesString/>
     </div>
   )

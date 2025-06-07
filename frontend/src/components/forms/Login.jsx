@@ -1,16 +1,28 @@
 import React, { useContext, useEffect, useState } from 'react';
 import fetchApi from '../../axios/config';
-import { Link, useNavigate } from 'react-router-dom';
 import {UserContext} from '../../App'
 
-const Login = () => {
+const Login = ({isRegistring}) => {
     const {setThisUser} = useContext(UserContext)
     const [email, setEmail] = useState('');
     const [password, setPassword] = useState('');
-    const navigate = useNavigate();
+    const [incorrect, setIncorrect] = useState(false)
+    const [showPassword, setShowPassword] = useState(false)
+
+    const togglePassword = () => {
+     setShowPassword(!showPassword);
+    }
+
+    const goRegister = () => {
+        isRegistring(true)
+    }
 
     const userLogin = async (e) => {
         e.preventDefault();
+
+        const located = () => {
+            window.location.href=`/`
+        }
 
         try {
             const res = await fetchApi.get('/users');
@@ -25,9 +37,9 @@ const Login = () => {
                     localStorage.setItem('username', foundUser.nickname)
                     localStorage.setItem('email', foundUser.email)
                     setThisUser(foundUser)
-                    navigate('/');
+                    located()
                 } else {
-                    console.log('Invalid email or password');
+                    setIncorrect(true)
                 }
             }
         } catch (error) {
@@ -50,16 +62,28 @@ const Login = () => {
                 </label>
                 <label htmlFor="">
                     <span>Senha:</span>
-                    <input 
-                        type="password" 
+                    <div className="password-container d-flex align-items-center">
+                        <input 
+                        type={`${showPassword? "text" : "password"}`} 
                         placeholder='Insira sua senha' 
                         required
                         onChange={(e) => setPassword(e.target.value)}
-                    />
+                        />
+                        <i 
+                        className={`bi ${showPassword? "bi-eye-fill" : "bi-eye"}`}
+                        onClick={togglePassword}
+                        ></i>
+                    </div>
                 </label>
-                <span className="form-message"></span>
+                <span className="form-message">
+                    {
+                        incorrect ? (<p>Senha ou email incorretos.</p>) : null
+                    }
+                </span>
                 <input className='form-btn' type="submit" value="Fazer login"/>
-                <span className='create-account'>Não tem uma conta? <Link>Cadastre-se</Link></span>
+                <span className='create-account'>Não tem uma conta? 
+                    <a href='#' onClick={goRegister}>Cadastre-se</a>
+                    </span>
             </form>
         </div>
     );

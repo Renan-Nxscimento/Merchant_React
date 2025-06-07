@@ -11,8 +11,6 @@ const FeaturedProducts = () => {
           const loadProducts = async () => {
           const res = await fetchApi.get('/products')
 
-           console.log(res.data)
-
           setProducts(res.data)
           }
 
@@ -20,8 +18,6 @@ const FeaturedProducts = () => {
       }, [])
 
       if(!products) return <p>Carregando...</p>
-
-      console.log(products)
 
     function cutString(str, length) {
         return str.slice(0, length)

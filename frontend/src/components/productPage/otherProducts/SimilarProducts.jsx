@@ -11,8 +11,6 @@ const SimilarProducts = ({thisProducts}) => {
             const loadProducts = async () => {
             const res = await fetchApi.get(`/products`)
 
-             console.log(res)
-
             setProducts(res.data)
             }
 

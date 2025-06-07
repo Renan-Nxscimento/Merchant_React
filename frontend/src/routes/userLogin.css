@@ -5,6 +5,11 @@
  min-width: 300px;
  border-radius: 5px;
  margin-bottom: 10%;
+ margin-top: 50px;
+}
+
+.register {
+    margin-bottom: 20px;
 }
 
 .login-adjust {
@@ -36,6 +41,25 @@
     font-weight: 500;
 }
 
+.password-container {
+    width: 100%;
+    padding: 8px 12px;
+    border-radius: 5px;
+    background-color: #fff;
+}
+
+.password-container input {
+    width: 100%;
+    padding: unset;
+    border-radius: unset;
+    background-color: transparent;
+    margin-right: 5px;
+}
+
+.password-container i{
+    cursor: pointer;
+}
+
 .form-message{
     font-size: 16px !important;
     text-align: center;
@@ -50,6 +74,10 @@
     margin-top: -10px;
     font-size: 14px !important;
     text-align: center;
+}
+
+.create-account a{
+    margin-left: 5px;
 }
 
 .form-btn {

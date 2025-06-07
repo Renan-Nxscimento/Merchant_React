@@ -68,7 +68,7 @@ h3 {
 }
 
 .close-fullscreen {
-    display: flex;
+    display: flex !important;
     align-items: center;
     justify-content: center;
     position: absolute;

@@ -153,9 +153,10 @@ Content-Type: application/json
 
 {
     "name": "theboss",
-    "email": "testeremail@tester.com",
+    "nickname": "The Boss",
+    "email": "thisemail@tester.com",
     "password": "thebosseater",
-    "image": "",
+    "image": "https://thenewheroines.wordpress.com/wp-content/uploads/2017/05/30fda328355410e7839666921384aac2.png",
     "favorite_products": [
 
     ],
@@ -165,14 +166,33 @@ Content-Type: application/json
 }
 
 ###
-PUT http://localhost:3000/api/users/683084c9d876c15111ea2356
+POST http://localhost:3000/api/users
 Content-Type: application/json
 
 {
-    "name": "tester",
-    "email": "testeremail@tester.com",
-    "password": "snakeeater",
-    "image": "",
+    "name": "test bot",
+    "nickname": "Punished ''Venom'' tester",
+    "email": "tester@tester.com",
+    "password": "bigtest",
+    "image": "https://64.media.tumblr.com/0e741f51d477680bca91c71931139fb8/9a2b25f80bcb6ded-32/s500x750/11f5fb1471fd058c485b4b5b7907826c5a9b23a8.png",
+    "favorite_products": [
+
+    ],
+    "cart": [
+
+    ]
+}
+
+###
+PUT http://localhost:3000/api/users/683fbfe59d6021080a9a7212
+Content-Type: application/json
+
+{
+    "name": "Diamond Dog",
+    "nickname": "Punished ''Venom'' Jotchua",
+    "email": "tester@tester.com",
+    "password": "bigtest",
+    "image": "https://64.media.tumblr.com/0e741f51d477680bca91c71931139fb8/9a2b25f80bcb6ded-32/s500x750/11f5fb1471fd058c485b4b5b7907826c5a9b23a8.png",
     "favorite_products": [
         {
             "productname": "Rog Phone 8" 
@@ -186,3 +206,6 @@ Content-Type: application/json
         }
     ]
 }
+
+###
+DELETE http://localhost:3000/api/users/683fbf569d6021080a9a71cc

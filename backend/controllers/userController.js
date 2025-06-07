@@ -6,6 +6,7 @@ const userController = {
 
             const user = {
                 name: req.body.name,
+                nickname: req.body.nickname,
                 email: req.body.email,
                 password: req.body.password,
                 image: req.body.image,
@@ -74,7 +75,26 @@ const userController = {
         } catch (error) {
             console.log(error)
         }
-    }
+    },
+
+        delete: async (req, res) => {
+        try {
+            const id = req.params.id
+            const user = await UserModel.findById(id)
+
+            if(!user) {
+                res.status(404).json({msg: `Couldn't locate the target, Boss.`})
+                return
+            }
+
+            const deletedUser = await UserModel.findByIdAndDelete(id)
+
+            res.status(200).json({deletedUser, msg: 'Target extracted succesfully, Boss.'})
+
+        } catch (error) {
+            console.log(error)
+        }
+    },
 
 }
 

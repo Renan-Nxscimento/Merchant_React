@@ -10,8 +10,6 @@ const MainBrands = () => {
           const loadBrands = async () => {
           const res = await fetchApi.get('/brands')
 
-           console.log(res.data)
-
           setBrands(res.data)
           }
 
@@ -19,8 +17,6 @@ const MainBrands = () => {
       }, [])
 
       if(!brands) return <p>Carregando...</p>
-
-      console.log(brands)
 
   return (
     <div className='main-brands w-100 d-flex flex-column align-items-center'>

@@ -9,6 +9,12 @@ const User = () => {
     const [users, setUsers] = useState([])
     const [name, setName] = useState(null)
 
+    function logout() {
+        localStorage.removeItem('username')
+        localStorage.removeItem('email')
+        window.location.href=`/`
+    }
+
     const defaultUser = {
         name: "Entrar",
         email: "notregistred@example.com",
@@ -40,8 +46,6 @@ const User = () => {
             const loadUsers = async () => {
             const res = await fetchApi.get(`/users`)
 
-             console.log(res)
-
             setUsers(res.data)
 
             const email = localStorage.getItem('email')
@@ -57,7 +61,6 @@ const User = () => {
             } else {
                 setThisUser(defaultUser)
                 setName(defaultUser.name)
-                console.log('num vai dar não')
             }
             }
 
@@ -65,8 +68,6 @@ const User = () => {
         }, [])
 
         if (users.length === 0) return <p>Carregando...</p>
-
-        console.log(defaultUser)
 
               const abbreviatedName = abbreviate(name)
 
@@ -138,12 +139,13 @@ const User = () => {
                         <hr className="dropdown-divider" />
                     </li>
                     <li>
-                    <a 
-                    href="users.profile.html"
+                    <a
+                    href='#'
                     className='dropdown-item d-flex align-items-center'
+                    onClick={logout}
                     >
                         <i className="bi bi-box-arrow-right">
-                            <span>Sign Out</span>
+                            <span>Encerrar</span>
                         </i>
                     </a>
                     </li>

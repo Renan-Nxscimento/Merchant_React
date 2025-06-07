@@ -4,22 +4,23 @@ import { Link } from 'react-router-dom'
 import QualitiesString from '../home/QualitiesString'
 import FeaturedProducts from '../home/FeaturedProducts'
 import './productSelection.css'
+import fetchApi from '../../axios/config'
+
 const ProductsSelection = ({selection}) => {
     const [products, setProducts] = useState([])
     const [selectionCounter, setSelectionCounter] = useState(2)
 
-                const fetchData = () => {
-                    fetch('http://localhost:4000/products')
-                    .then(res => res.json())
-                    .then(data => {
-                      setProducts(data)
-                    })
-                    .catch(e => console.log(e.message))
-                  }
-                
-                  useEffect(() => {
-                    fetchData()
-                  }, [])
+      useEffect(() => {
+          const loadProducts = async () => {
+          const res = await fetchApi.get('/products')
+
+           console.log(res.data)
+
+          setProducts(res.data)
+          }
+
+        loadProducts()
+      }, [])
 
   const handleSelection = (num) => {
     setSelectionCounter(num);
