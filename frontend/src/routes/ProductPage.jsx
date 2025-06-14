@@ -1,5 +1,5 @@
-import React, { createContext, useContext, useEffect, useReducer, useState } from 'react'
-import { Link, useLocation, useNavigate, useParams } from 'react-router-dom'
+import { createContext, useEffect, useState } from 'react'
+import { useParams } from 'react-router-dom'
 import Fullscreen from '../components/productPage/mainPart/Fullscreen'
 import Main from '../components/productPage/mainPart/Main';
 import fetchApi from '../axios/config';
