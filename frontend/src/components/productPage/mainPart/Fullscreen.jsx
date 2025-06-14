@@ -15,16 +15,12 @@ const Fullscreen = ({selectedProduct}) => {
       const previousImage = () => {
         if (imageCounter > 1) {
           setImageCounter((prevImageCounter) => prevImageCounter - 1)
-          imageSetter()
-          console.log(imageCounter)
         }
       }
 
       const nextImage = () => {
         if (imageCounter < 5) {
           setImageCounter((prevImageCounter) => prevImageCounter + 1)
-          imageSetter()
-          console.log(imageCounter)
         }
       }
 

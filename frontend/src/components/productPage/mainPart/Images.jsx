@@ -19,7 +19,6 @@ const Images = ({selectedProduct}) => {
 
     const toggleFullscreen = () => {
         setFullscreen(prevState => !prevState)
-        console.log(fullscreen)
     }
 
   return (

@@ -1,4 +1,4 @@
-import React, { useContext, useEffect, useState } from 'react'
+import { useState } from 'react'
 
 import Stars from '../../stars/Stars'
 import ShipAndBuy from './ShipAndBuy'

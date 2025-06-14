@@ -10,6 +10,8 @@ const ShipAndBuy = ({selectedProduct, variation, productname}) => {
   const {thisUser} = useContext(UserContext)
   const [isOnCart, setIsOnCart] = useState(false)
   const [quantityNumber, setQuantityNumber] = useState(1)
+  const [cartItems, setCartItems] = useState([])
+  const [isFavorite, setIsFavorite] = useState(false)
 
   const raiseQuantity = () => {
     setQuantityNumber(quantityNumber + 1)
@@ -23,23 +25,43 @@ const ShipAndBuy = ({selectedProduct, variation, productname}) => {
 
   let itemToCart = {
     productname,
-    quantityNumber,
+    quantitynumber: quantityNumber,
     variation
   }
 
+    const checkCart = () => {
+      cartItems.find(item => 
+      item.productname === selectedProduct.name && item.variation === variation
+      ) ? setIsOnCart(true) : setIsOnCart(false)
+    }
+
+    const checkFavorites = () => {
+      currentUser.favorites.find(item => 
+      item.productname === selectedProduct.name
+      ) ? setIsFavorite(true) : setIsFavorite(false)
+    }
+
     const addToCart = () => {
-      cartItems.push(itemToCart)
-      console.log(thisUser)
-      updateCart()
-  }
+      if (currentUser) {
+        if (!currentUser.cart) {
+          currentUser.cart = []
+        }
+        if (itemToCart)
+        currentUser.cart.push(itemToCart)
+        setCartItems(currentUser.cart)
+      
+        updateCart()
+      }
+    }
 
     const updateCart = async () => {
 
         try {
-            const res = await fetchApi.put(`/users/${thisUser._id}`, thisUser)
+            const res = await fetchApi.put(`/users/${thisUser._id}`, currentUser)
 
             if(res.status === 200) {
                 console.log('Produto adicionado')
+                setIsOnCart(true)
             }
         } catch (error) {
             console.log(error.response.data.msg, 'error')
@@ -63,22 +85,18 @@ const ShipAndBuy = ({selectedProduct, variation, productname}) => {
             }
             }
 
-
           loadUsers()
+          checkCart()
+          checkFavorites()
         }, [thisUser])
 
         useEffect(() => {
-          if(currentUser) {
-            const cartItems = currentUser.cart
+          if(currentUser && currentUser.cart) {
+            setCartItems(currentUser.cart)
 
-            const checkCart = cartItems.find(item => 
-            item.productname === selectedProduct.name && item.variation === variation
-            )
-    
-              setIsOnCart(!!checkCart)
-
+            checkCart()
         }
-        }, [currentUser, selectedProduct, variation])
+        }, [currentUser, selectedProduct, variation, cartItems])
 
   return (
     <div className='buy-product d-flex flex-column h-100 justify-content-between col-5'>
