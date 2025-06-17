@@ -22,7 +22,7 @@ const Review = ({selectedProduct}) => {
                         </div>
                         <div className="r-content d-flex flex-column w-100">
                             <div className="r-stars">
-                                <Stars product={review.rating}/>
+                                <Stars product={review}/>
                             </div>
                             <div className="r-variation">
                                 Versão: {review.variation}

@@ -153,6 +153,11 @@
     background-color: #e0e3e6;
 }
 
+.cart-item button:active {
+    background-color: #b7babd;
+    transition: 0s;
+}
+
 .delete-cart-item {
     width: 50px !important;
     height: 50px !important;

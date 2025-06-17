@@ -8,10 +8,15 @@ const ShipAndBuy = ({selectedProduct, variation, productname}) => {
   const [users, setUsers] = useState([])
   const [currentUser, setCurrentUser] = useState()
   const {thisUser} = useContext(UserContext)
+
   const [isOnCart, setIsOnCart] = useState(false)
   const [quantityNumber, setQuantityNumber] = useState(1)
   const [cartItems, setCartItems] = useState([])
+
+  const [favItems, setFavItems] = useState([])
   const [isFavorite, setIsFavorite] = useState(false)
+
+  const [isPasted, setIsPasted] = useState(false)
 
   const raiseQuantity = () => {
     setQuantityNumber(quantityNumber + 1)
@@ -23,6 +28,11 @@ const ShipAndBuy = ({selectedProduct, variation, productname}) => {
     }
   }
 
+  const isEqual = (obj1, obj2) => {
+    return JSON.stringify(obj1) === JSON.stringify(obj2)
+  }
+
+//Adicionar ao carrinho
   let itemToCart = {
     productname,
     quantitynumber: quantityNumber,
@@ -35,12 +45,6 @@ const ShipAndBuy = ({selectedProduct, variation, productname}) => {
       ) ? setIsOnCart(true) : setIsOnCart(false)
     }
 
-    const checkFavorites = () => {
-      currentUser.favorites.find(item => 
-      item.productname === selectedProduct.name
-      ) ? setIsFavorite(true) : setIsFavorite(false)
-    }
-
     const addToCart = () => {
       if (currentUser) {
         if (!currentUser.cart) {
@@ -50,22 +54,74 @@ const ShipAndBuy = ({selectedProduct, variation, productname}) => {
         currentUser.cart.push(itemToCart)
         setCartItems(currentUser.cart)
       
-        updateCart()
+        updateUser(currentUser)
       }
     }
 
-    const updateCart = async () => {
+//Favoritos
+    const checkFavorites = () => {
+        const isFav = favItems.some(item => 
+        item.productname === selectedProduct.name
+      )
+      setIsFavorite(isFav)
+    }
+
+    const addToFavorites = () => {
+      if (currentUser) {
+        const favItem = {
+          productname: selectedProduct.name
+        }
+        if (!currentUser.favorite_products) {
+          currentUser.favorite_products([])
+        }
+        currentUser.favorite_products.push(favItem)
+        setFavItems(currentUser.favorite_products)
+
+      }
+      updateUser(currentUser)
+      setIsFavorite(true)
+    }
+
+    const removeFromFavorites = (name) => {
+      let newFavs = favItems    
+      let itemIndex = favItems.findIndex(item =>
+          item.productname === name
+      )
+      setFavItems(newFavs.splice(itemIndex, 1))
+      setIsFavorite(false)
+      updateUser(currentUser)
+    }
+
+    const updateUser = async (usr) => {
 
         try {
-            const res = await fetchApi.put(`/users/${thisUser._id}`, currentUser)
+          if(!isEqual(usr.favorite_products, thisUser.favorite_products)) {
+            const res = await fetchApi.put(`/users/${thisUser._id}`, usr)
 
             if(res.status === 200) {
-                console.log('Produto adicionado')
+                console.log('Produto favoritado')
+            }
+          }
+          if(!isEqual(usr.cart, thisUser.cart)) {
+            const res = await fetchApi.put(`/users/${thisUser._id}`, usr)
+
+            if(res.status === 200) {
+                console.log('Produto Adicionado')
                 setIsOnCart(true)
             }
+          }
+
+            
         } catch (error) {
             console.log(error.response.data.msg, 'error')
         }
+    }
+
+//Copiar Link
+    const shareProduct = () => {
+      const url = window.location.href
+      navigator.clipboard.writeText(url)
+      setIsPasted(true)
     }
 
             useEffect(() => {
@@ -91,12 +147,15 @@ const ShipAndBuy = ({selectedProduct, variation, productname}) => {
         }, [thisUser])
 
         useEffect(() => {
-          if(currentUser && currentUser.cart) {
+          if(currentUser) {
             setCartItems(currentUser.cart)
+              setFavItems(currentUser.favorite_products)
+            
 
             checkCart()
+            checkFavorites()
         }
-        }, [currentUser, selectedProduct, variation, cartItems])
+        }, [currentUser, selectedProduct, variation, cartItems, favItems])
 
   return (
     <div className='buy-product d-flex flex-column h-100 justify-content-between col-5'>
@@ -165,14 +224,34 @@ const ShipAndBuy = ({selectedProduct, variation, productname}) => {
       </div>
 
       <div className="options d-flex">
-        <div className="share-product d-flex h-100 align-items-center justify-content-center">
-            <i className="bi bi-share-fill"></i>
-            <span>Compartilhar</span>
-        </div>
-        <div className="fav-product d-flex h-100 align-items-center justify-content-center">
-            <i className="bi bi-heart"></i>
-            <span>Favoritar</span>
-        </div>
+        <button 
+        className="share-product d-flex h-100 align-items-center justify-content-center"
+        onClick={shareProduct}
+        >
+          {
+            isPasted ? (
+              <span className='text-success'>Link copiado!</span>
+            ) : (
+            <>
+              <i className="bi bi-share-fill"></i>
+              <span>Compartilhar</span>
+            </>
+            )
+          }
+        </button>
+        <button 
+        className="fav-product d-flex h-100 align-items-center justify-content-center"
+        onClick={() => {
+          if(isFavorite) {
+            removeFromFavorites(selectedProduct.name) 
+           } else {  
+            addToFavorites()
+          }}
+        }
+        >
+            <i className={`${isFavorite? "bi bi-heart-fill" : "bi bi-heart"}`}></i>
+            <span>{`${isFavorite? "Favoritado" : "Favoritar"}`}</span>
+        </button>
       </div>
     </div>
   )
