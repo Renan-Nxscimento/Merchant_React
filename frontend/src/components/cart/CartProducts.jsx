@@ -2,14 +2,34 @@ import { useContext, useEffect, useState } from 'react'
 import { UserContext } from '../../App'
 import fetchApi from '../../axios/config'
 import { Link } from 'react-router-dom'
+import { ValuesContext } from '../../routes/Cart'
 
 const CartProducts = () => {
     const {thisUser} = useContext(UserContext)
+    const {setValues, shipping, cartItems, setCartItems} = useContext(ValuesContext)
 
     const [currentUser, setCurrentUser] = useState()
     const [users, setUsers] = useState([])
-    const [cartItems, setCartItems] = useState([])
     const [products, setProducts] = useState([])
+
+    let somePrices = cartItems.map(item => {
+        const matchingProduct = products.find(prod => prod.name === item.productname)
+        if(matchingProduct) {
+            return matchingProduct.price * item.quantitynumber
+        } else {
+            return null
+        }
+    }).filter(price => price !== null)
+
+    let productsValue = 0
+    for(let i = 0; i < somePrices.length; i++) {
+        productsValue += somePrices[i]
+    }
+
+    const handleSommatorium = () => {
+        let total = productsValue + shipping
+        setValues(total.toFixed(2).replace(".", ","))
+    }
 
     const deleteFromCart = (itemName, spec) => {
         let itemToRemove = itemName
@@ -124,6 +144,10 @@ const CartProducts = () => {
           loadApi()
         }, [thisUser])
 
+        useEffect(() => {
+            handleSommatorium()
+        },[cartItems, shipping])
+
         if(!thisUser) return <p className='loading'>Carregando...</p>
 
   return (
@@ -148,6 +172,9 @@ const CartProducts = () => {
                     </Link>
                     <span>
                         {item.variation}
+                    </span>
+                    <span className='cart-item-price align-self-center' onClick={handleSommatorium}>
+                        R${matchingProduct ? matchingProduct.price.toFixed(2).replace(".", ",") : null}
                     </span>
                 </div>   
             </div>

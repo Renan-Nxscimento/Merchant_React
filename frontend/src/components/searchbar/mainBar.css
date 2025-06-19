@@ -114,5 +114,6 @@
     border-radius: 50%;
     color: #242429;
     margin-right: 5px;
+    transition: .3s;
 }
  
