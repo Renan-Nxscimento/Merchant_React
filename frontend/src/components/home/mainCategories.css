@@ -36,12 +36,21 @@
 .categorie {
     justify-content: center;
     align-items: center;
-    gap: 20px;
     color: #757583;
     text-transform: uppercase;
     font-weight: 700;
     letter-spacing: 1px;
     font-size: 14px;
+}
+
+.categorie a {
+    gap: 20px;
+    color: #757583;
+    transition: all .3s;
+}
+
+.categorie a:hover {
+    color: #008cff;
 }
 
 .categorie-image {

@@ -68,6 +68,21 @@ const router = createBrowserRouter([
       },{
         path: "/Motorola",
         element: <ProductsSelection selection={'Motorola'}/>,
+      },{
+        path: "/Smartphones",
+        element: <ProductsSelection selection={'Smartphones'}/>,
+      },{
+        path: "/Smartwatches",
+        element: <ProductsSelection selection={'Smartwatches'}/>,
+      },{
+        path: "/Chargers",
+        element: <ProductsSelection selection={'Chargers'}/>,
+      },{
+        path: "/Powerbanks",
+        element: <ProductsSelection selection={'Powerbanks'}/>,
+      },{
+        path: "/Holders",
+        element: <ProductsSelection selection={'Holders'}/>,
       },
       {
         path: "/user",

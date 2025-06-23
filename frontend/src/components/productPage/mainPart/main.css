@@ -114,6 +114,10 @@ h3 {
     justify-content: space-between;
 }
 
+.first-arrow {
+    margin-left: auto;
+}
+
 .arrow {
     display: flex;
     align-items: center;

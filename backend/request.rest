@@ -2,14 +2,13 @@ POST http://localhost:3000/api/products
 Content-Type: application/json
 
 {
-            "_id": 3,
-            "name": "Mi 14t Pro",
+            "_id": 4,
+            "name": "Mi Band 9",
             "rating": 3,
-            "reviews": 6,
             "sales": 28,
-            "category": "smartphones",
+            "category": "smartwatches",
             "brand": "Xiaomi",
-            "seller": "The man who sold the World",
+            "seller": "Xiaomi Global",
             "price": 4999.12,
             "offer": "",
             "latest": true,
@@ -19,64 +18,50 @@ Content-Type: application/json
             ,
             "variations": [
                 {
-                    "variation": "256GB 12GB",
+                    "variation": "Preto",
                     "order": 1
-                },
-                {
-                    "variation": "512GB 12GB",
-                    "order": 2
-                },
-                {
-                    "variation": "1TB 12GB",
-                    "order": 3
                 }
             ],
             "comments": [
                 {
                     "_id": 1,
                     "rating": 5,
-                    "variation": "256GB 12GB",
+                    "variation": "Preto",
                     "customer": "Big Boss",
                     "date": "11 Jul. 2007",
-                    "text": "Foto do ROG 5. Em relação ao ROG 5, este ROG 8 possui qualidade de alto falante inferior, qualidade de camera superior, mas o que me surpreende é a diferença de peso O ROG 8 é absurdamente mais leve que o ROG 5. Demoraram 7 dias para postar o produto mas assim que postaram chegou no dia seguinte",
-                    "images": [
-                        {
-                            "src": "https://static.wikia.nocookie.net/metalgear/images/6/64/Img_mgsv_idroid.jpg/revision/latest/scale-to-width-down/474?cb=20230106043946&path-prefix=pt"
-                        }
-                    ]
                 },
                 {
                     "_id": 2,
                     "rating": 5,
-                    "variation": "256GB 12GB",
+                    "variation": "Preto",
                     "customer": "Big Boss",
                     "date": "11 Jul. 2007"
                 },
                 {
                     "_id": 3,
                     "rating": 4,
-                    "variation": "256GB 12GB",
+                    "variation": "Preto",
                     "customer": "Big Boss",
                     "date": "11 Jul. 2007"
                 },
                 {
                     "_id": 4,
                     "rating": 2,
-                    "variation": "256GB 12GB",
+                    "variation": "Preto",
                     "customer": "Big Boss",
                     "date": "11 Jul. 2007"
                 },
                 {
                     "_id": 5,
                     "rating": 1,
-                    "variation": "256GB 12GB",
+                    "variation": "Preto",
                     "customer": "Big Boss",
                     "date": "11 Jul. 2007"
                 },
                 {
                     "_id": 6,
                     "rating": 1,
-                    "variation": "256GB 12GB",
+                    "variation": "Preto",
                     "customer": "Big Boss",
                     "date": "11 Jul. 2007"
                 }

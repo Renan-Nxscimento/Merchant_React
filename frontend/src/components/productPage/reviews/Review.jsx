@@ -1,59 +1,86 @@
-import React from 'react'
+import { useContext, useState } from 'react'
 import Stars from '../../stars/Stars'
-
-import './review.css'
-
 import user from '../../../../public/assets/user.png'
-
+import { FilterReviewContext } from './Overall'
+import './review.css'
+import AllReviews from './AllReviews'
 
 const Review = ({selectedProduct}) => {
     const reviews = selectedProduct.comments
+    const {filter} = useContext(FilterReviewContext)
+    const [showAll, setShowAll] = useState(false)
+
+    const handleFilter = (review) => {
+        if (filter) {
+            if (filter === "Images" && review.images && review.images.length > 0) {
+                return true;
+            }
+            if (!Number.isNaN(Number(filter)) && review.rating === Number(filter)) {
+                return true;
+            }
+            return false
+        } else {
+            return true
+        }
+    }
+
+    const filtredReviews = reviews.filter(handleFilter)
+    const displayedReviews = filtredReviews.slice(0, 6)
 
   return (
     <div className='reviews-container d-flex w-100 flex-wrap align-items-center justify-content-center'>
-        {reviews.map(review => (
-                review.rating &&
-                 review.rating !== ""? (
-                    <div key={review._id} className="review d-flex mb-auto">
-                        <div className="r-user d-flex flex-column h-100">
-                            <div className="r-user-image">
-                                <img src={user} alt=""/>
-                            </div>
-                        </div>
-                        <div className="r-content d-flex flex-column w-100">
-                            <div className="r-stars">
-                                <Stars product={review}/>
-                            </div>
-                            <div className="r-variation">
-                                Versão: {review.variation}
-                            </div>
-
-                            <div className="r-text">
-                                <p>{review.text}</p>
-                            </div>
-                            {
-                                review.images ? (
-                                    <div className="r-images d-flex">
-                                        {review.images.map(image => (
-                                            <div key={image.order} className="r-image">
-                                                <img src={image.src} alt="" />
-                                            </div>
-                                        ))}
-                                    </div>
-                                ) : null
-                            }
-                            <div className="r-end d-flex mt-auto w-100">
-                                <span>{review.customer}</span>
-                                <span>|</span>
-                                <span>{review.date}</span>
-                                <i className="bi bi-hand-thumbs-up"></i>
-                            </div>
+        {displayedReviews.map(review => (
+                <div key={review._id} className="review d-flex mb-auto">
+                    <div className="r-user d-flex flex-column h-100">
+                        <div className="r-user-image">
+                            <img src={user} alt="" />
                         </div>
                     </div>
-                    ) 
-                : null
-            ))}
-    </div>
+                    <div className="r-content d-flex flex-column w-100">
+                        <div className="r-stars">
+                            <Stars product={review} />
+                        </div>
+                        <div className="r-variation">
+                            Versão: {review.variation}
+                        </div>
+                        <div className="r-text">
+                            <p>{review.text}</p>
+                        </div>
+                        {review.images && (
+                            <div className="r-images d-flex">
+                                {review.images.map(image => (
+                                    <div key={image.order} className="r-image">
+                                        <img src={image.src} alt="" />
+                                    </div>
+                                ))}
+                            </div>
+                        )}
+                        <div className="r-end d-flex mt-auto w-100">
+                            <span>{review.customer}</span>
+                            <span>|</span>
+                            <span>{review.date}</span>
+                            <i className="bi bi-hand-thumbs-up"></i>
+                        </div>
+                    </div>
+                </div>
+            ))              
+            }
+            {
+                displayedReviews.length >= 6? (
+                    <button 
+                    onClick={() => setShowAll(true)}
+                    className='showa-btn'
+                    >
+                    Mostrar mais reviews
+                    </button>
+                ) : null
+            }
+            {
+                showAll ? (
+                    <AllReviews moreReviews={filtredReviews} userImage={user} setShowAll={setShowAll}></AllReviews>
+                ) : null
+            }
+        </div>
   )
 }
 

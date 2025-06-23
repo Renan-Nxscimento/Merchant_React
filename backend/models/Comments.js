@@ -21,6 +21,9 @@ const commentsSchema = new Schema({
         type: String,
         required: true
     },
+    user_image: {
+        type: String
+    },
     date: {
         type: String,
         required: true

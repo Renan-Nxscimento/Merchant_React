@@ -21,6 +21,8 @@ const Fullscreen = ({selectedProduct}) => {
       const nextImage = () => {
         if (imageCounter < 5) {
           setImageCounter((prevImageCounter) => prevImageCounter + 1)
+        } if (imageCounter === 5) {
+          setImageCounter(1)
         }
       }
 
@@ -38,6 +40,8 @@ const Fullscreen = ({selectedProduct}) => {
             <div className="f-content">
                 <img src={`${locatedImage ? locatedImage.src : mainImage}`} alt="" id='fullImago'/>
                 <div className="arrows d-flex align-items-center justify-content-between">
+                  {
+                    imageCounter === 1 ? null : (
                     <button 
                     className="arrow" 
                     id="previousImage"
@@ -45,13 +49,19 @@ const Fullscreen = ({selectedProduct}) => {
                     >
                       <i className="bi bi-arrow-left-circle-fill"></i>
                     </button>
+                    )
+                  }
+                  {
+                    imageCounter === 5 ? null : (
                     <button 
-                    className="arrow" 
+                    className={`arrow ${imageCounter === 1 ? "first-arrow" : ""}`} 
                     id="nextImage"
                     onClick={nextImage}
                     >
                       <i className="bi bi-arrow-right-circle-fill"></i>
                     </button>
+                    )
+                  } 
                 </div>
             </div>
         </div>

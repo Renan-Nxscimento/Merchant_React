@@ -23,11 +23,6 @@ const productSchema = new Schema(
         min: 1,
         max: 5
     },
-    reviews: {
-        type: Number,
-        required: true,
-        min: 0
-    },
     sales: {
         type: Number,
         required: true

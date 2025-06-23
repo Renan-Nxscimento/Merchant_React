@@ -15,4 +15,9 @@ const brandsRouter = require('./brands')
 
 router.use('/', brandsRouter)
 
+//Categories router
+const categoriesRouter = require('./categories')
+
+router.use('/', categoriesRouter)
+
 module.exports = router

@@ -1,4 +1,4 @@
-import React from 'react'
+import { createContext, useState } from 'react'
 import Images from './Images'
 
 import './main.css'
@@ -9,10 +9,13 @@ import Details from '../details/Details'
 import Overall from '../reviews/Overall'
 import MoreProducts from '../otherProducts/MoreProducts'
 
+export const OverallContext = createContext()
+
 const Main = ({refreshMainImago, selectedProduct}) => {
+  const [overall, setOverall] = useState()
   
   return (
-    <>
+    <OverallContext.Provider value={{overall, setOverall}}>
         <main className="main-product d-flex w-100">
           <Images refreshMainImago={refreshMainImago} selectedProduct={selectedProduct}/>
           <ProductInfo selectedProduct={selectedProduct}/>
@@ -29,7 +32,7 @@ const Main = ({refreshMainImago, selectedProduct}) => {
         
         <Overall selectedProduct={selectedProduct}/>
         <MoreProducts thisProducts={selectedProduct}/>
-    </>
+    </OverallContext.Provider>
   )
 }
 

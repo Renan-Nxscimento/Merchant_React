@@ -1,22 +1,19 @@
-import { useState } from 'react'
-
+import { useContext, useEffect, useState } from 'react'
 import Stars from '../../stars/Stars'
 import ShipAndBuy from './ShipAndBuy'
-
 import './productInfo.css'
+import { OverallContext } from './Main'
 
 const ProductInfo = ({selectedProduct}) => {
-
     const discount = Math.floor((selectedProduct.offer * selectedProduct.price ) / 100 ).toFixed(2)
     const currentPrice = selectedProduct.price - discount
-
     const [currentVariation, setCurrentVariation] = useState()
+    const [selectedVariation, setSelectedVariation] = useState()
+    const {overall, setOverall} = useContext(OverallContext)
 
         if (!currentVariation) {
         setCurrentVariation(selectedProduct.variations[0].variation)
         }
-
-    const [selectedVariation, setSelectedVariation] = useState()
 
         if (!selectedVariation) {
         setSelectedVariation(1)
@@ -26,6 +23,23 @@ const ProductInfo = ({selectedProduct}) => {
         setCurrentVariation(name)
         setSelectedVariation(number)
     }
+
+    const getOverall = (num1, num2) => {
+        let result = num1 / num2
+        setOverall(result.toFixed(1))
+    }
+
+    const somaReviews =  selectedProduct.comments.reduce((accumulator, comment) => {
+        return accumulator + comment.rating
+    }, 0)
+
+    useEffect(() => {
+        if(selectedProduct) {
+          getOverall(somaReviews, selectedProduct.comments.length)
+
+        }
+    }, [selectedProduct])
+
 
   return (
     <div className='product-content d-flex w-100'>
@@ -84,8 +98,8 @@ const ProductInfo = ({selectedProduct}) => {
 
         <div className="product-rating d-flex align-items-center">
             <Stars product={selectedProduct}/>
-            <span id="ratingNumber">{selectedProduct.rating.toFixed(1)}</span>
-            <span id="reviewCount">{selectedProduct.reviews} Reviews |</span>
+            <span id="ratingNumber">{overall}</span>
+            <span id="reviewCount">{selectedProduct.comments.length} Reviews |</span>
             <span id="sellsCount">{selectedProduct.sales} Vendidos</span>
         </div>
 
