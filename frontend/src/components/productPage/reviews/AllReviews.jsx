@@ -20,23 +20,44 @@ const AllReviews = ({moreReviews, userImage, setShowAll}) => {
             ></i>
             <div className="rating-filter d-flex justify-content-between w-100 align-items-center">
                 <button 
-                className='filter-btn d-flex align-items-center' onClick={() => setFilter('')}>Todos</button>
-                <button className='filter-btn d-flex align-items-center' onClick={() => setFilter('Images')}>
+                className={`filter-btn d-flex align-items-center ${filter === "" ? "active-filter" : ""}`} 
+                onClick={() => setFilter('')}>
+                  Todos
+                </button>
+                <button 
+                className={`filter-btn d-flex align-items-center ${filter === "Images" ? "active-filter" : ""}`}
+                onClick={() => setFilter('Images')}
+                >
                     <i className="bi bi-image"> Com mídia</i>
                 </button>
-                <button className='filter-btn d-flex align-items-center'onClick={() => setFilter(5)}>
+                <button 
+                className={`filter-btn d-flex align-items-center ${filter === 5 ? "active-filter" : ""}`}
+                onClick={() => setFilter(5)}
+                >
                   5 Estrelas
                 </button>
-                <button className='filter-btn d-flex align-items-center' onClick={() => setFilter(4)}>
+                <button 
+                className={`filter-btn d-flex align-items-center ${filter === 4 ? "active-filter" : ""}`} 
+                onClick={() => setFilter(4)}
+                >
                   4 Estrelas
                 </button>
-                <button className='filter-btn d-flex align-items-center' onClick={() => setFilter(3)}>
+                <button 
+                className={`filter-btn d-flex align-items-center ${filter === 3 ? "active-filter" : ""}`} 
+                onClick={() => setFilter(3)}
+                >
                   3 Estrelas
                 </button>
-                <button className='filter-btn d-flex align-items-center' onClick={() => setFilter(2)}>
+                <button 
+                className={`filter-btn d-flex align-items-center ${filter === 2 ? "active-filter" : ""}`} 
+                onClick={() => setFilter(2)}
+                >
                   2 Estrelas
                 </button>
-                <button className='filter-btn d-flex align-items-center' onClick={() => setFilter(1)}>
+                <button 
+                className={`filter-btn d-flex align-items-center ${filter === 1 ? "active-filter" : ""}`} 
+                onClick={() => setFilter(1)}
+                >
                   1 Estrelas
                 </button>
             </div>

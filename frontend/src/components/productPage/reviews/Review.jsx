@@ -1,14 +1,28 @@
-import { useContext, useState } from 'react'
+import { createContext, useContext, useState } from 'react'
 import Stars from '../../stars/Stars'
 import user from '../../../../public/assets/user.png'
 import { FilterReviewContext } from './Overall'
 import './review.css'
 import AllReviews from './AllReviews'
+import ReviewFullscreen from './ReviewFullscreen'
+
+export const ReviewFullscreenContext = createContext()
 
 const Review = ({selectedProduct}) => {
     const reviews = selectedProduct.comments
     const {filter} = useContext(FilterReviewContext)
     const [showAll, setShowAll] = useState(false)
+    const [reviewFullscreen, setReviewFullscreen] = useState(false)
+    const [selectedReview, setSelectedReview] = useState(null)
+
+    const toggleFullscreen = () => {
+      setReviewFullscreen(prevState => !prevState)
+    }
+
+    const handleImageClick = (review) => {
+        setSelectedReview(review)
+        setReviewFullscreen(true)
+    }
 
     const handleFilter = (review) => {
         if (filter) {
@@ -47,13 +61,22 @@ const Review = ({selectedProduct}) => {
                             <p>{review.text}</p>
                         </div>
                         {review.images && (
-                            <div className="r-images d-flex">
-                                {review.images.map(image => (
-                                    <div key={image.order} className="r-image">
-                                        <img src={image.src} alt="" />
-                                    </div>
-                                ))}
-                            </div>
+                            <ReviewFullscreenContext.Provider value={{reviewFullscreen, setReviewFullscreen}}>
+                                <div className="r-images d-flex">
+                                    {review.images.map(image => (
+                                        <div 
+                                        key={image.order} 
+                                        className="r-image"
+                                        onClick={() => handleImageClick(review)}
+                                        >
+                                            <img src={image.src} alt="" />
+                                        </div>
+                                    ))}
+                                </div>
+                                {reviewFullscreen && selectedReview === review && (
+                                    <ReviewFullscreen review={review}/>
+                                )}
+                            </ReviewFullscreenContext.Provider>
                         )}
                         <div className="r-end d-flex mt-auto w-100">
                             <span>{review.customer}</span>
@@ -62,6 +85,7 @@ const Review = ({selectedProduct}) => {
                             <i className="bi bi-hand-thumbs-up"></i>
                         </div>
                     </div>
+
                 </div>
             ))              
             }

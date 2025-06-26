@@ -7,7 +7,7 @@ import Review from './Review'
 export const FilterReviewContext = createContext()
 
 const Overall = ({selectedProduct}) => {
-  const [filter, setFilter] = useState()
+  const [filter, setFilter] = useState("")
 
   return (
     <section id='reviews' className='d-flex flex-column w-100'>

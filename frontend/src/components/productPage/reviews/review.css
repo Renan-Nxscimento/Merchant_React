@@ -119,3 +119,8 @@
 .all-reviews-container .review{
     width: 45%;
 }
+
+.active-filter {
+    border: 1px solid #008cff;
+    color: #008cff;
+}

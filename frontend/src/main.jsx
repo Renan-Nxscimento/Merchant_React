@@ -75,14 +75,14 @@ const router = createBrowserRouter([
         path: "/Smartwatches",
         element: <ProductsSelection selection={'Smartwatches'}/>,
       },{
-        path: "/Chargers",
-        element: <ProductsSelection selection={'Chargers'}/>,
+        path: "/Carregadores",
+        element: <ProductsSelection selection={'Carregadores'}/>,
       },{
         path: "/Powerbanks",
         element: <ProductsSelection selection={'Powerbanks'}/>,
       },{
-        path: "/Holders",
-        element: <ProductsSelection selection={'Holders'}/>,
+        path: "/Fones",
+        element: <ProductsSelection selection={'Fones'}/>,
       },
       {
         path: "/user",
