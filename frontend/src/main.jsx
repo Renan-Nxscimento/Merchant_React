@@ -94,7 +94,7 @@ const router = createBrowserRouter([
       },
       {
         path: "/favorites",
-        element: <div>favoritos</div>,
+        element: <ProductsSelection selection={'Favoritos'}/>,
       },
       {
         path: "/product/:id",

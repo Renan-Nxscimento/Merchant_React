@@ -1,14 +1,22 @@
-import { useContext } from "react"
+import { useContext, useState } from "react"
 import { FilterReviewContext } from "./Overall"
 import "./review.css"
 import Stars from "../../stars/Stars"
+import { ReviewFullscreenContext } from "./Review"
+import ReviewFullscreen from "./ReviewFullscreen"
 
 const AllReviews = ({moreReviews, userImage, setShowAll}) => {
-
+    const {reviewFullscreen, setReviewFullscreen} = useContext(ReviewFullscreenContext)
     const {filter, setFilter} = useContext(FilterReviewContext)
+    const [selectedReview, setSelectedReview] = useState(null)
 
     const toggleMoreReviews = () => {
       setShowAll(prevState => !prevState)
+    }
+
+    const handleImageClick = (review) => {
+        setSelectedReview(review)
+        setReviewFullscreen(true)
     }
 
   return (
@@ -80,13 +88,22 @@ const AllReviews = ({moreReviews, userImage, setShowAll}) => {
                                   <p>{review.text}</p>
                               </div>
                               {review.images && (
+                                <>
                                   <div className="r-images d-flex">
                                       {review.images.map(image => (
-                                          <div key={image.order} className="r-image">
+                                          <div 
+                                          key={image.order} 
+                                          className="r-image"
+                                          onClick={() => handleImageClick(review)}
+                                          >
                                               <img src={image.src} alt="" />
                                           </div>
                                       ))}
                                   </div>
+                                  {reviewFullscreen && selectedReview === review && (
+                                    <ReviewFullscreen review={review}/>
+                                  )}
+                                </>
                               )}
                               <div className="r-end d-flex mt-auto w-100">
                                   <span>{review.customer}</span>

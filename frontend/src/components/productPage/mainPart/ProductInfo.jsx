@@ -83,12 +83,14 @@ const ProductInfo = ({selectedProduct}) => {
             <div className="parcels d-flex w-100 align-items-center">
                 <i className="bi bi-calendar2-check"></i>
                 <span>Em até 12x de {parseFloat(currentPrice / 12).toFixed(2).replace('.', ',')}</span>
-                <i className="bi bi-caret-right-fill"></i>
             </div>
             <div className="vouchers d-flex w-100 align-items-center">
                 <i className="bi bi-ticket-detailed-fill"></i>
                 <span>Cupons para pedidos a partir de R$500</span>
-                <i className="bi bi-caret-right-fill"></i>
+                <i 
+                className="bi bi-caret-right-fill"
+                onClick={() => {window.location.href=`/vouchers`}}
+                ></i>
             </div>
         </div>
 
@@ -123,7 +125,11 @@ const ProductInfo = ({selectedProduct}) => {
 
         <div className="slash"></div>
       </div>
-      <ShipAndBuy selectedProduct={selectedProduct} variation={currentVariation} productname={selectedProduct.name}/>
+      <ShipAndBuy 
+      selectedProduct={selectedProduct} 
+      variation={currentVariation} 
+      productname={selectedProduct.name}
+      />
     </div>
   )
 }

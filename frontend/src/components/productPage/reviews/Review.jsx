@@ -15,10 +15,6 @@ const Review = ({selectedProduct}) => {
     const [reviewFullscreen, setReviewFullscreen] = useState(false)
     const [selectedReview, setSelectedReview] = useState(null)
 
-    const toggleFullscreen = () => {
-      setReviewFullscreen(prevState => !prevState)
-    }
-
     const handleImageClick = (review) => {
         setSelectedReview(review)
         setReviewFullscreen(true)
@@ -42,6 +38,7 @@ const Review = ({selectedProduct}) => {
     const displayedReviews = filtredReviews.slice(0, 6)
 
   return (
+    <ReviewFullscreenContext.Provider value={{reviewFullscreen, setReviewFullscreen}}>
     <div className='reviews-container d-flex w-100 flex-wrap align-items-center justify-content-center'>
         {displayedReviews.map(review => (
                 <div key={review._id} className="review d-flex mb-auto">
@@ -61,7 +58,7 @@ const Review = ({selectedProduct}) => {
                             <p>{review.text}</p>
                         </div>
                         {review.images && (
-                            <ReviewFullscreenContext.Provider value={{reviewFullscreen, setReviewFullscreen}}>
+                            <>
                                 <div className="r-images d-flex">
                                     {review.images.map(image => (
                                         <div 
@@ -76,7 +73,7 @@ const Review = ({selectedProduct}) => {
                                 {reviewFullscreen && selectedReview === review && (
                                     <ReviewFullscreen review={review}/>
                                 )}
-                            </ReviewFullscreenContext.Provider>
+                            </>
                         )}
                         <div className="r-end d-flex mt-auto w-100">
                             <span>{review.customer}</span>
@@ -104,7 +101,8 @@ const Review = ({selectedProduct}) => {
                     <AllReviews moreReviews={filtredReviews} userImage={user} setShowAll={setShowAll}></AllReviews>
                 ) : null
             }
-        </div>
+    </div>
+    </ReviewFullscreenContext.Provider>
   )
 }
 

@@ -71,8 +71,6 @@ const User = () => {
 
               const abbreviatedName = abbreviate(name)
 
-              const secondName = second(name)
-
 
   return (
     <div className="user-header d-flex dropdown">
@@ -110,13 +108,13 @@ const User = () => {
                 thisUser.email == defaultUser.email ? null : (
                 <>
                     <li>
-                        <a 
-                        href="users.profile.html"
+                        <Link 
+                        to={`/Favorites`}
                         className='dropdown-item d-flex align-items-center'
                         >
                             <i className="bi bi-heart"></i>
                             <span>Favoritos</span>
-                        </a>
+                        </Link>
                     </li>
                     <li>
                         <hr className="dropdown-divider" />

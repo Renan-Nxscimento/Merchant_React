@@ -18,6 +18,10 @@ const ShipAndBuy = ({selectedProduct, variation, productname}) => {
 
   const [isPasted, setIsPasted] = useState(false)
 
+  const defaultUser = {
+          email: "notregistred@example.com",
+      }
+
   const raiseQuantity = () => {
     setQuantityNumber(quantityNumber + 1)
   }
@@ -150,12 +154,13 @@ const ShipAndBuy = ({selectedProduct, variation, productname}) => {
           if(currentUser) {
             setCartItems(currentUser.cart)
               setFavItems(currentUser.favorite_products)
+              console.log(thisUser)
             
 
             checkCart()
             checkFavorites()
         }
-        }, [currentUser, selectedProduct, variation, cartItems, favItems])
+        }, [currentUser, selectedProduct, variation, cartItems, favItems, thisUser])
 
   return (
     <div className='buy-product d-flex flex-column h-100 justify-content-between col-5'>
@@ -242,6 +247,9 @@ const ShipAndBuy = ({selectedProduct, variation, productname}) => {
         <button 
         className="fav-product d-flex h-100 align-items-center justify-content-center"
         onClick={() => {
+          if(thisUser.email === defaultUser.email) {
+            return
+          }
           if(isFavorite) {
             removeFromFavorites(selectedProduct.name) 
            } else {  
