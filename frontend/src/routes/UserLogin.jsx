@@ -9,7 +9,7 @@ const UserLogin = () => {
   const [registring, isRegistring] = useState(false)
 
   return (
-    <div className=' login-adjust user-login flex-column d-flex align-items-center justify-content-center'>
+    <div className='login-adjust user-login flex-column d-flex align-items-center justify-content-center'>
       {
         registring? (
           <CreateUser isRegistring={isRegistring}/>

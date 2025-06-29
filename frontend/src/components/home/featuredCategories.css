@@ -16,6 +16,9 @@
     color: aliceblue;
     gap: 10px;
     text-shadow: 2px 2px 2px black, 0 0 1em black, 0 0 0.2em black;
+    background-position: right;
+    background-repeat: no-repeat;
+    background-size: contain
 }
 
 .f-categorie-content a {
@@ -32,25 +35,4 @@
 
 .f-quality {
     color: #008cff;
-}
-
-#featureOne {
-    background-image: url(../../../public/assets/images/FOXHOUND.webp);
-    background-position: right;
-    background-repeat: no-repeat;
-    background-size: contain;
-}
-
-#featureTwo {
-    background-image: url(../../../public/assets/images/FOXHOUND.webp);
-    background-position: right;
-    background-repeat: no-repeat;
-    background-size: contain;
-}
-
-#featureThree {
-    background-image: url(../../../public/assets/images/FOXHOUND.webp);
-    background-position: right;
-    background-repeat: no-repeat;
-    background-size: contain;
 }

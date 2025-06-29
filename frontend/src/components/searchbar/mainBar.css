@@ -136,15 +136,14 @@
 
 .search-results {
     position: absolute;
-    top: 26px;
+    top: 32px;
     width: 100%;
     background-color: #f4f4f4;
     padding: 5px 20px;
     max-height: 50vh;
     overflow-y: auto;
     outline: 2px solid #b6c6d3;
-    border-bottom-left-radius: 5px;
-    border-bottom-right-radius: 5px;
+    border-radius: 5px;
 }
 
 .search-results .slash:last-child {
@@ -154,6 +153,15 @@
 .result {
     padding-top: 10px;
     padding-bottom: 10px;
+}
+
+.result a {
+    color: #506372;
+    font-size: 18px;
+}
+
+.result a:hover {
+    color: #006dc7;
 }
  
 .result img {

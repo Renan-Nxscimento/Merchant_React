@@ -13,7 +13,7 @@ const Cart = () => {
   const [cartItems, setCartItems] = useState([])
 
   return (
-    <div className='ocelot'>
+    <div className='adjust-screen'>
         <section id='cartSection' className='d-flex flex-column align-items-center'>
             <h3 className="big-text">carrinho</h3>
             <ValuesContext.Provider value={{values, setValues, shipping, setShipping, cartItems, setCartItems}}>

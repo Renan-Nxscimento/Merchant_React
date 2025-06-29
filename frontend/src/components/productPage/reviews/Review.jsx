@@ -87,7 +87,7 @@ const Review = ({selectedProduct}) => {
             ))              
             }
             {
-                displayedReviews.length >= 6? (
+                filtredReviews.length > 6? (
                     <button 
                     onClick={() => setShowAll(true)}
                     className='showa-btn'

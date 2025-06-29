@@ -1,8 +1,13 @@
-import { useContext, useState } from 'react'
+import { createContext, useContext, useEffect, useState } from 'react'
 import { ValuesContext } from '../../routes/Cart'
+import FinishPurchase from './FinishPurchase'
+
+export const FinishingContext = createContext()
 
 const ShippingValue = () => {
   const {values, shipping, setShipping, cartItems} = useContext(ValuesContext)
+
+  const [isFinishing, setIsFinishing] = useState(false)
 
   const [cep, setCep] = useState('')
   const [notFound, setNotFound] = useState(false)
@@ -108,48 +113,64 @@ const ShippingValue = () => {
     }
     
   }
+
+  useEffect(() => {
+    console.log(values)
+  }, [values])
     
   return (
-    <div className='shipping-container d-flex align-items-center justify-content-between w-100 p-4'>
-      <div className="ship-calc d-flex flex-column">
-        <span>Calcular frete:</span>
-        <form className='d-flex flex-column h-100 justify-content-between'>
-          <input 
-          type="number" 
-          name="cepNumber" 
-          id="cepNumber" 
-          placeholder='Insira seu CEP aqui'
-          onChange={(e) => setCep(e.target.value)}
-          />
-          <button 
-          className='cep-btn' 
-          type="button"
-          onClick={buscarCep}
-          >Calcular</button>
-        </form>
-      </div>
+    <FinishingContext.Provider value={{isFinishing, setIsFinishing}}>
+      <div className='shipping-container d-flex align-items-center justify-content-between w-100 p-4'>
+        <div className="ship-calc d-flex flex-column">
+          <span>Calcular frete:</span>
+          <form className='d-flex flex-column h-100 justify-content-between'>
+            <input 
+            type="number" 
+            name="cepNumber" 
+            id="cepNumber" 
+            placeholder='Insira seu CEP aqui'
+            onChange={(e) => setCep(e.target.value)}
+            />
+            <button 
+            className='cep-btn' 
+            type="button"
+            onClick={buscarCep}
+            >Calcular</button>
+          </form>
+        </div>
 
-      <div className="ship-value-n-place d-flex flex-column align-items-center">
+        <div className="ship-value-n-place d-flex flex-column align-items-center">
+          {
+            addres ? (
+              <>
+                <span>{addres.logradouro}</span>
+                <span className="ship-value">Valor do frete: R${shipping.toFixed(2).replace(".", ",")}</span>
+              </>
+            ) : null
+          }
+          {
+            notFound ? (<span className='text-danger'>CEP Incorreto.</span>) : null
+          }
+        </div>
+
+        <div className="total-value d-flex flex-column h-100 justify-content-between">
+          <span>Produtos: {cartItems.length}</span>
+          <span>Frete: R${shipping.toFixed(2).replace(".", ",")}</span>
+          <span className="total d-flex align-items-center">Total: R${values}</span>
+          <button 
+          className='finish-btn'
+          onClick={() => setIsFinishing(true)}
+          >
+            Finalizar compra
+          </button>
+        </div>
         {
-          addres ? (
-            <>
-              <span>{addres.logradouro}</span>
-              <span className="ship-value">Valor do frete: R${shipping.toFixed(2).replace(".", ",")}</span>
-            </>
+          isFinishing ? (
+            <FinishPurchase values={values}/>
           ) : null
         }
-        {
-          notFound ? (<span className='text-danger'>CEP Incorreto.</span>) : null
-        }
       </div>
-
-      <div className="total-value d-flex flex-column h-100 justify-content-between">
-        <span>Produtos: {cartItems.length}</span>
-        <span>Frete: R${shipping.toFixed(2).replace(".", ",")}</span>
-        <span className="total d-flex align-items-center">Total: R${values}</span>
-        <button className='finish-btn'>Finalizar compra</button>
-      </div>
-    </div>
+    </FinishingContext.Provider>
   )
 }
 

@@ -54,7 +54,7 @@ const ProductsSelection = ({selection}) => {
   if (!thisUser) return <p className="loading">Carregando...</p>
 
   return (
-    <>
+    <div className="adjust-screen">
         <section id='selectionSection' className='d-flex align-items-center flex-column'>
             <h3 className="big-text">{selection}</h3>
             <div className="product-selection d-flex">
@@ -129,7 +129,7 @@ const ProductsSelection = ({selection}) => {
         </section>
         <QualitiesString/>
         <FeaturedProducts/>
-    </>
+    </div>
   )
 }
 

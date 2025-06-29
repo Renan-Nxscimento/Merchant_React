@@ -22,21 +22,21 @@ const StoreReviews = () => {
               }, [])
 
   return (
-    <>
-    <section id='storeReviews' className='d-flex align-items-center flex-column'>
-        <h3 className="big-text">Feedbacks</h3>
-        {
-            reviews.map(review => (
-                <>
-                <Review key={review.id} review={review}/>
-                <div className="slash"></div>
-                </>
-            ))
-        }
-    </section>
-    <QualitiesString/>
-    <FeaturedProducts/>
-    </>
+    <div className="adjust-screen">
+      <section id='storeReviews' className='d-flex align-items-center flex-column'>
+          <h3 className="big-text">Feedbacks</h3>
+          {
+              reviews.map(review => (
+                  <>
+                  <Review key={review.id} review={review}/>
+                  <div className="slash"></div>
+                  </>
+              ))
+          }
+      </section>
+      <QualitiesString/>
+      <FeaturedProducts/>
+    </div>
   )
 }
 
