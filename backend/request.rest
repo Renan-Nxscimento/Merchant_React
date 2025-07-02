@@ -9,8 +9,8 @@ Content-Type: application/json
             "category": "smartwatches",
             "brand": "Xiaomi",
             "seller": "Xiaomi Global",
-            "price": 4999.12,
-            "offer": "",
+            "price": 328.64,
+            "offer": "27",
             "latest": true,
             "bestseller": false,
             "featured": true,
@@ -27,107 +27,106 @@ Content-Type: application/json
                     "_id": 1,
                     "rating": 5,
                     "variation": "Preto",
-                    "customer": "Big Boss",
-                    "date": "11 Jul. 2007",
+                    "customer": "Liam Smith",
+                    "customerimage": "",
+                    "date": "01 Jul. 2025",
+                    "text": "The Mi Band 9 is fantastic! It has a sleek design and tracks my workouts perfectly.",
+                    "images": [
+                        {
+                            "src": "https://example.com/mi_band_9_image.jpg",
+                            "order": 1
+                        }
+                    ]
                 },
                 {
                     "_id": 2,
-                    "rating": 5,
+                    "rating": 4,
                     "variation": "Preto",
-                    "customer": "Big Boss",
-                    "date": "11 Jul. 2007"
+                    "customer": "Emma Johnson",
+                    "date": "01 Jul. 2025",
+                    "text": "Great value for money! The battery lasts long, but I wish it had NFC."
                 },
                 {
                     "_id": 3,
-                    "rating": 4,
+                    "rating": 3,
                     "variation": "Preto",
-                    "customer": "Big Boss",
-                    "date": "11 Jul. 2007"
+                    "customer": "Noah Brown",
+                    "date": "01 Jul. 2025",
+                    "text": "It's decent, but the accuracy could be better compared to other brands."
                 },
                 {
                     "_id": 4,
                     "rating": 2,
                     "variation": "Preto",
-                    "customer": "Big Boss",
-                    "date": "11 Jul. 2007"
+                    "customer": "Olivia Davis",
+                    "date": "01 Jul. 2025",
+                    "text": "Not very satisfied. The interface is a bit confusing and lacks some features."
                 },
                 {
                     "_id": 5,
                     "rating": 1,
                     "variation": "Preto",
-                    "customer": "Big Boss",
-                    "date": "11 Jul. 2007"
+                    "customer": "James Wilson",
+                    "date": "01 Jul. 2025",
+                    "text": "Very disappointed. The watch stopped syncing after a week."
                 },
                 {
                     "_id": 6,
                     "rating": 1,
                     "variation": "Preto",
-                    "customer": "Big Boss",
-                    "date": "11 Jul. 2007"
+                    "customer": "Sophia Martinez",
+                    "date": "01 Jul. 2025",
+                    "text": "Terrible experience. Would not recommend."
                 }
             ],
             "images": [
                 {
-                    "src": "https://pbs.twimg.com/media/BkqjX6ICIAAU_iB.jpg",
+                    "src": "https://renan-nxscimento.github.io/Merchant_E-commerce/img/watches/mband9.png",
                     "order": 1
                 },
                 {
-                    "src": "https://assetsio.gnwcdn.com/mgs-v-sells-6m-pushes-konami-digital-profits-up-by-250-percent-1454068524241.jpg?width=1600&height=900&fit=crop&quality=100&format=png&enable=upscale&auto=webp",
+                    "src": "https://renan-nxscimento.github.io/Merchant_E-commerce/img/watches/AltImgs/miband9/alt1.webp",
                     "order": 2
                 },
                 {
-                    "src": "https://meups.com.br/wp-content/uploads/2022/10/Metal-gear-Solid-MGS.jpg",
+                    "src": "https://renan-nxscimento.github.io/Merchant_E-commerce/img/watches/AltImgs/miband9/alt2.webp",
                     "order": 3
                 },
                 {
-                    "src": "https://planetagracza.pl/wp-content/uploads/2015/08/MGS-V-The-Phantom-Pain.jpg",
+                    "src": "https://renan-nxscimento.github.io/Merchant_E-commerce/img/watches/AltImgs/miband9/alt3.webp",
                     "order": 4
-                },
-                {
-                    "src": "https://gamehall.com.br/wp-content/uploads/2015/08/Metal-Gear-Solid-V-The-Phantom-Pain-Control-room-PS4.jpg",
-                    "order": 5
                 }
             ],
             "details": [
                 {
-                    "detail": "Capacidade",
+                    "detail": "Capacidade da bateria",
                     "order": 1,
-                    "spec": 256
+                    "spec": "233mAh"
                 },
                 {
-                    "detail": "Memória RAM",
+                    "detail": "Possui câmera",
                     "order": 2,
-                    "spec": "12GB/16GB"
+                    "spec": "Não"
                 },
                 {
-                    "detail": "Câmera",
+                    "detail": "Material da pulseira",
                     "order": 3,
-                    "spec": "50MP"
-                },
-                {
-                    "detail": "Câmera frontal",
-                    "order": 4,
-                    "spec": "12MP"
-                },
-                {
-                    "detail": "Processador",
-                    "order": 5,
-                    "spec": "Snapdragon 8 Gen 3"
+                    "spec": "Silicone"
                 },
                 {
                     "detail": "Tela",
-                    "order": 6,
-                    "spec": "6,78' 165hz"
+                    "order": 4,
+                    "spec": "1,62 Polegadas"
                 },
                 {
-                    "detail": "Sistema operacional",
-                    "order": 7,
-                    "spec": "Android"
+                    "detail": "Duração da bateria",
+                    "order": 5,
+                    "spec": "Até 21 Dias"
                 },
                 {
                     "detail": "Extras",
-                    "order": 8,
-                    "spec": "NFC, Proteção IP68, entrada de 3.5mm"
+                    "order": 6,
+                    "spec": "Proteção IP68 contra águe e poeira"
                 }
             ]
         }

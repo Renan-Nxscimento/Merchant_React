@@ -19,7 +19,7 @@
     font-weight: 500;
 }
 
-.rating-number .bi-star-fill {
+.rating-number .bi-star-fill, .rating-number .bi-star-half {
     font-size: 20px;
 }
 

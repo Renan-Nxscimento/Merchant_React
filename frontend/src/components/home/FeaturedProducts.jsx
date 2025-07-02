@@ -75,11 +75,6 @@ const FeaturedProducts = () => {
                                 : null
                             }
                             </div>
-                            <div className="f-product-options d-flex">
-                                <i className="bi bi-bag-fill d-flex align-items-center justify-content-center"></i>
-                                <i className="bi bi-heart d-flex align-items-center justify-content-center"></i>
-                                <i className="bi bi-share-fill d-flex align-items-center justify-content-center"></i>
-                            </div>
                         </div>
                     </div>
                 </Link>

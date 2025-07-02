@@ -154,8 +154,6 @@ const ShipAndBuy = ({selectedProduct, variation, productname}) => {
           if(currentUser) {
             setCartItems(currentUser.cart)
               setFavItems(currentUser.favorite_products)
-              console.log(thisUser)
-            
 
             checkCart()
             checkFavorites()

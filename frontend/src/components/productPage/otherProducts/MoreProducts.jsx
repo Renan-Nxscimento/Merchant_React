@@ -20,7 +20,8 @@ const MoreProducts = ({thisProducts}) => {
     <section id='moreProducts' className='d-flex flex-column'>
       <h3>Mais produtos</h3>
       <div className="more-products-container d-flex">
-                  {products.map(product => (
+        {products.slice(0, 16)
+            .map(product => (
                       <Link key={product._id} onClick={() => {window.location.href=`/product/${product._id}`}}>
                         <Product product={product}/>
                       </Link>

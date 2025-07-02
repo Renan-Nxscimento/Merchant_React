@@ -79,7 +79,7 @@ const AllReviews = ({moreReviews, userImage, setShowAll}) => {
                           </div>
                           <div className="r-content d-flex flex-column w-100">
                               <div className="r-stars">
-                                  <Stars product={review} />
+                                  <Stars numb={review.rating} />
                               </div>
                               <div className="r-variation">
                                   Versão: {review.variation}
@@ -109,7 +109,6 @@ const AllReviews = ({moreReviews, userImage, setShowAll}) => {
                                   <span>{review.customer}</span>
                                   <span>|</span>
                                   <span>{review.date}</span>
-                                  <i className="bi bi-hand-thumbs-up"></i>
                               </div>
                           </div>
                       </div>

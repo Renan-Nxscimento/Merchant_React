@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react'
+import { useEffect, useState } from 'react'
 import Product from '../../product/Product'
 import { Link } from 'react-router-dom'
 import './otherProduct.css'
@@ -21,15 +21,18 @@ const SimilarProducts = ({thisProducts}) => {
         <div className='similar-products d-flex flex-column'>
           <h3>Itens similares</h3>
           <div className="similar-container d-flex">
-          {products.map(product => (
-                    product.category &&
-                     product.category === thisProducts.category ? (
-                      <Link key={product._id} onClick={() => {window.location.href=`/product/${product._id}`}}>
-                        <Product product={product}/>
-                      </Link>
-                     )
-                    : null
-                ))}
+          {
+          products? (
+          products
+            .filter(product => product.category && product.category === thisProducts.category)
+            .slice(0, 8)
+            .map(product => (
+              <Link key={product._id} onClick={() => { window.location.href = `/product/${product._id}` }}>
+                <Product product={product} />
+              </Link>
+            ))
+        ) : null
+        }
           </div>
           <div className="slash"></div>
         </div>

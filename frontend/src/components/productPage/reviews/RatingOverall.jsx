@@ -11,7 +11,7 @@ const RatingOverall = ({selectedProduct}) => {
     <div className='rating-grade w-100 d-flex'>
       <div className="rating-number d-flex flex-column align-items-center justify-content-center col-2">
         <span id='grade'>{overall}</span>
-        <Stars product={selectedProduct}/>
+        <Stars numb={Number(overall)}/>
       </div>
       <div className="rating-filter d-flex justify-content-between w-100 align-items-center">
         <button 

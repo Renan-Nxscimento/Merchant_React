@@ -17,7 +17,7 @@
     border: 2px solid transparent;
     padding: 2px;
     cursor: pointer;
-    object-fit: cover;
+    object-fit: contain;
 }
 
 .img-selected {
@@ -29,7 +29,6 @@
 }
 
 .main-image {
-    object-fit: cover;
     width: 450px;
     height: 450px;
     overflow: hidden;
@@ -37,9 +36,9 @@
 }
 
 .main-image img{
-    height: auto;
+    height: 100%;
     width: 100%;
-    object-fit: cover;
+    object-fit: contain;
     cursor: pointer;
 }
 
@@ -100,6 +99,7 @@ h3 {
     object-fit: cover;
     max-height: 99%;
     max-width: 99%;
+    min-height: 70vh;
 }
 
 .f-content{

@@ -10,6 +10,7 @@
 .featured-products-container {
     height: 300px;
     margin-top: 40px;
+    gap: 5px;
 }
 
 .featured-product {
@@ -20,6 +21,7 @@
     transition: all .1s;
     cursor: default;
     color: #242429;
+    border: 1px solid #b0b8be;
 }
 
 .featured-product:hover {
@@ -40,7 +42,7 @@
     width: 100%;
     padding: 20px;
     height: 300px;
-    object-fit: cover;
+    object-fit: contain;
 }
 
 .f-product-content {

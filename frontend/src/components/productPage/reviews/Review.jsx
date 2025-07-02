@@ -16,9 +16,9 @@ const Review = ({selectedProduct}) => {
     const [selectedReview, setSelectedReview] = useState(null)
 
     const handleImageClick = (review) => {
-        setSelectedReview(review)
-        setReviewFullscreen(true)
-    }
+                setSelectedReview(review)
+                setReviewFullscreen(true)
+            }
 
     const handleFilter = (review) => {
         if (filter) {
@@ -40,7 +40,9 @@ const Review = ({selectedProduct}) => {
   return (
     <ReviewFullscreenContext.Provider value={{reviewFullscreen, setReviewFullscreen}}>
     <div className='reviews-container d-flex w-100 flex-wrap align-items-center justify-content-center'>
-        {displayedReviews.map(review => (
+        {displayedReviews.map(review => {
+
+            return (
                 <div key={review._id} className="review d-flex mb-auto">
                     <div className="r-user d-flex flex-column h-100">
                         <div className="r-user-image">
@@ -49,7 +51,7 @@ const Review = ({selectedProduct}) => {
                     </div>
                     <div className="r-content d-flex flex-column w-100">
                         <div className="r-stars">
-                            <Stars product={review} />
+                            <Stars numb={review.rating} />
                         </div>
                         <div className="r-variation">
                             Versão: {review.variation}
@@ -79,12 +81,12 @@ const Review = ({selectedProduct}) => {
                             <span>{review.customer}</span>
                             <span>|</span>
                             <span>{review.date}</span>
-                            <i className="bi bi-hand-thumbs-up"></i>
                         </div>
                     </div>
 
                 </div>
-            ))              
+            )
+            })              
             }
             {
                 filtredReviews.length > 6? (

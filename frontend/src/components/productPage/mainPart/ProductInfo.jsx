@@ -1,4 +1,4 @@
-import { useContext, useEffect, useState } from 'react'
+import { useContext, useEffect, useRef, useState } from 'react'
 import Stars from '../../stars/Stars'
 import ShipAndBuy from './ShipAndBuy'
 import './productInfo.css'
@@ -99,7 +99,7 @@ const ProductInfo = ({selectedProduct}) => {
         </div>
 
         <div className="product-rating d-flex align-items-center">
-            <Stars product={selectedProduct}/>
+            <Stars numb={Number(overall)}/>
             <span id="ratingNumber">{overall}</span>
             <span id="reviewCount">{selectedProduct.comments.length} Reviews |</span>
             <span id="sellsCount">{selectedProduct.sales} Vendidos</span>

@@ -60,6 +60,7 @@ a {
 .prod-bg img {
     height: 100%;
     width: auto;
+    object-fit: contain;
 }
 
 .stars {

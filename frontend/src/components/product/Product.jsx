@@ -1,9 +1,34 @@
-import React, { useState } from 'react'
+import { useEffect, useState } from 'react'
 import Stars from '../stars/Stars'
+import Overall from '../productPage/reviews/Overall'
 
 const Product = ({product}) => {
  const image = product.images[0].src
+
+ const [thisOverall, setThisOverall] = useState(0)
+
+ const [thisProductNumber, setThisProductNumber] = useState(0)
  
+ const getOverall = (num1, num2) => {
+         let result = num1 / num2
+         setThisOverall(result.toFixed(1))
+     }
+ 
+     const somaReviews =  product.comments.reduce((accumulator, comment) => {
+         return accumulator + comment.rating
+     }, 0)
+ 
+     useEffect(() => {
+         if(product) {
+           getOverall(somaReviews, product.comments.length)
+         }
+     }, [product])
+
+     useEffect(() => {
+        if (thisOverall !== undefined) {
+            setThisProductNumber(Number(thisOverall));
+        }
+    }, [thisOverall])
 
   return (
     
@@ -11,7 +36,13 @@ const Product = ({product}) => {
       <div className="prod-bg d-flex justify-content-center">
         <img src={image} alt="" />
       </div>
-      <Stars product={product}/>
+      {
+        thisProductNumber > 0? (
+          <Stars numb={thisProductNumber}/>
+        ) : (
+          <Stars numb={product.rating}/>
+        )
+      }
       <div className="product-name flex-wrap justify-content-center text-center">
         <span>{product.brand} {product.name}</span>
       </div>
