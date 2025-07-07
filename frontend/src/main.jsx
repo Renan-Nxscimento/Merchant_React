@@ -46,13 +46,13 @@ const router = createBrowserRouter([
         element: <ProductsSelection selection={'smartwatches'}/>,
       },{
         path: "/Carregadores",
-        element: <ProductsSelection selection={'Carregadores'}/>,
+        element: <ProductsSelection selection={'carregadores'}/>,
       },{
         path: "/Powerbanks",
-        element: <ProductsSelection selection={'Powerbanks'}/>,
+        element: <ProductsSelection selection={'powerbanks'}/>,
       },{
         path: "/Fones",
-        element: <ProductsSelection selection={'Fones'}/>,
+        element: <ProductsSelection selection={'fones'}/>,
       },{
         path: "/Asus",
         element: <ProductsSelection selection={'Asus'}/>,
@@ -68,12 +68,6 @@ const router = createBrowserRouter([
       },{
         path: "/Motorola",
         element: <ProductsSelection selection={'Motorola'}/>,
-      },{
-        path: "/Smartphones",
-        element: <ProductsSelection selection={'Smartphones'}/>,
-      },{
-        path: "/Smartwatches",
-        element: <ProductsSelection selection={'Smartwatches'}/>,
       },
       {
         path: "/user",

@@ -20,7 +20,7 @@ const SimilarProducts = ({thisProducts}) => {
   return (
         <div className='similar-products d-flex flex-column'>
           <h3>Itens similares</h3>
-          <div className="similar-container d-flex">
+          <div className="similar-container d-flex flex-wrap justify-content-center">
           {
           products? (
           products

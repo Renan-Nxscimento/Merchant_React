@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react'
+import { useEffect, useState } from 'react'
 import Stars from '../stars/Stars'
 import { Link } from 'react-router-dom'
 import fetchApi from '../../axios/config'
@@ -7,13 +7,10 @@ import './brandItem.css'
 
 const BrandItem = ({brand}) => {
     const [products, setProducts] = useState([])
-    const [filtredProduct, setFiltredProduct] = useState(null)
         
       useEffect(() => {
           const loadProducts = async () => {
           const res = await fetchApi.get('/products')
-
-           console.log(res.data)
 
           setProducts(res.data)
           }
@@ -36,15 +33,17 @@ const BrandItem = ({brand}) => {
 
         function finalFilter(arrs) {
           if (arrs === undefined) {
-            return "No! That is NOT Solid Snake!"
+            return "Error"
           } else {
             return arrs
           }
         }
 
         let producto = finalFilter(generalFilter[0])
-
-        console.log(producto)
+        
+        const somaReviews =  producto.comments ? producto.comments.reduce((accumulator, comment) => {
+        return accumulator + comment.rating
+        }, 0) : null
 
   return (
     <div className='brand-item d-flex'>
@@ -55,7 +54,7 @@ const BrandItem = ({brand}) => {
         <h3 className="big-text">{brand.brand}</h3>
         <span className="best-seller">Mais vendido:</span>
           {
-            producto && producto.name !== undefined ? (
+          producto && producto.name !== undefined ? (
               <>
               <Link key={producto._id} to={`/product/${producto._id}`}>
               <div className="best-selling-product d-flex">
@@ -63,7 +62,21 @@ const BrandItem = ({brand}) => {
                   <img className='bs-img d-flex align-items-center justify-content-center' src={producto.images[0].src} alt="Carregando..." />
                 </div>
                 <div className="bs-content d-flex flex-column flex-wrap">
-                  <Stars product={producto}/>
+                  {(() => {
+                    let overallNumber = 0
+
+                    const getOverall = (num1, num2) => {
+                      let result = num1 / num2
+                      overallNumber = result.toFixed(1)
+                    }
+
+                    if(producto.comments) {
+                      getOverall(somaReviews, producto.comments.length)
+                      return (
+                        <Stars numb={Number(overallNumber)}/>
+                      )
+                    }
+                  })()}
                   <span className="bs-name">{producto.name}</span>
                     {
                     producto.description.length > 200 ? (

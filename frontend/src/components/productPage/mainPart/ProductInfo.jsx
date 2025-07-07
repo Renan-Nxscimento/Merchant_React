@@ -1,11 +1,11 @@
-import { useContext, useEffect, useRef, useState } from 'react'
+import { useContext, useEffect, useState } from 'react'
 import Stars from '../../stars/Stars'
 import ShipAndBuy from './ShipAndBuy'
 import './productInfo.css'
 import { OverallContext } from './Main'
 
 const ProductInfo = ({selectedProduct}) => {
-    const discount = Math.floor((selectedProduct.offer * selectedProduct.price ) / 100 ).toFixed(2)
+    const discount = ((selectedProduct.offer * selectedProduct.price ) / 100 ).toFixed(2)
     const currentPrice = selectedProduct.price - discount
     const [currentVariation, setCurrentVariation] = useState()
     const [selectedVariation, setSelectedVariation] = useState()

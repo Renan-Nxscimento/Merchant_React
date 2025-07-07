@@ -1,9 +1,9 @@
-import React, { useEffect, useState } from 'react'
+import { useEffect, useState } from 'react'
 import Product from '../../product/Product'
 import fetchApi from '../../../axios/config'
 import { Link } from 'react-router-dom'
 
-const MoreProducts = ({thisProducts}) => {
+const MoreProducts = () => {
   const [products, setProducts] = useState([])
           
       useEffect(() => {
@@ -19,7 +19,7 @@ const MoreProducts = ({thisProducts}) => {
   return (
     <section id='moreProducts' className='d-flex flex-column'>
       <h3>Mais produtos</h3>
-      <div className="more-products-container d-flex">
+      <div className="more-products-container d-flex flex-wrap justify-content-center">
         {products.slice(0, 16)
             .map(product => (
                       <Link key={product._id} onClick={() => {window.location.href=`/product/${product._id}`}}>

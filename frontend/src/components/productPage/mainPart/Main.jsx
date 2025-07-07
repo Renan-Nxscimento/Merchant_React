@@ -31,7 +31,7 @@ const Main = ({refreshMainImago, selectedProduct}) => {
         </section>
         
         <Overall selectedProduct={selectedProduct}/>
-        <MoreProducts thisProducts={selectedProduct}/>
+        <MoreProducts/>
     </OverallContext.Provider>
   )
 }

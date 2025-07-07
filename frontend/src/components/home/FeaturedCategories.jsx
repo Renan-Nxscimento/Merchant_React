@@ -24,7 +24,7 @@ const FeaturedCategories = () => {
     <div className='featured-categories-container d-flex'>
         {
             featuredCategories.map(item => 
-            <div className="f-categorie-container">
+            <div key={item.category} className="f-categorie-container">
                 <div 
                 className="f-categorie-content d-flex flex-column h-100 justify-content-center"
                 style={{backgroundImage: `url(${item.img})`}}

@@ -5,7 +5,7 @@
 }
 
 .similar-container {
-    gap: 20px;
+    gap: 18px;
 }
 
 .similar-container .product {
@@ -24,7 +24,7 @@
 }
 
 .more-products-container {
-    gap: 20px;
+    gap: 18px;
 }
 
 .more-products-container .product {

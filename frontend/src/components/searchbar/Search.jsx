@@ -47,7 +47,13 @@ const Search = () => {
           filtredProducts.map(result => 
             <>
               <li className="d-flex result align-items-center">
-                <Link className="w-100">
+                <Link 
+                className="w-100"
+                onClick={() => { 
+                  window.location.href = `/product/${result._id}` 
+                  setSearchQuery('')
+                }}
+                >
                   <img src={result.images[0].src} alt="" />
                   <span>{result.name}</span>
                 </Link>

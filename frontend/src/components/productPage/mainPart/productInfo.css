@@ -87,6 +87,10 @@
     gap: 5px;
 }
 
+.product-rating .stars {
+    margin-top: unset;
+}
+
 #ratingNumber {
     font-weight: 500;
 }

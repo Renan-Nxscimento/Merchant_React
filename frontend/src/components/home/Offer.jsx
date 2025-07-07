@@ -1,6 +1,6 @@
 import './offer.css'
 
-import React from 'react'
+import { Link } from 'react-router-dom'
 
 const Offer = () => {
   return (
@@ -10,11 +10,11 @@ const Offer = () => {
             <i className="bi bi-gift-fill"></i>
             <div className="gift-text d-flex flex-column">
                 <span className='gift-bigger'>OFERTA</span>
-                <a href="#">Resgatar</a>
+                <Link to={`/vouchers`}>Resgatar</Link>
             </div>
           </div>
           <div className="offer-text w-100 d-flex align-items-center justify-content-center">
-            <span><mark><mark>Ofertas imperdíveis:</mark></mark></span>
+            <span><mark>Ofertas imperdíveis:</mark></span>
             <span>
                  Smartphones, Headphones, acessórios e diversos produtos com grande desconto!
             </span>

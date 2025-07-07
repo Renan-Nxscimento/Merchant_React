@@ -6,9 +6,9 @@ const Banner = () => {
   const [bannerCounter, setBannerCounter] = useState(2)
 
   const backgroundImages = [
-    "url('https://www.nintendo.com/eu/media/images/10_share_images/games_15/nintendo_switch_download_software_1/2x1_NSwitchDS_MetalGearSolidMasterCollectionVersion.jpg')",
-    "url('https://wallpapercave.com/wp/wp6767454.jpg')",
-    "url('https://images6.alphacoders.com/131/1316756.png')"
+    "url('https://www.asus.com/events/eventES/eventspic/4601_1900.jpg')",
+    "url('https://s.zst.com.br/cms-assets/2024/01/capa-celular-samsung-galaxy-s24-ultra.webp')",
+    "url('https://renan-nxscimento.github.io/Merchant_E-commerce/img/bannerXiaomi.webp')"
   ]
 
   const handlePrevious = () => {

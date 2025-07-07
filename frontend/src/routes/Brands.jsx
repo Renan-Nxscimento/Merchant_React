@@ -13,8 +13,6 @@ const Brands = () => {
           const loadBrands = async () => {
           const res = await fetchApi.get('/brands')
 
-           console.log(res.data)
-
           setBrands(res.data)
           }
 

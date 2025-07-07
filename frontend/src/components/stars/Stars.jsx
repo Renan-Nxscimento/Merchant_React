@@ -16,7 +16,7 @@ const Stars = ({numb}) => {
   const hasDecimal = hasDecimalPlace(validNumb)
 
   if (validNumb === 0) {
-    return <p>Error: Invalid number of stars</p>;
+    return <p></p>;
   }
 
   const integerPart = Math.floor(validNumb)

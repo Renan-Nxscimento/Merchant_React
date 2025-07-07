@@ -41,12 +41,13 @@ const Review = ({selectedProduct}) => {
     <ReviewFullscreenContext.Provider value={{reviewFullscreen, setReviewFullscreen}}>
     <div className='reviews-container d-flex w-100 flex-wrap align-items-center justify-content-center'>
         {displayedReviews.map(review => {
+            const customerImage = review.customerimage
 
             return (
                 <div key={review._id} className="review d-flex mb-auto">
                     <div className="r-user d-flex flex-column h-100">
                         <div className="r-user-image">
-                            <img src={user} alt="" />
+                            <img src={customerImage ? customerImage : user} alt="" />
                         </div>
                     </div>
                     <div className="r-content d-flex flex-column w-100">

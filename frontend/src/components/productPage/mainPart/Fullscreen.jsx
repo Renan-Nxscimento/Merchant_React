@@ -19,10 +19,8 @@ const Fullscreen = ({selectedProduct}) => {
       }
 
       const nextImage = () => {
-        if (imageCounter < 5) {
+        if (imageCounter < selectedProduct.images.length) {
           setImageCounter((prevImageCounter) => prevImageCounter + 1)
-        } if (imageCounter === 5) {
-          setImageCounter(1)
         }
       }
 
@@ -52,7 +50,7 @@ const Fullscreen = ({selectedProduct}) => {
                     )
                   }
                   {
-                    imageCounter === 5 ? null : (
+                    imageCounter === selectedProduct.images.length ? null : (
                     <button 
                     className={`arrow ${imageCounter === 1 ? "first-arrow" : ""}`} 
                     id="nextImage"
