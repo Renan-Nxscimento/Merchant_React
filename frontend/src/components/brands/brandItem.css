@@ -8,7 +8,7 @@
  background-color: #f2f4f7;
  padding: 20px;
  border-radius: 10px;
- height: 400px;
+ height: fit-content;
  width: 100%;
  overflow: hidden;
 }
@@ -28,6 +28,10 @@
     width: 100%;
     min-width: 100px;
     max-height: 180px;
+}
+
+.brand-content a {
+    width: 100%;
 }
 
 .best-selling-product {

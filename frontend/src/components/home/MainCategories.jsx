@@ -29,7 +29,7 @@ const [categories, setCategories] = useState([])
     <>
     <div className="categories-container d-flex w-100">
         <div className="main-categories d-flex w-100">
-            <div className="categories-message d-flex flex-column col-3 align-items-center justify-content-center">
+            <div className="categories-message flex-column col-3 align-items-center justify-content-center">
                 <span className='bigger'>Principais Categorias</span>
                 <span className="discount">Consiga até 30% de desconto</span>
             </div>

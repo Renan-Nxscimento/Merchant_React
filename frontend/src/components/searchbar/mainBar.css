@@ -144,6 +144,7 @@
     overflow-y: auto;
     outline: 2px solid #b6c6d3;
     border-radius: 5px;
+    z-index: 99999;
 }
 
 .search-results .slash:last-child {

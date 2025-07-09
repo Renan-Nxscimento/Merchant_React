@@ -23,7 +23,7 @@ const Images = ({selectedProduct}) => {
 
   return (
     <div className='product-images d-flex'>
-        <div className="alt-images d-flex flex-column">
+        <div className="alt-images d-flex">
             {selectedProduct.images.map(image => (
                 image.src &&
                  image.src !== ""? (

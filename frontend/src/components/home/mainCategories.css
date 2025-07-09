@@ -8,6 +8,7 @@
 }
 
 .categories-message {
+    display: flex;
     border-top-left-radius: 5px;
     border-bottom-left-radius: 5px;
     background-color: #242429;

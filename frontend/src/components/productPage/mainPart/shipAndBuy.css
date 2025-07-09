@@ -1,10 +1,11 @@
 .buy-product {
     border: 1px solid #7d9eb9;
     padding: 15px 0;
+    min-width: 275px;
 }
 
 .buy-product .slash{
-    width: 95%;;
+    width: 95%;
 }
 
 .buy-product div{
@@ -148,4 +149,8 @@
     border: 1px solid #242429;
     gap: 10px;
     cursor: pointer;
+}
+
+.ship-to, .ship-info, .safety .product-quantity {
+    display: flex;
 }

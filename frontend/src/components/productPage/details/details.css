@@ -23,6 +23,7 @@
 .spec {
     height: 55px;
     border-top: 1px solid #8598a5;
+    min-height: fit-content;
 }
 
 .spec:last-child {

@@ -171,7 +171,7 @@ const ShipAndBuy = ({selectedProduct, variation, productname}) => {
 
       <div className="slash"></div>
 
-      <div className="ship-to d-flex align-items-center justify-content-between">
+      <div className="ship-to align-items-center justify-content-between">
         <span>Enviar para:</span>
         <div className="ship-location d-flex">
             <i className="bi bi-pin-map-fill d-flex align-items-center"></i>
@@ -179,12 +179,12 @@ const ShipAndBuy = ({selectedProduct, variation, productname}) => {
         </div>
       </div>
 
-      <div className="ship-info d-flex">
+      <div className="ship-info">
         <i className="bi bi-airplane-fill"></i>
         <span>Frete:</span>
       </div>
 
-      <div className="safety d-flex flex-column">
+      <div className="safety flex-column">
         <i className="bi bi-shield-shaded">
             <span>Segurança e privacidade</span>
         </i>
@@ -193,9 +193,9 @@ const ShipAndBuy = ({selectedProduct, variation, productname}) => {
         </span>
       </div>
 
-      <div className="slash"></div>
+      <div className="slash last-of"></div>
 
-      <div className="product-quantity d-flex flex-column">
+      <div className="product-quantity flex-column">
         <div className="quantity-text">
             <span>Quantidade: </span>
         </div>
@@ -207,7 +207,19 @@ const ShipAndBuy = ({selectedProduct, variation, productname}) => {
       </div>
 
       <div className="buy-btn">
-        <button className='w-100 h-100'>Comprar agora</button>
+        <button 
+        className='w-100 h-100'
+        onClick={() => {
+          if (thisUser.email === defaultUser.email) {
+            window.location.href='/user'
+          } else {
+            isOnCart? window.location.href='/cart' :
+            addToCart(), window.location.href='/cart'
+          }
+        }}
+        >
+          Comprar agora
+        </button>
       </div>
 
       <div className="cart-btn">
@@ -217,7 +229,13 @@ const ShipAndBuy = ({selectedProduct, variation, productname}) => {
           (
           <button 
           className="w-100 h-100"
-          onClick={addToCart}
+          onClick={() => {
+          if (thisUser.email === defaultUser.email) {
+            window.location.href='/user'
+          } else {
+            addToCart()
+          }
+          }}
           >
             Adicionar ao carrinho
             <i className="bi bi-cart3"></i>
@@ -246,7 +264,7 @@ const ShipAndBuy = ({selectedProduct, variation, productname}) => {
         className="fav-product d-flex h-100 align-items-center justify-content-center"
         onClick={() => {
           if(thisUser.email === defaultUser.email) {
-            return
+            window.location.href='/user'
           }
           if(isFavorite) {
             removeFromFavorites(selectedProduct.name) 

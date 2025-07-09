@@ -13,7 +13,7 @@ const RatingOverall = ({selectedProduct}) => {
         <span id='grade'>{overall}</span>
         <Stars numb={Number(overall)}/>
       </div>
-      <div className="rating-filter d-flex justify-content-between w-100 align-items-center">
+      <div className="rating-filter d-flex w-100 align-items-center">
         <button 
         className={`filter-btn d-flex align-items-center ${filter === "" ? "active-filter" : ""}`} 
         onClick={() => setFilter('')}

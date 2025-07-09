@@ -8,8 +8,6 @@ import Products from '../components/home/Products'
 import QualitiesString from '../components/home/QualitiesString'
 import './home.css'
 
-import React from 'react'
-
 const Home = () => {
   
   return (

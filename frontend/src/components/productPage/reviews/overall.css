@@ -25,6 +25,7 @@
 
 .rating-filter {
     padding: 20px 40px;
+    justify-content: space-between;
 }
 
 .filter-btn {

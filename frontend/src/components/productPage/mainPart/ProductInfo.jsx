@@ -44,7 +44,7 @@ const ProductInfo = ({selectedProduct}) => {
   return (
     <div className='product-content d-flex w-100'>
       <div className="product-info d-flex flex-column col-7 justify-content-between">
-        <div className="discount-banner d-flex w-100">
+        <div className="discount-banner w-100">
             {
                 selectedProduct.offer ? (
                     <div className="discount-content w-100 h-100 d-flex justify-between">
@@ -79,7 +79,7 @@ const ProductInfo = ({selectedProduct}) => {
             }
         </div>
 
-        <div className="conditions d-flex flex-column">
+        <div className="conditions flex-column">
             <div className="parcels d-flex w-100 align-items-center">
                 <i className="bi bi-calendar2-check"></i>
                 <span>Em até 12x de {parseFloat(currentPrice / 12).toFixed(2).replace('.', ',')}</span>
