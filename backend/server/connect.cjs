@@ -11,7 +11,7 @@ async function main() {
         const collections = await client.db("merc-api").collections()
         collections.forEach((collection) => console.log(collection.dropSearchIndex.namespace.collection))
     } catch (error) {
-        console.error(error)
+        console.error(error + "this here")
     } finally {
         await client.close()
     }
