@@ -7,7 +7,6 @@ async function main() {
         mongoose.set("strictQuery", true)
 
         await mongoose.connect(
-            //'mongodb+srv://boss:thebigboss@merchant.xf1svqa.mongodb.net/?retryWrites=true&w=majority&appName=merchant'
             'mongodb+srv://boss:thebigboss@merchant.xf1svqa.mongodb.net/merc-api',
         )
         
