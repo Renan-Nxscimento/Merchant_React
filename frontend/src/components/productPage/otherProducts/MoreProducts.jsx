@@ -22,7 +22,7 @@ const MoreProducts = () => {
       <div className="more-products-container d-flex flex-wrap justify-content-center">
         {products.slice(0, 16)
             .map(product => (
-                      <Link key={product._id} onClick={() => {window.location.href=`/product/${product._id}`}}>
+                      <Link key={product._id} to={`/product/${product._id}`}>
                         <Product product={product}/>
                       </Link>
                      )
