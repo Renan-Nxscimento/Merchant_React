@@ -27,7 +27,7 @@ const SimilarProducts = ({thisProducts}) => {
             .filter(product => product.category && product.category === thisProducts.category)
             .slice(0, 8)
             .map(product => (
-              <Link key={product._id} onClick={() => { window.location.href = `/product/${product._id}` }}>
+              <Link key={product._id} to={`/product/${product._id}`}>
                 <Product product={product} />
               </Link>
             ))
