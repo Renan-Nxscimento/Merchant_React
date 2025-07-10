@@ -34,9 +34,8 @@ const ProductsSelection = ({selection}) => {
                 setFavoriteProducts(userLocated.favorite_products)
                 console.log('User located')
             } else {
-                console.log('user not found')
+                setProducts(productsres.data)
             }
-            setProducts(productsres.data)
         }
         catch(error) {
             console.log(error)
@@ -45,7 +44,7 @@ const ProductsSelection = ({selection}) => {
 
         checkIsFavorites()
         loadProducts()
-      }, [thisUser])
+      }, [thisUser, products, isFavorites])
 
   const handleSelection = (num) => {
     setSelectionCounter(num);
