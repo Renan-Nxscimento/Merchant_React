@@ -29,7 +29,7 @@ const ProductPage = () => {
             }
 
           loadProducts()
-        }, [])
+        }, [selectedProduct])
       
       if (!selectedProduct) {
         return <p className='loading'>Carregando...</p>
