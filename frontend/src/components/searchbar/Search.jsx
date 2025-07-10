@@ -49,10 +49,8 @@ const Search = () => {
               <li className="d-flex result align-items-center">
                 <Link 
                 className="w-100"
-                onClick={() => { 
-                  window.location.href = `/product/${result._id}` 
-                  setSearchQuery('')
-                }}
+                onClick={() => setSearchQuery('')}
+                to={`/product/${result._id}`}
                 >
                   <img src={result.images[0].src} alt="" />
                   <span>{result.name}</span>
