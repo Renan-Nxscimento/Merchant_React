@@ -1,7 +1,7 @@
 import axios from 'axios'
 
 const fetchApi = axios.create({
-    baseURL: 'http://localhost:3000/api/',
+    baseURL: 'https://merchant-backend-6w1j.onrender.com',
     headers: {
         "Content-Type": "application/json"
     }
