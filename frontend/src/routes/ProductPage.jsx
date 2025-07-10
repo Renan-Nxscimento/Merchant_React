@@ -29,7 +29,14 @@ const ProductPage = () => {
             }
 
           loadProducts()
-        }, [selectedProduct])
+        }, [])
+
+        useEffect(() => {
+          if(products) {
+            const locate = products.find(product => String(product._id) === id)
+            setSelectedProduct(locate)
+          }
+        }, [selectedProduct, id])
       
       if (!selectedProduct) {
         return <p className='loading'>Carregando...</p>
