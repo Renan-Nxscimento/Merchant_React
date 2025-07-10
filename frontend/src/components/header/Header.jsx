@@ -3,7 +3,7 @@ import NavBar from './NavBar'
 import User from './User'
 
 import './header.css'
-import MainBar from '../searchbar/mainBar'
+import MainBar from '../searchbar/MainBar'
 import { Link } from 'react-router-dom'
 
 const Header = () => {
