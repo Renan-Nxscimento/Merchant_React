@@ -26,7 +26,7 @@ const ProductsSelection = ({selection}) => {
             const productsres = await fetchApi.get('/products')
             const usersres = await fetchApi.get('./users')
             
-            if (thisUser) {
+            if (isFavorites) {
                 const thisId = thisUser._id
                 const userLocated = usersres.data.find(user =>
                 user._id === thisId
