@@ -90,12 +90,12 @@ const FeaturedProducts = () => {
                                 ) 
                                 : 
                                 (
-                                    <span 
+                                    <Link 
                                     className="featured-price" 
                                     to={`/product/${product._id}`}
                                     >
                                         R${product.price.toFixed(2).replace('.', ',')}
-                                    </span>
+                                    </Link>
                                 ) 
                             }
                             {
