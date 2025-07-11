@@ -22,7 +22,11 @@ const MoreProducts = () => {
       <div className="more-products-container d-flex flex-wrap justify-content-center">
         {products.slice(0, 16)
             .map(product => (
-                      <Link key={product._id} to={`/product/${product._id}`}>
+                      <Link 
+                      key={product._id} 
+                      to={`/product/${product._id}`}
+                      onClick={() => window.scrollTo({top: 0, behavior: "instant"})}
+                      >
                         <Product product={product}/>
                       </Link>
                      )
