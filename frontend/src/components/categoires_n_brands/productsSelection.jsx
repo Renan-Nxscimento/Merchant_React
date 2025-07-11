@@ -26,7 +26,7 @@ const ProductsSelection = ({selection}) => {
             const productsres = await fetchApi.get('/products')
             const usersres = await fetchApi.get('./users')
             
-            if (thisUser) {
+            if (isFavorites) {
                 const thisId = thisUser._id
                 const userLocated = usersres.data.find(user =>
                 user._id === thisId
@@ -34,9 +34,8 @@ const ProductsSelection = ({selection}) => {
                 setFavoriteProducts(userLocated.favorite_products)
                 console.log('User located')
             } else {
-                console.log('user not found')
+                setProducts(productsres.data)
             }
-            setProducts(productsres.data)
         }
         catch(error) {
             console.log(error)
@@ -45,13 +44,14 @@ const ProductsSelection = ({selection}) => {
 
         checkIsFavorites()
         loadProducts()
-      }, [thisUser])
+      }, [thisUser, products, isFavorites])
+      
 
   const handleSelection = (num) => {
     setSelectionCounter(num);
   };
 
-  if (!thisUser) return <p className="loading">Carregando...</p>
+  if (products.length < 1) return <p className="loading">Carregando...</p>
 
   return (
     <div className="adjust-screen">

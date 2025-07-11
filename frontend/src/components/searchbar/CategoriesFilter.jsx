@@ -11,31 +11,31 @@ const CategoriesFilter = () => {
         <div className="dropdown-menu" aria-labelledby="dropdownMenuLink">
           <Link 
           className="category-item d-flex justify-content-center align-items-center" 
-          onClick={() => {window.location.href=`/Smartphones`}}
+          to={`/smartphones`}
           >
             Smartphones
           </Link>
           <Link 
           className="category-item d-flex justify-content-center align-items-center" 
-          onClick={() => {window.location.href=`/Smartwatches`}}
+          to={`/smartwatches`}
           >
             Smartwatches
           </Link>
           <Link 
           className="category-item d-flex justify-content-center align-items-center" 
-          onClick={() => {window.location.href=`/Carregadores`}}
+          to={`/carregadores`}
           >
             Carregadores
           </Link>
           <Link 
           className="category-item d-flex justify-content-center align-items-center" 
-          onClick={() => {window.location.href=`/Powerbanks`}}
+          to={`/powerbanks`}
           >
             Powerbanks
           </Link>
           <Link 
           className="category-item d-flex justify-content-center align-items-center" 
-          onClick={() => {window.location.href=`/Fones`}}
+          to={`/fones`}
           >
             Fones
           </Link>

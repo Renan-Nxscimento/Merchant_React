@@ -12,7 +12,7 @@ import StoreReviews from './routes/StoreReviews.jsx'
 import Contact from './routes/Contact.jsx'
 import Cart from './routes/Cart.jsx'
 import UserLogin from './routes/UserLogin.jsx'
-import ProductsSelection from './components/categoires_n_brands/productsSelection.jsx'
+import ProductsSelection from './components/categoires_n_brands/ProductsSelection.jsx'
 
 const router = createBrowserRouter([
   {

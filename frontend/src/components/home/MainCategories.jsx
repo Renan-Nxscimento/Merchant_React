@@ -38,7 +38,7 @@ const [categories, setCategories] = useState([])
                     categories? categories.map(category => (
                         <div className="categorie d-flex flex-column col-2" key={category.category}>
                             <Link 
-                            onClick={() => {window.location.href=`/${category.category}`}}
+                            to={`${category.category.toLowerCase()}`}
                             className="d-flex flex-column align-items-center"
                             >
                                 <img 

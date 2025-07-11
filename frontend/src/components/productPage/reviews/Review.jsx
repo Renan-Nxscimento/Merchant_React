@@ -63,7 +63,8 @@ const Review = ({selectedProduct}) => {
                         {review.images && (
                             <>
                                 <div className="r-images d-flex">
-                                    {review.images.map(image => (
+                                    {review.images.map(image => 
+                                    image.src !== "" &&(
                                         <div 
                                         key={image.order} 
                                         className="r-image"

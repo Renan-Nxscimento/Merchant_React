@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react'
+import { useEffect, useState } from 'react'
 import './products.css'
 import { Link } from 'react-router-dom'
 import fetchApi from '../../axios/config'
@@ -19,7 +19,7 @@ const Products = () => {
         loadProducts()
       }, [])
 
-      if(!products) return <p>Carregando...</p>
+      if (products.length < 1) return <p className="loading">Carregando...</p>
 
         const handleSelection = (num) => {
           setSelectionCounter(num);

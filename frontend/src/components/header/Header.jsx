@@ -1,9 +1,8 @@
-import React from 'react'
 import NavBar from './NavBar'
 import User from './User'
 
 import './header.css'
-import MainBar from '../searchbar/mainBar'
+import MainBar from '../searchbar/MainBar'
 import { Link } from 'react-router-dom'
 
 const Header = () => {
@@ -15,7 +14,7 @@ const Header = () => {
     header d-flex align-items-center flex-wrap
     '>
         <div className="logo d-flex align-items-center">
-            <Link id='logo' onClick={() => {window.location.href=`/`}}>MERCHANT</Link>
+            <Link id='logo' to={`/`}>MERCHANT</Link>
         </div>
         <NavBar/>
         <User/>

@@ -31,7 +31,7 @@ const FeaturedCategories = () => {
                 >
                     <span className="categorie-name">{item.category}</span>
                     <h4 className='f-quality'>{item.category_feature}</h4>
-                    <Link onClick={() => {window.location.href=`/${item.category}`}}>
+                    <Link to={`${item.category.toLowerCase()}`}>
                         Ver mais produtos
                     </Link>
                 </div>

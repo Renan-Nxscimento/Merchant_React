@@ -27,8 +27,12 @@ const SimilarProducts = ({thisProducts}) => {
             .filter(product => product.category && product.category === thisProducts.category)
             .slice(0, 8)
             .map(product => (
-              <Link key={product._id} onClick={() => { window.location.href = `/product/${product._id}` }}>
-                <Product product={product} />
+              <Link 
+              key={product._id} 
+              to={`/product/${product._id}`}
+              onClick={() => window.scrollTo({top: 0, behavior: "instant"})}
+              >
+                <Product product={product}/>
               </Link>
             ))
         ) : null
