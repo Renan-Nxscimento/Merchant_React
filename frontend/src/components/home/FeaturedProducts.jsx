@@ -2,6 +2,7 @@ import { useEffect, useState } from 'react'
 import Stars from '../stars/Stars'
 import fetchApi from '../../axios/config'
 import './featuredProduct.css'
+import { Link } from 'react-router-dom'
 
 const FeaturedProducts = () => {
     const [products, setProducts] = useState([])
@@ -50,17 +51,17 @@ const FeaturedProducts = () => {
 
                     return (
                     <div key={product._id} className="featured-product d-flex h-100">
-                        <div 
+                        <Link 
                         className="f-product-img"
-                        onClick={() => { window.location.href = `/product/${product._id}` }}
+                        to={`/product/${product._id}`}
                         >
                             <img src={product.images[0].src} alt="" />
-                        </div>
+                        </Link>
                         <div className="f-product-content d-flex flex-column">
                             <Stars numb={Number(overallNumber)}/>
                             <span 
                             className='f-product-name' 
-                            onClick={() => { window.location.href = `/product/${product._id}` }}
+                            to={`/product/${product._id}`}
                             >
                                 {product.name}
                             </span>
@@ -68,30 +69,30 @@ const FeaturedProducts = () => {
                             product.description.length > 300 ? (
                                 <p className='f-product-description'>
                                     {cutString(product.description, 150)}
-                                    <span 
+                                    <Link 
                                     className='text-primary'
-                                    onClick={() => { window.location.href = `/product/${product._id}` }}
+                                    to={`/product/${product._id}`}
                                     >
                                         ...Ver mais
-                                    </span>
+                                    </Link>
                                 </p>
                             ) : <p className='f-product-description'>{product.description}</p>
                             }
                             <div className="f-product-prices d-flex">
                             {
                                 product.offer ? (    
-                                    <span 
+                                    <Link 
                                     className="featured-price" 
-                                    onClick={() => { window.location.href = `/product/${product._id}` }}
+                                    to={`/product/${product._id}`}
                                     >
                                         R${realPrice(product.price, product.offer).toFixed(2).replace('.', ',')}
-                                    </span>
+                                    </Link>
                                 ) 
                                 : 
                                 (
                                     <span 
                                     className="featured-price" 
-                                    onClick={() => { window.location.href = `/product/${product._id}` }}
+                                    to={`/product/${product._id}`}
                                     >
                                         R${product.price.toFixed(2).replace('.', ',')}
                                     </span>
