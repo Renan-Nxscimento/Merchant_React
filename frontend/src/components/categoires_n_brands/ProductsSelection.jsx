@@ -45,7 +45,6 @@ const ProductsSelection = ({selection}) => {
         checkIsFavorites()
         loadProducts()
       }, [thisUser, products, isFavorites])
-      
 
   const handleSelection = (num) => {
     setSelectionCounter(num);
