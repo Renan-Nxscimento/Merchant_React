@@ -142,7 +142,7 @@ const CartProducts = () => {
 
 
           loadApi()
-        }, [thisUser])
+        }, [thisUser, cartItems])
 
         useEffect(() => {
             handleSommatorium()
