@@ -211,12 +211,8 @@ const ShipAndBuy = ({selectedProduct, variation, productname}) => {
             <button 
             className='w-100 h-100'
             onClick={() => {
-              if (thisUser.email === defaultUser.email) {
-                return
-              } else {
                 isOnCart? null :
                 addToCart()
-              }
             }}
             >
               <Link 
