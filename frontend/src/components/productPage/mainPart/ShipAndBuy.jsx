@@ -3,6 +3,7 @@ import { useContext, useEffect, useState } from 'react'
 import './shipAndBuy.css'
 import { UserContext } from '../../../App'
 import fetchApi from '../../../axios/config'
+import { Link } from 'react-router-dom'
 
 const ShipAndBuy = ({selectedProduct, variation, productname}) => {
   const [users, setUsers] = useState([])
@@ -207,42 +208,56 @@ const ShipAndBuy = ({selectedProduct, variation, productname}) => {
       </div>
 
       <div className="buy-btn">
-        <button 
-        className='w-100 h-100'
-        onClick={() => {
-          if (thisUser.email === defaultUser.email) {
-            window.location.href='/user'
-          } else {
-            isOnCart? window.location.href='/cart' :
-            addToCart(), window.location.href='/cart'
-          }
-        }}
-        >
-          Comprar agora
-        </button>
+            <button 
+            className='w-100 h-100'
+            onClick={() => {
+              if (thisUser.email === defaultUser.email) {
+                return
+              } else {
+                isOnCart? null :
+                addToCart()
+              }
+            }}
+            >
+              <Link 
+              className='text-white w-100 h-100 d-flex align-items-center justify-center'
+              to={thisUser.email === defaultUser.email ? `/user` : `/cart`}
+              >
+                <div className="link-content">
+                  Comprar agora
+                </div>
+              </Link>
+            </button>       
       </div>
 
       <div className="cart-btn">
-        {
-          isOnCart? (<button className='w-100 h-100 text-success'>Adicionado ao carrinho</button>) 
-          : 
-          (
-          <button 
-          className="w-100 h-100"
-          onClick={() => {
-          if (thisUser.email === defaultUser.email) {
-            window.location.href='/user'
-          } else {
-            addToCart()
-          }
-          }}
-          >
-            Adicionar ao carrinho
-            <i className="bi bi-cart3"></i>
-          </button>
+        {isOnCart ? (
+          <button className='cart-button w-100 h-100 text-success'>Adicionado ao carrinho</button>
+        ) : (
+          thisUser.email === defaultUser.email ? (
+            <button className="cart-button w-100 h-100">
+              <Link 
+              className='text-dark'
+              to={`/user`}
+              >
+                <div className="link-content">
+                  <span>Adicionar ao carrinho</span>
+                  <i className="bi bi-cart3"></i>
+                </div>
+              </Link>
+            </button>
+          ) : (
+            <button
+              className="cart-button w-100 h-100"
+              onClick={addToCart}
+            >
+              Adicionar ao carrinho
+              <i className="bi bi-cart3"></i>
+            </button>
           )
-        }
+        )}
       </div>
+
 
       <div className="options d-flex">
         <button 
@@ -260,22 +275,38 @@ const ShipAndBuy = ({selectedProduct, variation, productname}) => {
             )
           }
         </button>
+        {
+          thisUser.email === defaultUser.email ? (
         <button 
         className="fav-product d-flex h-100 align-items-center justify-content-center"
-        onClick={() => {
-          if(thisUser.email === defaultUser.email) {
-            window.location.href='/user'
-          }
-          if(isFavorite) {
-            removeFromFavorites(selectedProduct.name) 
-           } else {  
-            addToFavorites()
-          }}
-        }
         >
-            <i className={`${isFavorite? "bi bi-heart-fill" : "bi bi-heart"}`}></i>
-            <span>{`${isFavorite? "Favoritado" : "Favoritar"}`}</span>
+          <Link 
+          className='text-dark'
+          to={`/user`}
+          >
+            <div className="link-content">
+              <i className="bi bi-heart"></i>
+              <span>Favoritar</span>
+            </div>
+          </Link>
         </button>
+          ) : (
+            <button 
+            className="fav-product d-flex h-100 align-items-center justify-content-center"
+            onClick={() => {
+              if(isFavorite) {
+                removeFromFavorites(selectedProduct.name) 
+               } else {  
+                addToFavorites()
+              }}
+            }
+            >
+                <i className={`${isFavorite? "bi bi-heart-fill" : "bi bi-heart"}`}></i>
+                <span>{`${isFavorite? "Favoritado" : "Favoritar"}`}</span>
+            </button>
+          )
+        }
+        
       </div>
     </div>
   )

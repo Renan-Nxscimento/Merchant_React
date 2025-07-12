@@ -119,11 +119,20 @@
 
 .cart-btn {
     height: 40px;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: transparent;
 }
 
 .cart-btn button {
     background-color: transparent;
     font-weight: 500;
+}
+
+.buy-product .cart-btn #buyThisShit{
+    color: black !important;
 }
 
 .cart-btn i {
@@ -153,4 +162,17 @@
 
 .ship-to, .ship-info, .safety .product-quantity {
     display: flex;
+}
+
+.link-content {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+}
+
+.link-content .bi-heart {
+    margin-right: 5px;
 }
